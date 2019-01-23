@@ -56,7 +56,7 @@ def referenced_place(place_id):
         o.write('<dcterms:isReferencedBy rdf:resource="' + base_uri + '/text/' + parent_id + '"/>')
 
 
-def referencing_fragment(person_id):
+def referencing_fragment(place_id):
     ref = './/tei:placeName[@ref="#' + place_id + '"]'
     for referencing_fragment in root.findall(ref, ns):
         parent = referencing_fragment.getparent()
