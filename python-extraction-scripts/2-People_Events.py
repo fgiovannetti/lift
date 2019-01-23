@@ -10,6 +10,7 @@ tree = etree.parse('input.xml')
 ns = {'tei': 'http://www.tei-c.org/ns/1.0'}
 root = tree.getroot()
 base_uri = root.get('{http://www.w3.org/XML/1998/namespace}base')
+edition_id = root.get('{http://www.w3.org/XML/1998/namespace}id')
 
 o = open('output2.rdf', mode='w')
 
@@ -65,7 +66,7 @@ def referencing_fragment(person_id):
         parent_id = parent.get('{http://www.w3.org/XML/1998/namespace}id')
         o.write('<rdf:Description rdf:about="' + base_uri + '/text/' + parent_id + '">')
         o.write('<rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>')
-        o.write('<frbroo:R15i_is_fragment_of rdf:resource="' + base_uri + '"/>')
+        o.write('<frbroo:R15i_is_fragment_of rdf:resource="' + base_uri + edition_id + '"/>')
         o.write('</rdf:Description>')
 
 
@@ -100,9 +101,12 @@ def role_in_event(person):
             o.write('<pro:withRole rdf:resource="' + base_uri + '/role/participant' + '"/>')
         o.write('<tvc:atTime rdf:resource="' + base_uri + '/tvc/' + event_id + '-time' + '"/>')
         o.write('<pro:relatesToEntity rdf:resource="' + base_uri + '/event/' + event_id + '"/>')
-        place_of_event = event.find('./tei:desc/tei:placeName', ns)
-        if place_of_event is not None:
-            o.write('<pro:relatesToPlace rdf:resource="' + place_of_event.get('ref') + '"/>')
+        place = event.find('./tei:desc/tei:placeName', ns)
+        if place > 1:
+            place_of_event = place.get('type="place_of_event"')
+            o.write('<proles:relatesToPlace rdf:resource="' + base_uri + '/place/' + place.get('ref').replace("#", "") + '"/>')
+        elif event.find('./tei:desc/tei:placeName', ns) == 1:
+            o.write('<proles:relatesToPlace rdf:resource="' + base_uri + '/place/' + place.get('ref').replace("#", "") + '"/>')
         o.write('</rdf:Description>')
 
 

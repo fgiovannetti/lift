@@ -10,6 +10,7 @@ tree = etree.parse('input.xml')
 ns = {'tei': 'http://www.tei-c.org/ns/1.0'}
 root = tree.getroot()
 base_uri = root.get('{http://www.w3.org/XML/1998/namespace}base')
+edition_id = root.get('{http://www.w3.org/XML/1998/namespace}id')
 
 o = open('output3.rdf', mode='w')
 
@@ -62,7 +63,7 @@ def referencing_fragment(person_id):
         parent_id = parent.get('{http://www.w3.org/XML/1998/namespace}id')
         o.write('<rdf:Description rdf:about="' + base_uri + '/text/' + parent_id + '">')
         o.write('<rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>')
-        o.write('<frbroo:R15i_is_fragment_of rdf:resource="' + base_uri + '"/>')
+        o.write('<frbroo:R15i_is_fragment_of rdf:resource="' + base_uri + edition_id + '"/>')
         o.write('</rdf:Description>')
 
 
