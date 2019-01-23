@@ -53,12 +53,13 @@
           </person>
           <listRelation>
             <!-- aggiungere listRelation type social/intellectual? -->
-            <relation xml:id="rel01" name="master-disciple" active="#Socr" passive="#Plat #Xen #Criti"/>
-            <relation xml:id="rel02" name="colleague" mutual="#Socr" passive="#Plat #Xen"/>
+            <!-- use https://d-nb.info/standards/elementset/agrelon -->
+            <relation xml:id="rel01" name="hasStudent" active="#Socr" passive="#Plat #Xen #Criti"/>
+            <relation xml:id="rel02" name="hasColleague" mutual="#Plat #Xen"/>
           </listRelation>
           <listRelation>
             <!-- aggiungere listRelation type biological? -->
-            <relation xml:id="rel03" name="uncle-nephew" active="#Criti" passive="#Plat"/>
+            <relation xml:id="rel03" name="hasNieceNephew" active="#Criti" passive="#Plat"/>
           </listRelation>
         </listPerson>
       </particDesc>
