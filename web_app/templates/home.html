@@ -56,7 +56,7 @@ $def with ()
 			<div class="container d-flex h-100 align-items-center">
 				<div class="mx-auto text-center">
 					<h1 class="text-white mx-auto my-0"><span style="color:#64a19d;">LI</span>NKED DATA <span style="color:#64a19d;">F</span>ROM <span style="color:#64a19d;">T</span>EI</h1>
-					<h2 class="text-white-50 mx-auto mt-2 mb-5">Automatically extract, visualize, and download RDF triples from your TEI-encoded texts</h2>
+					<h2 class="text-white-50 mx-auto mt-2 mb-5">Extraction, visualization, and download of RDF triples from your TEI-encoded texts</h2>
 					<a href="#transform" class="btn btn-primary js-scroll-trigger">Get Started</a>
 				</div>
 			</div>
@@ -79,15 +79,21 @@ $def with ()
 		<section id="transform" class="projects-section bg-light">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-10 col-lg-8 mx-auto text-center">
-						<i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-						<h2 class="mb-5">Upload your TEI file</h2>
-						<form method="POST" enctype="multipart/form-data" class="form-inline d-flex">
-							<input type="file" id="myfile" name="myfile" accept=".xml, application/tei+xml" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"/>
-							<!-- <button type="submit" class="btn btn-primary mx-auto">Upload</button> -->
-							<input type="submit" value="Upload" class="btn btn-primary mx-auto"/>
+					<div class="col-md-10 col-lg-8 mx-auto">
+						<form method="POST" enctype="multipart/form-data" action="">
+							<h2>1) Select an extraction option</h2>
+							<input type="radio" id="transform" name="transform" value="1-people"> People</input><br/>
+			  				<input type="radio" id="transform" name="transform" value="2-people_ev"> People and events</input><br/>
+			  				<input type="radio" id="transform" name="transform" value="3-people_rel"> People and relations</input><br/>
+			  				<input type="radio" id="transform" name="transform" value="4-places"> Places</input><br/>
+			  				<input type="radio" id="transform" name="transform" value="5-all"> All of the above</input>
+							<h2 style="margin-top:50px;">2) Upload your TEI file</h2>
+							<div class="form-inline d-flex">
+								<input type="file" id="myfile" name="myfile" accept=".xml, application/tei+xml" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"/>
+								<input type="submit" value="Upload" class="btn btn-primary mx-auto"/>
+							</div>
 						</form>
-					</div>
+				 	</div>
 				</div>
 			</div>
 		</section>
@@ -97,7 +103,7 @@ $def with ()
 		<!-- Footer -->
 		<footer class="bg-black small text-center text-white-50">
 			<div class="container">
-				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a><br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="margin-bottom:15px; " src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a><br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
 			</div>
 		</footer>
 

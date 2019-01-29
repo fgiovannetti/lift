@@ -1,13 +1,14 @@
 import web
 import os
-import pyjxslt
-import lxml.etree as ET #XSL transform
+#import pyjxslt
+#import lxml.etree as ET #XSL transform
 from bs4 import BeautifulSoup #pretty print RDF output
 render = web.template.render('templates/')
 
 urls = (
 	'/', 'home', 
-	'/viewer', 'viewer' 
+	'/viewer', 'viewer',
+	'/download' , 'download' 
 ) 
 	
 #home
@@ -15,66 +16,57 @@ class home(object):
 	def GET(self):
 		return render.home()
 
-	#POST method for input file uploading (check that document is xml to do)
-	#fai in modo che input file si chiami sempre input.xml
+
+	# POST method for extraction option and input file uploading
 	def POST(self):
-		x = web.input(myfile={})
-		filedir = 'static/temp' # change this to the directory you want to store the file in.
-		if 'myfile' in x: # to check if the file-object is created
-			filepath=x.myfile.filename.replace('\\','/') # replaces the windows-style slashes with linux ones.
-			filename=filepath.split('/')[-1] # splits the and chooses the last part (the filename with extension)
-			fout = open(filedir +'/'+ filename,'w') # creates the file where the uploaded file should be stored
-			fout.write(x.myfile.file.read()) # writes the uploaded file to the newly created file.
-			fout.close() # closes the file, upload complete.
-
-			#transform file and write output to output.xml (change to result.rdf)
+		# uploaded file
+		inpf = web.input(myfile={})
+		filedir = 'static/temp' # change this to the directory you want to store the file in
+		if 'myfile' in inpf: # to check if the file-object is created
 			
+		 	filepath=inpf.myfile.filename.replace('\\','/') # replaces the windows-style slashes with linux ones.
+		 	filename=filepath.split('/')[-1] # splits the filepath and chooses the last part (the filename with extension)
+		
+		 	fout = open(filedir +'/input.xml','w') # creates the file where the uploaded file should be stored
+		 	fout.write(inpf.myfile.file.read()) # writes the uploaded file to the newly created file named input.xml
+		 	fout.close() # closes the file, upload complete.
 
-			xml_filename = filedir +'/'+ filename
-			xsl_filename = 'static/script/transform/transform_people.xsl'
+		# extraction option
+		btn = web.input()
+		opt = "%s" % (btn.transform)
+		if opt == "1-people":
+			execfile('static/script/transform/1-People.py')
+			raise web.seeother('/viewer')
+		elif opt == "2-people_ev":
+			execfile('static/script/transform/2-People_Events.py')
+			raise web.seeother('/viewer')
+		elif opt == "3-people_rel":
+			execfile('static/script/transform/3-People_Relations.py')
+			raise web.seeother('/viewer')
+		elif opt == "4-places":
+			execfile('static/script/transform/4-Places.py')
+			raise web.seeother('/viewer')
+		elif opt == "5-all":
+			execfile('static/script/transform/5-All.py')
+			raise web.seeother('/viewer')
+		else:
+			raise web.seeother('/#transform')
 
 
-			gw = pyjxslt.Gateway(25333)
-			# Add an xslt transformation.  
-			#       First parameter is the name of the transformation
-			# 	    Second parameter is either XSLT text or the name of a file that contains XSLT text
-			gw.add_transform('k1', xsl_filename)
-			# Do a transformation
-			#       First parameter is the name of the xslt transformation (cached on server)
-			#       Second parameter is either XML text or the name of a file that contains XML text
-			#       Third parameter is dictionary of parameters to pass to XSLT Transformer [parms_dict]
-			result = gw.transform('k1', xml_filename)
-			# Remove the transformation when you are done with it or need to replace it with a new one
-			gw.remove_transform('k1')
-
-			f = open('static/temp/output.xml', 'w')
-			f.write(ET.tostring(result, pretty_print=True))
-			f.close()
-
-
-			# dom = ET.parse(xml_filename)
-			# xslt = ET.parse(xsl_filename)
-			# transform = ET.XSLT(xslt)
-			# newdom = transform(dom)
-			# f = open('static/temp/output.xml', 'w')
-			# f.write(ET.tostring(newdom, pretty_print=True))
-			# f.close()
 
 		
 
-
-
-		raise web.seeother('/viewer')#make redirection to visualization?
-
-#viewer
+		#si apre pagina viewer che contiene la visualizzazione in RDFa tipo Worldcat e scarica in automatico il risultato RDF/XML chiedendo dove salvarlo;
+		#se ci sono errori particolarmente gravi compare un pop up e l'utente viene ridirezionato alla transform page con il consiglio di guardare la documentazione che conterra una sez trouble shooting
+		
+# viewer
 class viewer(object):
 	def GET(self):
-		output_path = 'static/temp/output.xml'
+		output_path = 'static/temp/output.rdf'
 
 		if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
 			bs = BeautifulSoup(open(output_path), 'xml')
 			output = bs.prettify()
-
 			return render.viewer(output)
 		else: 
 			raise web.seeother('/#transform') # redirects user to upload form if there is no output file in temp folder 
