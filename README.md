@@ -1,2 +1,2 @@
 # LIFT
-Linked data from TEI: Automatically extract, visualize, download RDF triples from your TEI-encoded texts
+Linked data from TEI: Extraction, visualization, download of RDF triples from your TEI-encoded texts
