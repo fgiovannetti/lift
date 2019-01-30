@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="https://w3id.org/example" xml:id="example_v1">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>An example of TEI input for extraction via DSEasLOD.</title>
+        <author>Francesca Giovannetti</author>
+      </titleStmt>
+      <publicationStmt>
+        <availability>
+          <p>CC-BY 4.0.</p>
+        </availability>
+        <date when="2019">2019</date>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Born digital description of events and relations involving Socrates, Critias, Plato, Xenophon.</p>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <particDesc>
+        <listPerson type="ancient-athenian-philosophers" corresp="http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers">
+          <person xml:id="Socr" sameAs="http://viaf.org/viaf/88039167">
+            <persName xml:lang="en">Socrates</persName>
+            <persName xml:lang="el">Σωκρᾰ́της</persName>
+            <event xml:id="ev01" type="trial" when="-0399" corresp="http://wordnet-rdf.princeton.edu/id/01198357-n">
+              <label>Socrates trial</label>
+              <desc xml:id="desc01">The trial of <persName ref="#Socr" role="defendant" corresp="http://wordnet-rdf.princeton.edu/id/09781524-n">Socrates</persName> for impiety and corruption of the youth took place in <placeName ref="#Athens">Athens</placeName> in <date
+                when="-0399">399 B.C.</date></desc> <bibl xml:id="bibl01" sameAs="http://viaf.org/viaf/214045129"><author ref="#Plat">Plato</author> <!--and <author ref="#Xen">Xenophon</author>--> gives a contemporary account of the trial in their works, both
+                titled <title ref="Apology_of_Socr">Apology of Socrates</title>.</bibl>
+                <!--  add structured bibl and extract works -->
+            </event>
+          </person>
+          <person xml:id="Criti"
+            sameAs="http://viaf.org/viaf/17263602 http://id.loc.gov/authorities/names/n00087919 http://dbpedia.org/resource/Critias">
+            <persName xml:lang="en">Critias (approximately 460 B.C.-approximately 403 B.C.)</persName>
+            <persName xml:lang="el">Κριτίας</persName>
+            <event xml:id="ev02" from="-0404-06" to="-0403-01">
+              <desc xml:id="desc02">Between 404 B.C. and 403 B.C. <persName role="leader">Critias</persName> lead the oligarchic government imposed on <placeName type="place_of_event" ref="#Athens">Athens</placeName> by <placeName ref="#Sparta">Sparta</placeName> after the end of the Peloponnysian war. <bibl xml:id="bibl02">An accout of the main events concerning this period is given by the <author ref="#Aristot">aristotelian</author> <title>Constitution of the Athenians</title></bibl>.</desc>
+            </event>
+          </person>
+          <person xml:id="Xen" sameAs="http://viaf.org/viaf/89597697">
+            <persName xml:lang="en">Xenophon</persName>
+            <persName xml:lang="el">Ξενοφῶν</persName>
+          </person>
+          <person xml:id="Plat" sameAs="https://viaf.org/viaf/108159964/ http://dbpedia.org/resource/Plato">
+            <persName xml:lang="en">Plato</persName>
+            <persName xml:lang="el">Πλάτων</persName>
+          </person>
+          <person xml:id="Aristot" sameAs="http://viaf.org/viaf/7524651 http://dbpedia.org/resource/Aristotle">
+            <persName xml:lang="en">Aristotle</persName>
+            <persName xml:lang="el">Ἀριστοτέλης</persName>
+          </person>
+          <listRelation>
+            <!-- aggiungere listRelation type social/intellectual? -->
+            <!-- use https://d-nb.info/standards/elementset/agrelon -->
+            <relation xml:id="rel01" name="hasStudent" active="#Socr" passive="#Plat #Xen #Criti"/>
+            <relation xml:id="rel02" name="hasColleague" mutual="#Plat #Xen"/>
+          </listRelation>
+          <listRelation>
+            <!-- aggiungere listRelation type biological? -->
+            <relation xml:id="rel03" name="hasNieceNephew" active="#Criti" passive="#Plat"/>
+          </listRelation>
+        </listPerson>
+      </particDesc>
+      <settingDesc>
+        <listPlace>
+          <place xml:id="Athens" sameAs="https://pleiades.stoa.org/places/579885">
+            <placeName xml:lang="en">Athens</placeName>
+          </place>
+          <place xml:id="Sparta" sameAs="https://pleiades.stoa.org/places/570685 http://dbpedia.org/resource/Sparta">
+            <placeName>Sparta</placeName>
+          </place>
+        </listPlace>
+      </settingDesc>
+    </profileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <p xml:id="para01">Some text mentioning <persName ref="#Plat">Plato</persName> here and <placeName ref="#Athens">Athens</placeName>.</p>
+      <p xml:id="para02">Some text mentioning <persName ref="#Aristot">Aristotle</persName> and <placeName ref="#Sparta">Sparta</placeName> here.</p>
+      <lg>
+        <l xml:id="line01">Some text mentioning <persName ref="#Socr">Socrates</persName></l>
+      </lg>
+    </body>
+  </text>
+</TEI>

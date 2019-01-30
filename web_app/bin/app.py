@@ -36,40 +36,52 @@ class home(object):
 		opt = "%s" % (btn.transform)
 		if opt == "1-people":
 			execfile('static/script/transform/1-People.py')
+			execfile('static/script/transform/toRDFa.py')
 			raise web.seeother('/viewer')
 		elif opt == "2-people_ev":
 			execfile('static/script/transform/2-People_Events.py')
+			execfile('static/script/transform/toRDFa.py')
 			raise web.seeother('/viewer')
 		elif opt == "3-people_rel":
 			execfile('static/script/transform/3-People_Relations.py')
+			execfile('static/script/transform/toRDFa.py')
 			raise web.seeother('/viewer')
 		elif opt == "4-places":
 			execfile('static/script/transform/4-Places.py')
+			execfile('static/script/transform/toRDFa.py')
 			raise web.seeother('/viewer')
 		elif opt == "5-all":
 			execfile('static/script/transform/5-All.py')
+			execfile('static/script/transform/toRDFa.py')
 			raise web.seeother('/viewer')
 		else:
 			raise web.seeother('/#transform')
-
-
-
-		
-
-		#si apre pagina viewer che contiene la visualizzazione in RDFa tipo Worldcat e scarica in automatico il risultato RDF/XML chiedendo dove salvarlo;
-		#se ci sono errori particolarmente gravi compare un pop up e l'utente viene ridirezionato alla transform page con il consiglio di guardare la documentazione che conterra una sez trouble shooting
 		
 # viewer
 class viewer(object):
 	def GET(self):
-		output_path = 'static/temp/output.rdf'
+		output_path = 'static/temp/viz.html'
 
 		if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-			bs = BeautifulSoup(open(output_path), 'xml')
-			output = bs.prettify()
+			#bs = BeautifulSoup(open(output_path), 'html')
+			#output = bs.prettify()
+
+			output = open(output_path, 'r').read()
 			return render.viewer(output)
 		else: 
 			raise web.seeother('/#transform') # redirects user to upload form if there is no output file in temp folder 
+
+
+class download(object):
+	def GET(self):
+		download_path = 'static/temp/output.rdf'
+		if os.path.exists(download_path) and os.path.getsize(download_path) > 0:
+			bs = BeautifulSoup(open(download_path), 'xml')
+			output = bs.prettify()
+			return open(output, 'rb'),read()
+		else: 
+			raise web.seeother('/#transform') # redirects user to upload form if there is no output file in temp folder 
+
 
 if __name__ == "__main__":
 	app = web.application(urls, globals())
