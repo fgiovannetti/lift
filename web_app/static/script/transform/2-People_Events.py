@@ -12,6 +12,7 @@ root = tree.getroot()
 base_uri = root.get('{http://www.w3.org/XML/1998/namespace}base')
 edition_id = root.get('{http://www.w3.org/XML/1998/namespace}id')
 
+
 o = open('static/temp/output.rdf', mode='w')
 
 
@@ -26,7 +27,7 @@ o.write('''<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
          xmlns:schema="https://schema.org/"
          xmlns:tei="http://www.tei-c.org/ns/1.0"
-         xmlns:tvc="http://www.essepuntato.it/2012/04/tvc/"''')
+         xmlns:tvc="http://www.essepuntato.it/2012/04/tvc/">''')
 
 
 def subject(person):
