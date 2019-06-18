@@ -1,8 +1,3 @@
-import sys
-reload(sys)
-sys.setdefaultencoding('utf8')
-
-
 from lxml import etree
 tree = etree.parse('static/temp/input.xml')
 
@@ -12,90 +7,73 @@ root = tree.getroot()
 base_uri = root.get('{http://www.w3.org/XML/1998/namespace}base')
 edition_id = root.get('{http://www.w3.org/XML/1998/namespace}id')
 
+from rdflib import Graph, Literal, BNode, Namespace, RDF, URIRef, RDFS
+from rdflib.namespace import XSD, DCTERMS, OWL
+agrelon = Namespace("https://d-nb.info/standards/elementset/agrelon#")
+crm = Namespace("http://www.cidoc-crm.org/cidoc-crm/")
+frbroo = Namespace("http://iflastandards.info/ns/fr/frbr/frbroo/")
+pro = Namespace("http://purl.org/spar/pro/")
+proles = Namespace("http://www.essepuntato.it/2013/10/politicalroles/")
+prov = Namespace("http://www.w3.org/ns/prov#")
+schema = Namespace("https://schema.org/")
+tvc = Namespace("http://www.essepuntato.it/2012/04/tvc/")
+ 
 
-o = open('static/temp/output.rdf', mode='w')
+g = Graph()
 
+############################
 
-o.write('<?xml version="1.0" encoding="UTF-8"?>')
-o.write('''<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/"
-         xmlns:frbroo="http://iflastandards.info/ns/fr/frbr/frbroo/"
-         xmlns:owl="http://www.w3.org/2002/07/owl#"
-         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-         xmlns:schema="https://schema.org/"
-         xmlns:tei="http://www.tei-c.org/ns/1.0">''')
+# extraction script begins
 
-
-def subject(place):
-    global o
-    global base_uri
-    global place_id
-    o.write('<rdf:Description rdf:about="' + base_uri + '/place/' + place_id + '">')
-
-
-def sameas(place):
-    global o
-    sameAs = place.get('sameAs').split()
-    i = 0
-    while i < len(sameAs):
-        o.write('<owl:sameAs rdf:resource="' + sameAs[i] + '"/>')
-        i += 1
-
-
-def placename(place):
-    global o
-    global ns
-    placeName = place.find('./tei:placeName', ns)
-    label = placeName.text
-    label_lang = placeName.get('{http://www.w3.org/XML/1998/namespace}lang')
-    if label_lang is not None:
-        o.write('<rdfs:label ' + 'xml:lang="' + label_lang + '">' + label + '</rdfs:label>')
-    else:
-        o.write('<rdfs:label>' + label + '</rdfs:label>')
-
-
-def referenced_place(place_id):
-    global o
-    global root
-    ref = './/tei:placeName[@ref="#' + place_id + '"]'
-    for referenced_place in root.findall(ref, ns):
-        parent = referenced_place.getparent()
-        parent_id = parent.get('{http://www.w3.org/XML/1998/namespace}id')
-        o.write('<dcterms:isReferencedBy rdf:resource="' + base_uri + '/text/' + parent_id + '"/>')
-
-
-def referencing_fragment(place_id):
-    global o
-    global base_uri
-    global edition_id
-    ref = './/tei:placeName[@ref="#' + place_id + '"]'
-    for referencing_fragment in root.findall(ref, ns):
-        parent = referencing_fragment.getparent()
-        parent_id = parent.get('{http://www.w3.org/XML/1998/namespace}id')
-        o.write('<rdf:Description rdf:about="' + base_uri + '/text/' + parent_id + '">')
-        o.write('<rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>')
-        o.write('<frbroo:R15i_is_fragment_of rdf:resource="' + base_uri + edition_id + '"/>')
-        o.write('</rdf:Description>')
-
+############################
 
 for place in root.findall('.//tei:place', ns):
-    place_id = place.get('{http://www.w3.org/XML/1998/namespace}id')
-    place_ref = '#' + place_id
-    subject(place)
-    o.write('<rdf:type rdf:resource="https://schema.org/Place"/>')
-    sameas(place)
-    placename(place)
-    referenced_place(place_id)
-    o.write('</rdf:Description>')
+	place_id = place.get('{http://www.w3.org/XML/1998/namespace}id')
+	place_ref = '#' + place_id
+	place_uri = URIRef(base_uri + '/place/' + place_id)
+	g.add( (place_uri, RDF.type, schema.Place))
 
+	# sameas
+	same_as = place.get('sameAs').split()
+	i = 0
+	while i < len(same_as):
+		same_as_uri = URIRef(same_as[i])
+		g.add( (place_uri, OWL.sameAs, same_as_uri))
+		i += 1
+	
+	# placename
 
-for place in root.findall('.//tei:place', ns):
-    place_id = place.get('{http://www.w3.org/XML/1998/namespace}id')
-    place_ref = '#' + place_id
-    referencing_fragment(place_id)
+	placename = place.find('./tei:placeName', ns)
+	label = placename.text
+	label_lang = placename.get('{http://www.w3.org/XML/1998/namespace}lang')
+	if label_lang is not None:
+		g.add( (place_uri, RDFS.label, Literal(label, lang=label_lang)))
+	else:
+		g.add( (place_uri, RDFS.label, Literal(label)))
+	
+	# referenced places
 
+	ref = './/tei:placeName[@ref="#' + place_id + '"]'
+	for referenced_place in root.findall(ref, ns):
+		parent = referenced_place.getparent()
+		parent_id = parent.get('{http://www.w3.org/XML/1998/namespace}id')
+		parent_uri = URIRef(base_uri + '/text/' + parent_id)
+		g.add( (place_uri, DCTERMS.isReferencedBy, parent_uri))
+		g.add( (parent_uri, RDF.type, frbroo.F23_Expression_Fragment))
+		g.add( (parent_uri, frbroo.R15i_is_fragment_of, URIRef(base_uri + edition_id)))
 
-o.write('</rdf:RDF>')
+# bind prefix
+g.bind("agrelon", agrelon)
+g.bind("crm", crm)
+g.bind("frbroo", frbroo)
+g.bind("dcterms", DCTERMS)
+g.bind("schema", schema)
+g.bind("owl", OWL)
+g.bind("pro", pro)
+g.bind("proles", proles)
+g.bind("prov", prov)
+g.bind("tvc", tvc)
 
-
-o.close()
+g.serialize(destination='static/temp/output.nt', format='nt')
+g.serialize(destination='static/temp/output.n3', format='n3')
+g.serialize(destination='static/temp/output.rdf', format='xml')
