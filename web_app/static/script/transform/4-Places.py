@@ -60,7 +60,7 @@ for place in root.findall('.//tei:place', ns):
 		parent_uri = URIRef(base_uri + '/text/' + parent_id)
 		g.add( (place_uri, DCTERMS.isReferencedBy, parent_uri))
 		g.add( (parent_uri, RDF.type, frbroo.F23_Expression_Fragment))
-		g.add( (parent_uri, frbroo.R15i_is_fragment_of, URIRef(base_uri + edition_id)))
+		g.add( (parent_uri, frbroo.R15i_is_fragment_of, URIRef(base_uri + '/' + edition_id)))
 
 # bind prefix
 g.bind("agrelon", agrelon)

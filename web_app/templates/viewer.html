@@ -20,9 +20,49 @@ $def with (output)
 		<!-- Custom styles for this template -->
 		<!-- <link href="css/grayscale.min.css" rel="stylesheet"> -->
 		<link href="../static/css/grayscale.css" rel="stylesheet">
+		<!-- Dropdown download button style -->
+		<style>
+			.dropbtn {
+			  /*background-color: #3498DB;
+			  color: white;
+			  padding: 16px;
+			  font-size: 16px;*/
+			  border: none;
+			  cursor: pointer;
+			}
+
+			.dropbtn:hover, .dropbtn:focus {
+			  background-color: #2980B9;
+			}
+
+			.dropdown {
+			  position: relative;
+			  display: inline-block;
+			}
+
+			.dropdown-content {
+			  display: none;
+			  position: absolute;
+			  background-color: #f1f1f1;
+			  min-width: 160px;
+			  overflow: auto;
+			  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			  z-index: 1;
+			}
+
+			.dropdown-content a {
+			  color: black;
+			  padding: 12px 16px;
+			  text-decoration: none;
+			  display: block;
+			}
+
+			.dropdown a:hover {background-color: #ddd;}
+
+			.show {display: block;}
+			</style>
 	</head>
 	<body id="page-top">
-		
 		<!-- Navigation -->
 		<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
 			<div class="container">
@@ -40,10 +80,12 @@ $def with (output)
 							<a class="nav-link js-scroll-trigger" href="/#transform">Transform</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link js-scroll-trigger" href="/#documentation">Documentation</a>
+							<!-- <a class="nav-link js-scroll-trigger" href="#documentation">Documentation</a> -->
+							<a class="nav-link js-scroll-trigger" href="https://github.com/fgiovannetti/lift" target="_blank">Documentation</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link js-scroll-trigger" href="/#signup">Contact</a>
+							<!-- <a class="nav-link js-scroll-trigger" href="#signup">Contact</a> -->
+							<a class="nav-link js-scroll-trigger" href="https://github.com/fgiovannetti/lift/blob/master/README.md" target="_blank">Contact</a>
 						</li>
 					</ul>
 				</div>
@@ -62,10 +104,16 @@ $def with (output)
 		</header>
 
 		<!-- Viewer -->
-		<section id="download" class="projects-section bg-light" style="padding-left:4rem;padding-right:4rem;padding-top:2rem;padding-bottom:2rem;">
-			<a href="../static/temp/output.rdf" class="download" style="border-style:solid;border-radius:10px;padding: 10px">Download rdf+xml</a>
+		<section id="viewer" class="projects-section bg-light" style="padding-left:4rem;padding-right:4rem;padding-top:2rem;padding-bottom:2rem;">
+				<div class="dropdown download" style="border-style:solid;border-radius:7px;padding:5px;border-color:gray">
+					<button onclick="myFunction()" class="dropbtn bg-light">Download RDF graph</button>
+					<div id="myDropdown" class="dropdown-content">
+						<a href="../static/temp/output.rdf">RDF/XML</a>
+						<a href="../static/temp/output.nt">N-Triples</a>
+						<a href="../static/temp/output.n3">Notation3</a>
+					</div>
+				</div>
 		</section>
-
 		<section id="viewer" class="projects-section bg-light" style="padding-left:4rem;padding-right:4rem;padding-top:2rem;padding-bottom:2rem;">
 			<div class="container" style="margin-left:0;padding-left:0;padding-right:0;font-size:90%;letter-spacing:0">
 				$:output
@@ -88,6 +136,28 @@ $def with (output)
 
 		<!-- Custom scripts for this template -->
 		<script src="../static/script/js/grayscale.min.js"></script>
+		<script type="text/javascript">
+			/* When the user clicks on the button, 
+			toggle between hiding and showing the dropdown content */
+			function myFunction() {
+			  document.getElementById("myDropdown").classList.toggle("show");
+			}
+
+			// Close the dropdown menu if the user clicks outside of it
+			window.onclick = function(event) {
+			  if (!event.target.matches('.dropbtn')) {
+			    var dropdowns = document.getElementsByClassName("dropdown-content");
+			    var i;
+			    for (i = 0; i < dropdowns.length; i++) {
+			      var openDropdown = dropdowns[i];
+			      if (openDropdown.classList.contains('show')) {
+			        openDropdown.classList.remove('show');
+			      }
+			    }
+			  }
+			}
+		</script>
+		
 
 	</body>
 </html>

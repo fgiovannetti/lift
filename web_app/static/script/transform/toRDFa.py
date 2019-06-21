@@ -9,6 +9,7 @@ from lxml import etree
 tree = etree.parse('static/temp/output.rdf')
 
 
+
 ns = {'rdf': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#', 
       'rdfs': 'http://www.w3.org/2000/01/rdf-schema#', 
       'xmlns' : 'http://www.w3.org/1999/xhtml'}
@@ -39,8 +40,9 @@ nodes = root.findall('./rdf:Description', ns)
 for node in nodes:
     newroot = etree.Element('div')
     about = node.get('{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about')
+    target = '_blank'
     newroot.set('style', 'margin-bottom:15px' ) 
-    newroot.set('resource', about )
+    newroot.set('resource', about)
     
     lis = []
     for rdftype in node.findall('./rdf:type', ns):
@@ -53,6 +55,7 @@ for node in nodes:
     opangle.text = '<' 
     subject = etree.SubElement(newroot, 'a')
     subject.set('href', about)
+    subject.set('target', target)
     subject.text = about
     clangle = etree.SubElement(newroot, 'span')
     clangle.text = '>' 
@@ -76,6 +79,7 @@ for node in nodes:
             list2.append(i)
 
     classdecl.set('href', typeof)
+    classdecl.set('target', target)
     
     lis2=[]
     for i in lis:
@@ -97,6 +101,7 @@ for node in nodes:
             prop.set('style', 'text-decoration:none;padding-right:0.3rem;margin-left:2rem;' )
             url = str(child.tag).replace('{', '').replace('}', '')
             prop.set('href', url )
+            prop.set('target', target)
             prop.text = c
             if child.get('{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource') is not None:
                 opangle = etree.SubElement(newroot, 'span')
@@ -104,6 +109,7 @@ for node in nodes:
                 val = etree.SubElement(newroot, 'a')
                 value = child.get('{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource')
                 val.set('href',  value )
+                val.set('target', target)
                 val.set('property', c)
                 val.set('resource', value)
                 clangle = etree.SubElement(newroot, 'span')
@@ -128,5 +134,7 @@ for node in nodes:
 v.write('</div>')
 
 v.close()
+
+
 
 
