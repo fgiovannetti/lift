@@ -60,6 +60,25 @@ for person in root.findall('.//tei:person', ns):
 	if perscorr is not None and perscorr.startswith('http'):
 		g.add( (person_uri, DCTERMS.subject, URIRef(perscorr)))
 
+	# relation
+
+	for relation in root.findall('.//tei:listRelation/tei:relation', ns):
+		person_ref = '#' + person_id
+		if relation.get('active') is not None and relation.get('active') == person_ref:
+			passive = relation.get('passive').replace("#", "").split()
+			i = 0
+			while i < len(passive):
+				g.add( (person_uri, agrelon[relation.get('name')], URIRef(base_uri + '/' + passive[i])))
+				i += 1
+		elif relation.get('mutual') is not None:
+			relentity = relation.get('mutual').split()
+			if person_ref in relentity:
+				mutual = relation.get('mutual').replace("#", "").replace(person_id, "").split()
+				i = 0
+				while i < len(mutual):
+					g.add( (person_uri, agrelon[relation.get('name')], URIRef(base_uri + '/' + mutual[i])))
+					i += 1
+
 	# partic_event
 
 	for event in person.findall('./tei:event', ns):
@@ -72,38 +91,35 @@ for person in root.findall('.//tei:person', ns):
 
 	for event in person.findall('./tei:event', ns):
 		event_id = event.get('{http://www.w3.org/XML/1998/namespace}id')
-		persName = person.find('./tei:persName', ns)
+		persName = person.find('./tei:persName', tei)
 		label = persName.text
 		rit_uri = URIRef(base_uri + '/rit/' + person_id + '-at-' + event_id)
-		g.add( (rit_uri, RDF.type, pro.RoleInTime))
-		pers_in_event = event.find('./tei:desc/tei:persName', ns)
+		pers_in_event = event.find('./tei:desc/tei:persName', tei)
+		g.add( (rit_uri, RDF.type, pro.RoleInTime))	
 		if pers_in_event is not None and pers_in_event.get('ref') == person_ref and pers_in_event.get('role') is not None:
 			role_uri = URIRef(base_uri + '/role/' + pers_in_event.get('role'))
 			g.add( (rit_uri, pro.withRole, role_uri))
-			g.add( (role_uri, RDF.type, pro.Role))
-		if pers_in_event.get('corresp') is not None:
-			g.add( (role_uri, OWL.sameAs, pro.Role))
-			g.add( (role_uri, RDFS.label, pro.Role))
-			corresp_role_uri = URIRef(pers_in_event.get('corresp'))
-			g.add( (role_uri, OWL.sameAs, corresp_role_uri))
-			role_label = pers_in_event.get('role')
-			g.add( (role_uri, RDFS.label, Literal(role_label)))
+			g.add( (role_uri, RDF.type, pro.Role)) 
+			if pers_in_event.get('corresp') is not None:
+				corresp_role_uri = URIRef(pers_in_event.get('corresp'))
+				g.add( (role_uri, OWL.sameAs, corresp_role_uri))
+				role_label = pers_in_event.get('role')
+				g.add( (role_uri, RDFS.label, Literal(role_label)))
 		else:
 			g.add( (rit_uri, pro.withRole, URIRef(base_uri + '/role/participant')))
 			role_uri = URIRef(base_uri + '/role/participant')
 			g.add( (role_uri, RDF.type, pro.Role))
 			g.add( (role_uri, OWL.sameAs, URIRef('http://wordnet-rdf.princeton.edu/id/10421528-n')))
 			g.add( (role_uri, RDFS.label, Literal('participant'))) 
-			
-		g.add( (rit_uri, tvc.atTime, URIRef(base_uri + '/tvc/' + event_id + '-time')))
-		g.add( (rit_uri, pro.relatesToEntity, URIRef(base_uri + '/event/' + event_id)))
 
-		place = event.find('./tei:desc/tei:placeName', ns)
+		g.add( (rit_uri, tvc.atTime, URIRef(base_uri + '/tvc/' + event_id + '-time')))	
+		g.add( (rit_uri, pro.relatesToEntity, URIRef(base_uri + '/event/' + event_id)))  
+		place = event.find('./tei:desc/tei:placeName', tei)
 		if place > 1:
 			place_of_event = place.get('type="place_of_event"')
 			g.add( (rit_uri, proles.relatesToPlace, URIRef(base_uri + '/place/' + place.get('ref').replace("#", ""))))
-		elif event.find('./tei:desc/tei:placeName', ns) == 1:
-			g.add( (rit_uri, proles.relatesToPlace, URIRef(base_uri + '/place/' + place.get('ref').replace("#", ""))))
+		elif event.find('./tei:desc/tei:placeName', tei) == 1:
+			g.add( (rit_uri, proles.relatesToPlace, URIRef(base_uri + '/place/' + place.get('ref').replace("#", ""))))	   
 
 # referenced_person
 
@@ -148,7 +164,7 @@ for event in root.findall('.//tei:event', ns):
 	if source is not None:
 		source_id = source.get('{http://www.w3.org/XML/1998/namespace}id')
 		source_uri = URIRef(base_uri + '/source/' + source_id)
-		g.add( (event_uri, prov.hasPrimarySource, source_uri))
+		g.add( (event_uri, prov.hadPrimarySource, source_uri))
 		for event_source in root.findall('.//tei:event//tei:bibl', ns):
 			g.add( (source_uri, RDF.type, prov.PrimarySource))
 	        if event_source.find('./tei:author', ns) is not None and event_source.find('./tei:author', ns).get('ref') is not None:
@@ -164,26 +180,6 @@ for event in root.findall('.//tei:event', ns):
 	        if event_source.find('.tei:date', ns) is not None:
 	            evdate = event_source.find('.tei:date', ns)
 	            g.add( (source_uri, DCTERMS.date, Literal(evdate.get('when'), datatype=XSD.date)))
-
-
-# relation
-
-for relation in root.findall('.//tei:listRelation/tei:relation', ns):
-	person_ref = '#' + person_id
-	relation_name_uri = URIRef("https://d-nb.info/standards/elementset/agrelon#" + relation.get('name'))
-	if relation.get('active') is not None and relation.get('active') == person_ref:
-		passive = relation.get('passive').replace("#", "").split()
-		i = 0
-		while i < len(passive):
-			g.add( (person_uri, relation_name_uri, URIRef(base_uri + '/' + passive[i])))
-			i += 1
-	elif relation.get('mutual') is not None:
-		relentity = relation.get('mutual').split()
-		if person_ref in relentity:
-			mutual = relation.get('mutual').replace("#", "").replace(person_id, "").split()
-			i = 0
-			while i < len(mutual):
-				g.add( (person_uri, relation_name_uri, URIRef(base_uri + '/' + mutual[i])))	
 
 
 # place
