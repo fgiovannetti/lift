@@ -1,0 +1,25 @@
+@prefix agrelon: <https://d-nb.info/standards/elementset/agrelon#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix proles: <http://www.essepuntato.it/2013/10/politicalroles/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix tvc: <http://www.essepuntato.it/2012/04/tvc/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/person/Aristot> a schema:Person .
+
+<https://example.org/person/Criti> a schema:Person .
+
+<https://example.org/person/Plat> a schema:Person .
+
+<https://example.org/person/Socr> a schema:Person .
+
+<https://example.org/person/Xen> a schema:Person .
+

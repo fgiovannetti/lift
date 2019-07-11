@@ -60,15 +60,11 @@ g.bind("tvc", tvc)
 #############################
 
 
-for place in root.findall('.//tei:place', tei):
-    place_id = place.get('{http://www.w3.org/XML/1998/namespace}id')
-    place_uri = URIRef(base_uri + '/place/' + place_id)
-    place_ref = '#' + place_id
-    
-    #place
+def subject(place):
     g.add( (place_uri, RDF.type, schema.Place))
-    
-    #place_sameas(place)
+
+
+def place_sameas(place):
     same_as = place.get('sameAs').split()
     i = 0
     while i < len(same_as):
@@ -76,7 +72,8 @@ for place in root.findall('.//tei:place', tei):
         g.add( (place_uri, OWL.sameAs, same_as_uri))
         i += 1
 
-    #placename(place)
+
+def placename(place):
     placename = place.find('./tei:placeName', tei)
     label = placename.text
     label_lang = placename.get('{http://www.w3.org/XML/1998/namespace}lang')
@@ -85,7 +82,8 @@ for place in root.findall('.//tei:place', tei):
     else:
         g.add( (place_uri, RDFS.label, Literal(label)))
 
-    #referenced_place(place_id)
+
+def referenced_place(place_id):
     ref = './/tei:placeName[@ref="#' + place_id + '"]'
     for referenced_place in root.findall(ref, tei):
         parent = referenced_place.getparent()
@@ -96,15 +94,27 @@ for place in root.findall('.//tei:place', tei):
         g.add( (parent_uri, frbroo.R15i_is_fragment_of, URIRef(base_uri + '/' + edition_id)))
 
 
+for place in root.findall('.//tei:place', tei):
+    place_id = place.get('{http://www.w3.org/XML/1998/namespace}id')
+    place_uri = URIRef(base_uri + '/place/' + place_id)
+    place_ref = '#' + place_id
+    subject(place)
+    place_sameas(place)
+    placename(place)
+    referenced_place(place_id)
+
+
+
+
 
 
 
 
 # RDF/XML output
-g.serialize(destination="static/temp/output.rdf", format='xml')
+g.serialize(destination="output.xml", format='xml')
 
 # Notation3 output
-g.serialize(destination="static/temp/output.n3", format='n3')
+g.serialize(destination="output.n3", format='n3')
 
 # N-triples output
-g.serialize(destination="static/temp/output.nt", format='nt')
+g.serialize(destination="output.nt", format='nt')

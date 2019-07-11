@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="http://example.org" xml:id="example_v1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="https://example.org" xml:id="example_v1">
   <teiHeader>
     <fileDesc>
       <titleStmt>
@@ -24,13 +24,10 @@
             <persName xml:lang="el">Σωκρᾰ́της</persName>
             <event xml:id="ev01" type="trial" when="-0399" corresp="http://wordnet-rdf.princeton.edu/id/01198357-n">
               <label>Socrates trial</label>
-              <desc xml:id="desc01">The trial of <persName ref="#Socr" role="defendant" corresp="http://wordnet-rdf.princeton.edu/id/09781524-n"
-                >Socrates</persName> for impiety and corruption of the youth took place in <placeName ref="#Athens">Athens</placeName> in <date
-                when="-0399">399 B.C.</date></desc>
-              <bibl xml:id="bibl01" sameAs="http://viaf.org/viaf/214045129"><author ref="#Plat">Plato</author>
-                <!--and <author ref="#Xen">Xenophon</author>--> gives a contemporary account of the trial in their works, both titled <title
-                ref="Apology_of_Socr">Apology of Socrates</title>.</bibl>
-              <!--  add structured bibl and extract works -->
+              <desc xml:id="desc01">The trial of <persName ref="#Socr" role="defendant" corresp="http://wordnet-rdf.princeton.edu/id/09781524-n">Socrates</persName> for impiety and corruption of the youth took place in <placeName ref="#Athens">Athens</placeName> in <date
+                when="-0399">399 B.C.</date></desc> <bibl xml:id="bibl01" sameAs="http://viaf.org/viaf/214045129"><author ref="#Plat">Plato</author> <!--and <author ref="#Xen">Xenophon</author>--> gives a contemporary account of the trial in their works, both
+                titled <title ref="Apology_of_Socr">Apology of Socrates</title>.</bibl>
+                <!--  add structured bibl and extract works -->
             </event>
           </person>
           <person xml:id="Criti"
@@ -38,10 +35,7 @@
             <persName xml:lang="en">Critias (approximately 460 B.C.-approximately 403 B.C.)</persName>
             <persName xml:lang="el">Κριτίας</persName>
             <event xml:id="ev02" from="-0404-06" to="-0403-01">
-              <desc xml:id="desc02">Between 404 B.C. and 403 B.C. <persName role="leader">Critias</persName> lead the oligarchic government imposed on
-                <placeName type="place_of_event" ref="#Athens">Athens</placeName> by <placeName ref="#Sparta">Sparta</placeName> after the end of the
-                Peloponnysian war. <bibl xml:id="bibl02">An accout of the main events concerning this period is given by the <author ref="#Aristot"
-                >aristotelian</author> <title>Constitution of the Athenians</title></bibl>.</desc>
+              <desc xml:id="desc02">Between 404 B.C. and 403 B.C. <persName role="leader">Critias</persName> lead the oligarchic government imposed on <placeName type="place_of_event" ref="#Athens">Athens</placeName> by <placeName ref="#Sparta">Sparta</placeName> after the end of the Peloponnysian war. <bibl xml:id="bibl02">An accout of the main events concerning this period is given by the <author ref="#Aristot">aristotelian</author> <title>Constitution of the Athenians</title></bibl>.</desc>
             </event>
           </person>
           <person xml:id="Xen" sameAs="http://viaf.org/viaf/89597697">
