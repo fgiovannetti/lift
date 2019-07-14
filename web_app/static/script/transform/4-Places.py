@@ -84,6 +84,10 @@ for place in root.findall('.//tei:place', tei):
         g.add( (place_uri, RDFS.label, Literal(label, lang=label_lang)))
     else:
         g.add( (place_uri, RDFS.label, Literal(label)))
+    # value
+        value = etree.tostring(place, pretty_print=True, method="xml")
+        g.add( (place_uri, RDF.value, Literal(value, datatype=RDF.XMLLiteral)) )
+
 
     #referenced_place(place_id)
     ref = './/tei:placeName[@ref="#' + place_id + '"]'
@@ -95,7 +99,9 @@ for place in root.findall('.//tei:place', tei):
         g.add( (parent_uri, RDF.type, frbroo.F23_Expression_Fragment))
         g.add( (parent_uri, frbroo.R15i_is_fragment_of, URIRef(base_uri + '/' + edition_id)))
 
-
+        # value
+        value = etree.tostring(parent, pretty_print=True, method="xml")
+        g.add( (parent_uri, RDF.value, Literal(value, datatype=RDF.XMLLiteral)) )
 
 
 

@@ -54,6 +54,10 @@ class home(object):
 			execfile('static/script/transform/5-All.py')
 			execfile('static/script/transform/toRDFa.py')
 			raise web.seeother('/viewer')
+		elif opt == "6-critapp":
+			execfile('static/script/transform/6-CritApp.py')
+			execfile('static/script/transform/toRDFa.py')
+			raise web.seeother('/viewer')
 		else:
 			raise web.seeother('/#transform')
 		

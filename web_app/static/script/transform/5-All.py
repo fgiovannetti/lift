@@ -51,6 +51,7 @@ g.bind("tvc", tvc)
 
 
 
+
 #############################
 #                           #
 #        Persons            #
@@ -62,10 +63,10 @@ for person in root.findall('.//tei:person', tei):
     person_uri = URIRef(base_uri + '/person/' + person_id)
     person_ref = '#' + person_id
     
-    #person 
+    # person 
     g.add( (person_uri, RDF.type, schema.Person))
     
-    #same as
+    # same as
     same_as = person.get('sameAs').split()
     i = 0
     while i < len(same_as):
@@ -73,7 +74,7 @@ for person in root.findall('.//tei:person', tei):
         g.add( (person_uri, OWL.sameAs, same_as_uri))
         i += 1
     
-    #person name
+    # person name
     persname = person.find('./tei:persName', tei)
     label = persname.text
     label_lang = persname.get('{http://www.w3.org/XML/1998/namespace}lang')
@@ -82,7 +83,7 @@ for person in root.findall('.//tei:person', tei):
     else:
         g.add( (person_uri, RDFS.label, Literal(label)))
     
-    #person type
+    # person type
     listperson = person.find('./...', tei)
     perstype = listperson.get('type')
     perscorr = listperson.get('corresp')
@@ -90,8 +91,13 @@ for person in root.findall('.//tei:person', tei):
         g.add( (person_uri, DCTERMS.description, Literal(perstype)))
     if perscorr is not None and perscorr.startswith('http'):
         g.add( (person_uri, DCTERMS.subject, URIRef(perscorr)))
+
+    # value
+
+    value = etree.tostring(person, pretty_print=True, method="xml")
+    g.add( (person_uri, RDF.value, Literal(value, datatype=RDF.XMLLiteral)) )
     
-    #person references
+    # person references
     ref = './tei:text//tei:persName[@ref="#' + person_id + '"]'
     for referenced_person in root.findall(ref, tei):
         parent = referenced_person.getparent()
@@ -100,6 +106,9 @@ for person in root.findall('.//tei:person', tei):
         g.add( (person_uri, DCTERMS.isReferencedBy, parent_uri))
         g.add( (parent_uri, RDF.type, frbroo.F23_Expression_Fragment))
         g.add( (parent_uri, frbroo.R15i_is_fragment_of, URIRef(base_uri + '/' + edition_id)))
+        # value
+        value = etree.tostring(parent, pretty_print=True, method="xml")
+        g.add( (parent_uri, RDF.value, Literal(value, datatype=RDF.XMLLiteral)) )
 
 
 
@@ -202,8 +211,9 @@ for person in root.findall('.//tei:person', tei):
                 if sameAs.startswith('http'):
                     g.add( (source_uri, OWL.sameAs, URIRef(source.get('sameAs')))) 
 
-
-
+        # value
+        value = etree.tostring(event, pretty_print=True, method="xml")
+        g.add( (event_uri, RDF.value, Literal(value, datatype=RDF.XMLLiteral)) )
 
 
 
@@ -238,7 +248,9 @@ for person in root.findall('.//tei:person', tei):
                     g.add( (person_uri, agrelon[relation.get('name')], URIRef(base_uri + '/' + mutual[i])))
                     i += 1
 
-
+        # value
+        value = etree.tostring(relation, pretty_print=True, method="xml")
+        g.add( (person_uri, RDF.value, Literal(value, datatype=RDF.XMLLiteral)) )
 
 
 
@@ -277,6 +289,10 @@ for place in root.findall('.//tei:place', tei):
         g.add( (place_uri, RDFS.label, Literal(label, lang=label_lang)))
     else:
         g.add( (place_uri, RDFS.label, Literal(label)))
+    # value
+        value = etree.tostring(place, pretty_print=True, method="xml")
+        g.add( (place_uri, RDF.value, Literal(value, datatype=RDF.XMLLiteral)) )
+
 
     #referenced_place(place_id)
     ref = './/tei:placeName[@ref="#' + place_id + '"]'
@@ -285,6 +301,12 @@ for place in root.findall('.//tei:place', tei):
         parent_id = parent.get('{http://www.w3.org/XML/1998/namespace}id')
         parent_uri = URIRef(base_uri + '/text/' + parent_id)
         g.add( (place_uri, DCTERMS.isReferencedBy, parent_uri))
+        g.add( (parent_uri, RDF.type, frbroo.F23_Expression_Fragment))
+        g.add( (parent_uri, frbroo.R15i_is_fragment_of, URIRef(base_uri + '/' + edition_id)))
+
+        # value
+        value = etree.tostring(parent, pretty_print=True, method="xml")
+        g.add( (parent_uri, RDF.value, Literal(value, datatype=RDF.XMLLiteral)) )
 
 
 # bind prefix

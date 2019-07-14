@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:cao="http://purl.org/cao/"
+   xmlns:crm="http://www.cidoc-crm.org/cidoc-crm/"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:frbroo="http://iflastandards.info/ns/fr/frbr/frbroo/"
+   xmlns:oa="http://www.w3.org/ns/oa#"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="https://www.example.org/app/a7">
+    <cao:hasReading rdf:resource="https://www.example.org/rdg/a7-r2"/>
+    <cao:hasReading rdf:resource="https://www.example.org/rdg/a7-r3"/>
+    <cao:hasReading rdf:resource="https://www.example.org/rdg/a7-r1"/>
+    <rdf:type rdf:resource="http://purl.org/cao/VariationUnit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg/a7-r3">
+    <rdf:type rdf:resource="http://purl.org/cao/Reading"/>
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['wyf']</rdf:value>
+    <prov:wasAttributedTo rdf:resource="https://www.example.org/agent/mp"/>
+    <cao:isWitnessedBy rdf:resource="https://www.example.org/rdg-fragment/a7-r3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg/d1e376">
+    <rdf:type rdf:resource="http://purl.org/cao/Reading"/>
+    <cao:hasReadingCause rdf:resource="http://purl.org/cao/homeoarchy"/>
+    <cao:isWitnessedBy rdf:resource="https://www.example.org/rdg-fragment/d1e376"/>
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[]</rdf:value>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg-fragment/a2-r2">
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+    <frbroo:R4_carriers_provided_by rdf:resource="https://www.example.org/wit/La"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg/a1-r1">
+    <cao:isWitnessedBy rdf:resource="https://www.example.org/rdg-fragment/a1-r1"/>
+    <rdf:type rdf:resource="http://purl.org/cao/Reading"/>
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Experience though noon Auctoritee']</rdf:value>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg/a8-r2">
+    <cao:isWitnessedBy rdf:resource="https://www.example.org/rdg-fragment/a8-r2"/>
+    <cao:hasReadingType rdf:resource="http://purl.org/cao/deletion"/>
+    <cao:follows rdf:resource="https://www.example.org/rdg/a8-r1"/>
+    <rdf:type rdf:resource="http://purl.org/cao/Reading"/>
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['such a']</rdf:value>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg-fragment/a2-r1">
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+    <frbroo:R4_carriers_provided_by rdf:resource="https://www.example.org/wit/El"/>
+    <frbroo:R4_carriers_provided_by rdf:resource="https://www.example.org/wit/Hg"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/annot/an-a5">
+    <rdf:type rdf:resource="http://www.w3.org/ns/oa#Annotation"/>
+    <oa:hasBody rdf:resource="https://www.example.org/app/a5"/>
+    <oa:hasTarget rdf:resource="https://www.example.org/varloc/vl-a5"/>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-07-14</dcterms:created>
+    <dcterms:creator rdf:resource="https://www.example.org/agent/RB"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg/a3-r2">
+    <cao:hasReadingCause rdf:resource="http://purl.org/cao/haplography"/>
+    <cao:follows rdf:resource="https://www.example.org/rdg/a3-r1"/>
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Eryment']</rdf:value>
+    <rdf:type rdf:resource="http://purl.org/cao/Reading"/>
+    <cao:isWitnessedBy rdf:resource="https://www.example.org/rdg-fragment/a3-r2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg-fragment/a1-r2">
+    <frbroo:R4_carriers_provided_by rdf:resource="https://www.example.org/wit/La"/>
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg-fragment/a4-r1">
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+    <frbroo:R4_carriers_provided_by rdf:resource="https://www.example.org/wit/Mu"/>
+    <cao:hasAttributedHand rdf:resource="https://www.example.org/hand/m1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/app/a4">
+    <cao:hasReading rdf:resource="https://www.example.org/rdg/a4-r2"/>
+    <rdf:type rdf:resource="http://purl.org/cao/VariationUnit"/>
+    <cao:hasReading rdf:resource="https://www.example.org/rdg/a4-r1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg/a5-r2">
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[u'hea\xf0o hl\xe6we']</rdf:value>
+    <rdf:type rdf:resource="http://purl.org/cao/Reading"/>
+    <cao:isWitnessedBy rdf:resource="https://www.example.org/rdg-fragment/a5-r2"/>
+    <prov:hadPrimarySource rdf:resource="https://www.example.org/source-edition/ext-ed-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg/a3-r1">
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Experiment']</rdf:value>
+    <rdf:type rdf:resource="http://purl.org/cao/Reading"/>
+    <cao:isWitnessedBy rdf:resource="https://www.example.org/rdg-fragment/a3-r1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/app/a1">
+    <cao:hasReading rdf:resource="https://www.example.org/rdg/a1-r3"/>
+    <rdf:type rdf:resource="http://purl.org/cao/VariationUnit"/>
+    <cao:hasReading rdf:resource="https://www.example.org/rdg/a1-r2"/>
+    <cao:hasReading rdf:resource="https://www.example.org/rdg/a1-r1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg-fragment/a1-r1">
+    <frbroo:R4_carriers_provided_by rdf:resource="https://www.example.org/wit/El"/>
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/annot/an-a4">
+    <oa:hasTarget rdf:resource="https://www.example.org/varloc/vl-a4"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/oa#Annotation"/>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-07-14</dcterms:created>
+    <dcterms:creator rdf:resource="https://www.example.org/agent/RB"/>
+    <oa:hasBody rdf:resource="https://www.example.org/app/a4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg-fragment/a3-r1">
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+    <frbroo:R4_carriers_provided_by rdf:resource="https://www.example.org/wit/La"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/annot/an-d1e372">
+    <rdf:type rdf:resource="http://www.w3.org/ns/oa#Annotation"/>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-07-14</dcterms:created>
+    <oa:hasTarget rdf:resource="https://www.example.org/varloc/vl-d1e372"/>
+    <dcterms:creator rdf:resource="https://www.example.org/agent/RB"/>
+    <oa:hasBody rdf:resource="https://www.example.org/app/d1e372"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg-fragment/a7-r3">
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+    <frbroo:R4_carriers_provided_by rdf:resource="https://www.example.org/wit/Gg"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/annot/an-a8">
+    <oa:hasTarget rdf:resource="https://www.example.org/varloc/vl-a8"/>
+    <oa:hasBody rdf:resource="https://www.example.org/app/a8"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/oa#Annotation"/>
+    <dcterms:creator rdf:resource="https://www.example.org/agent/RB"/>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-07-14</dcterms:created>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg/a2-r1">
+    <cao:isWitnessedBy rdf:resource="https://www.example.org/rdg-fragment/a2-r1"/>
+    <rdf:type rdf:resource="http://purl.org/cao/BaseReading"/>
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Experience']</rdf:value>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/app/a2">
+    <cao:hasReading rdf:resource="https://www.example.org/rdg/a2-r2"/>
+    <cao:hasReading rdf:resource="https://www.example.org/rdg/a2-r3"/>
+    <rdf:type rdf:resource="http://purl.org/cao/VariationUnit"/>
+    <cao:hasBaseReading rdf:resource="https://www.example.org/rdg/a2-r1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg/a1-r3">
+    <rdf:type rdf:resource="http://purl.org/cao/Reading"/>
+    <cao:isWitnessedBy rdf:resource="https://www.example.org/rdg-fragment/a1-r3"/>
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Eryment though none auctorite']</rdf:value>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg/a4-r1">
+    <rdf:type rdf:resource="http://purl.org/cao/Reading"/>
+    <cao:isWitnessedBy rdf:resource="https://www.example.org/rdg-fragment/a4-r1"/>
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['alle']</rdf:value>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg/a2-r2">
+    <cao:isWitnessedBy rdf:resource="https://www.example.org/rdg-fragment/a2-r2"/>
+    <rdf:type rdf:resource="http://purl.org/cao/Reading"/>
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Experiment']</rdf:value>
+    <cao:hasReadingType rdf:resource="http://lawd.info/ontology/variant"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg/a7-r1">
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['wight']</rdf:value>
+    <rdf:type rdf:resource="http://purl.org/cao/Reading"/>
+    <cao:isWitnessedBy rdf:resource="https://www.example.org/rdg-fragment/a7-r1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/annot/an-a1">
+    <oa:hasTarget rdf:resource="https://www.example.org/varloc/vl-a1"/>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-07-14</dcterms:created>
+    <rdf:type rdf:resource="http://www.w3.org/ns/oa#Annotation"/>
+    <dcterms:creator rdf:resource="https://www.example.org/agent/RB"/>
+    <oa:hasBody rdf:resource="https://www.example.org/app/a1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg/a8-r1">
+    <rdf:type rdf:resource="http://purl.org/cao/Reading"/>
+    <cao:isWitnessedBy rdf:resource="https://www.example.org/rdg-fragment/a8-r1"/>
+    <cao:hasReadingType rdf:resource="http://purl.org/cao/deletion"/>
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['this']</rdf:value>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/annot/an-a3">
+    <oa:hasTarget rdf:resource="https://www.example.org/varloc/vl-a3"/>
+    <dcterms:creator rdf:resource="https://www.example.org/agent/RB"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/oa#Annotation"/>
+    <oa:hasBody rdf:resource="https://www.example.org/app/a3"/>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-07-14</dcterms:created>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg/a6-r1">
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Beowulfe']</rdf:value>
+    <rdf:type rdf:resource="http://purl.org/cao/BaseReading"/>
+    <cao:isWitnessedBy rdf:resource="https://www.example.org/rdg-fragment/a6-r1"/>
+    <crm:P3_has_note rdf:resource="https://www.example.org/note/a6-n1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/annot/an-a2">
+    <oa:hasBody rdf:resource="https://www.example.org/app/a2"/>
+    <oa:hasTarget rdf:resource="https://www.example.org/varloc/vl-a2"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/oa#Annotation"/>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-07-14</dcterms:created>
+    <dcterms:creator rdf:resource="https://www.example.org/agent/RB"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/annot/an-a6">
+    <dcterms:creator rdf:resource="https://www.example.org/agent/RB"/>
+    <oa:hasTarget rdf:resource="https://www.example.org/varloc/vl-a6"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/oa#Annotation"/>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-07-14</dcterms:created>
+    <oa:hasBody rdf:resource="https://www.example.org/app/a6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/annot/an-a10">
+    <oa:hasTarget rdf:resource="https://www.example.org/varloc/vl-a10"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/oa#Annotation"/>
+    <dcterms:creator rdf:resource="https://www.example.org/agent/RB"/>
+    <oa:hasBody rdf:resource="https://www.example.org/app/a10"/>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-07-14</dcterms:created>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg/a2-r3">
+    <cao:hasReadingType rdf:resource="http://lawd.info/ontology/variant"/>
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Eryment']</rdf:value>
+    <rdf:type rdf:resource="http://purl.org/cao/Reading"/>
+    <cao:isWitnessedBy rdf:resource="https://www.example.org/rdg-fragment/a2-r3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/app/a5">
+    <rdf:type rdf:resource="http://purl.org/cao/VariationUnit"/>
+    <cao:hasReading rdf:resource="https://www.example.org/rdg/a5-r2"/>
+    <cao:hasReading rdf:resource="https://www.example.org/rdg/a5-r1"/>
+    <cao:hasReading rdf:resource="https://www.example.org/rdg/a5-r3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/note/a6-n1">
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['[...] Folio 179, with the last page (Fol. 198b) [...]']</rdf:value>
+    <rdf:type rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E62_String"/>
+    <prov:hadPrimarySource rdf:resource="https://www.example.org/source-edition/ext-ed-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg/a7-r2">
+    <prov:wasAttributedTo rdf:resource="https://www.example.org/agent/ETD"/>
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['wright']</rdf:value>
+    <cao:hasReadingType rdf:resource="http://purl.org/cao/correction"/>
+    <rdf:type rdf:resource="http://purl.org/cao/Reading"/>
+    <cao:isWitnessedBy rdf:resource="https://www.example.org/rdg-fragment/a7-r2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/app/a6">
+    <cao:hasBaseReading rdf:resource="https://www.example.org/rdg/a6-r1"/>
+    <rdf:type rdf:resource="http://purl.org/cao/VariationUnit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg/a8-r3">
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['a']</rdf:value>
+    <cao:hasReadingType rdf:resource="http://purl.org/cao/addition"/>
+    <cao:isWitnessedBy rdf:resource="https://www.example.org/rdg-fragment/a8-r3"/>
+    <rdf:type rdf:resource="http://purl.org/cao/Reading"/>
+    <cao:follows rdf:resource="https://www.example.org/rdg/a8-r2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/annot/an-a7">
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-07-14</dcterms:created>
+    <oa:hasTarget rdf:resource="https://www.example.org/varloc/vl-a7"/>
+    <oa:hasBody rdf:resource="https://www.example.org/app/a7"/>
+    <dcterms:creator rdf:resource="https://www.example.org/agent/RB"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/oa#Annotation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg-fragment/a5-r1">
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+    <frbroo:R4_carriers_provided_by rdf:resource="https://www.example.org/wit/Kl"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg-fragment/a2-r3">
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+    <frbroo:R4_carriers_provided_by rdf:resource="https://www.example.org/wit/Ra2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/app/a8">
+    <cao:hasReading rdf:resource="https://www.example.org/rdg/a8-r2"/>
+    <cao:hasReading rdf:resource="https://www.example.org/rdg/a8-r1"/>
+    <rdf:type rdf:resource="http://purl.org/cao/VariationUnit"/>
+    <cao:hasReading rdf:resource="https://www.example.org/rdg/a8-r3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg/a4-r2">
+    <rdf:type rdf:resource="http://purl.org/cao/Reading"/>
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['allen']</rdf:value>
+    <cao:isWitnessedBy rdf:resource="https://www.example.org/rdg-fragment/a4-r2"/>
+    <cao:hasReadingCause rdf:resource="http://lawd.info/ontology/addition"/>
+    <cao:follows rdf:resource="https://www.example.org/rdg/a4-r1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg-fragment/a4-r2">
+    <frbroo:R4_carriers_provided_by rdf:resource="https://www.example.org/wit/Mu"/>
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+    <cao:hasAttributedHand rdf:resource="https://www.example.org/hand/m2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg-fragment/a8-r2">
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg-fragment/a5-r3">
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+    <frbroo:R4_carriers_provided_by rdf:resource="https://www.example.org/wit/ms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg-fragment/a7-r2">
+    <frbroo:R4_carriers_provided_by rdf:resource="https://www.example.org/wit/Ln"/>
+    <frbroo:R4_carriers_provided_by rdf:resource="https://www.example.org/wit/Ld"/>
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+    <frbroo:R4_carriers_provided_by rdf:resource="https://www.example.org/wit/Ry2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg-fragment/a3-r2">
+    <frbroo:R4_carriers_provided_by rdf:resource="https://www.example.org/wit/Ra2"/>
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg/d1e373">
+    <cao:isWitnessedBy rdf:resource="https://www.example.org/rdg-fragment/d1e373"/>
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Hypsipyle uacuo constitit in thalamo:']</rdf:value>
+    <rdf:type rdf:resource="http://purl.org/cao/BaseReading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg/a5-r3">
+    <rdf:type rdf:resource="http://purl.org/cao/Reading"/>
+    <prov:hadPrimarySource rdf:resource="http://externaledition.org"/>
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['heaum hope']</rdf:value>
+    <cao:isWitnessedBy rdf:resource="https://www.example.org/rdg-fragment/a5-r3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg-fragment/d1e376">
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+    <frbroo:R4_carriers_provided_by rdf:resource="https://www.example.org/wit/J"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg/a5-r1">
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[u'hea(um) h(\xe6\xfe)e']</rdf:value>
+    <rdf:type rdf:resource="http://purl.org/cao/Reading"/>
+    <cao:isWitnessedBy rdf:resource="https://www.example.org/rdg-fragment/a5-r1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/app/d1e372">
+    <rdf:type rdf:resource="http://purl.org/cao/VariationUnit"/>
+    <cao:hasReading rdf:resource="https://www.example.org/rdg/d1e376"/>
+    <cao:hasBaseReading rdf:resource="https://www.example.org/rdg/d1e373"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg/a1-r2">
+    <rdf:type rdf:resource="http://purl.org/cao/Reading"/>
+    <cao:isWitnessedBy rdf:resource="https://www.example.org/rdg-fragment/a1-r2"/>
+    <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">['Experiment thouh noon Auctoritee']</rdf:value>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/app/a10">
+    <rdf:type rdf:resource="http://purl.org/cao/VariationUnit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg-fragment/a5-r2">
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+    <frbroo:R4_carriers_provided_by rdf:resource="https://www.example.org/wit/ms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/app/a3">
+    <rdf:type rdf:resource="http://purl.org/cao/VariationUnit"/>
+    <cao:hasReading rdf:resource="https://www.example.org/rdg/a3-r1"/>
+    <cao:hasReading rdf:resource="https://www.example.org/rdg/a3-r2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg-fragment/a7-r1">
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+    <frbroo:R4_carriers_provided_by rdf:resource="https://www.example.org/wit/Hg"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg-fragment/a1-r3">
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+    <frbroo:R4_carriers_provided_by rdf:resource="https://www.example.org/wit/Ra2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg-fragment/a8-r3">
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg-fragment/d1e373">
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg-fragment/a8-r1">
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.example.org/rdg-fragment/a6-r1">
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+  </rdf:Description>
+</rdf:RDF>
