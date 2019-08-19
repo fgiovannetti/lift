@@ -38,15 +38,19 @@ $def with ()
 							<a class="nav-link js-scroll-trigger" href="#about">About</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link js-scroll-trigger" href="#transform">Transform</a>
+							<a class="nav-link js-scroll-trigger" href="#transform">Start</a>
 						</li>
 						<li class="nav-item">
-							<!-- <a class="nav-link js-scroll-trigger" href="#documentation">Documentation</a> -->
 							<a class="nav-link js-scroll-trigger" href="https://github.com/fgiovannetti/lift" target="_blank">Documentation</a>
 						</li>
 						<li class="nav-item">
-							<!-- <a class="nav-link js-scroll-trigger" href="#signup">Contact</a> -->
 							<a class="nav-link js-scroll-trigger" href="https://github.com/fgiovannetti/lift/blob/master/README.md" target="_blank">Contact</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="#signup">Credits</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="https://github.com/fgiovannetti/lift" target="_blank">Source</a>
 						</li>
 					</ul>
 				</div>
@@ -61,10 +65,10 @@ $def with ()
 					<h2 class="text-white-50 mx-auto mt-2 mb-5">Extract, visualize, and download RDF triples from your TEI-encoded texts</h2> -->
 					
 					<h1 class=" mx-auto my-0"><span style="color:#64a19d;">LI</span>NKED DATA <span style="color:#64a19d;">F</span>ROM <span style="color:#64a19d;">T</span>EI</h1>
-					<h2 class=" mx-auto mt-2 mb-5">Extract RDF graphs from your TEI documents</h2>
+					<h2 class=" mx-auto mt-2 mb-5">RDF graphs out of your TEI digital scholarly editions</h2>
 
 
-					<a href="#transform" class="btn btn-primary js-scroll-trigger">Get Started</a>
+					<a href="#transform" class="btn btn-primary js-scroll-trigger">Quick start</a>
 				</div>
 			</div>
 		</header>
@@ -75,7 +79,14 @@ $def with ()
 				<div class="row">
 					<div class="col-lg-8 mx-auto">
 						<h2 class="mb-4">About LIFT</h2>
-						<p class="text-black-50">A short description of the project</p>
+						<p style="text-align: justify;"><i>Linked data from TEI</i> (short: LIFT) is a Python-based toolkit for extracting RDF triples from TEI documents designed to support the creation of semantic digital scholarly editions. The toolkit is particularly useful to those taking their first steps towards the use of knowledge graphs to enrich TEI-based editions.</p>
+						<p style="text-align: justify;">LIFT lets you:</p>
+						<ul style="text-align: justify;">
+							<li>select what information to extract from your TEI document: you can choose among different extraction options including people, relationships, events, places, bibliographic references, critical apparatus;</li>
+							<li>choose a serialization: you can view and download your RDF graph using XML, Notation3 or N-triples;</li>
+							<li>customize all extraction scripts: all scripts can be freely downloaded; a step-by-step guide available as a manipulable Jupyter notebook will help you write your own customization.</li>
+						</ul>
+						<p style="text-align: justify;">LIFT comes with a detailed documentation suggesting further readings and useful resources.</p> 
 					</div>
 				</div>
 				<!-- <img src="img/" class="img-fluid" alt=""> -->
@@ -87,15 +98,16 @@ $def with ()
 			<div class="container">
 				<div class="row">
 					<div class="col-md-10 col-lg-8 mx-auto">
+							<p style="border:solid 3px lightgray; background:white; text-align:center; vertical-align:center; padding-top: 5px; margin-bottom:15px">For testing purposes, you can download <a href="#transform">this test file</a> <br/> and use it as an input for the extraction.</p>
 						<form method="POST" enctype="multipart/form-data" action="">
-							<h2>1) Select an extraction option</h2>
+							<h2>1) Select the information to extract:</h2>
 							<input type="radio" id="transform" name="transform" value="1-people"> People</input><br/>
 			  				<input type="radio" id="transform" name="transform" value="2-people_ev"> People and events</input><br/>
 			  				<input type="radio" id="transform" name="transform" value="3-people_rel"> People and relations</input><br/>
 			  				<input type="radio" id="transform" name="transform" value="4-places"> Places</input><br/>
 			  				<input type="radio" id="transform" name="transform" value="5-all"> People, relations, events and places</input><br/>
 			  				<input type="radio" id="transform" name="transform" value="6-critapp"> Critical apparatus (experimental)</input>
-							<h2 style="margin-top:50px;">2) Upload your TEI file</h2>
+							<h2 style="margin-top:50px;">2) Upload your TEI document:</h2>
 							<div class="form-inline d-flex">
 								<input type="file" id="myfile" name="myfile" accept=".xml, application/tei+xml" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"/>
 								<input type="submit" value="Upload" class="btn btn-primary mx-auto"/>
