@@ -1,0 +1,37 @@
+$def with ()
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="../static/css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="header">
+			<h1 id="short">LIFT</h1>
+			<h1 id="extended">Linked data from TEI</h1>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li class="active"><a href="#">Quick start</a></li>
+				<li><a href="">Documentation</a></li>
+				<li><a href="https://github.com/fgiovannetti/lift" target="_blank">Source</a></li>
+				<li><a href="credit.html">Credits</a></li>
+			</ul>
+		</nav>
+		<div class="main">
+		</div>
+		<div class="form-inline">
+			<p class="instruction" style="font-size: 100%;">Upload the TEI XML source file of your edition:</p>
+			<form method="POST" enctype="multipart/form-data" action="">
+				<input type="file" id="myfile" name="myfile" accept=".xml, application/tei+xml"/>
+				<input type="submit" value="Upload" class="btn"/>
+			</form>
+			<p class="nb">Note: for testing purposes, you can <a href="..static/script/transform/input-test.xml" download>download this test TEI XML file</a>, which you can use as an input for the transformation tool.
+			</p>
+		</div>
+		<footer>
+				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="margin-bottom:15px; " src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a><br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+		</footer>
+	</body>
+</html>
