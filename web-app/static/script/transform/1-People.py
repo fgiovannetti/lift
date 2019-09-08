@@ -2,7 +2,7 @@
 from lxml import etree
 
 
-tree = etree.parse('input.xml')
+tree = etree.parse('static/temp/input.xml')
 
 
 root = tree.getroot()
@@ -44,7 +44,6 @@ g.bind("pro", pro)
 g.bind("proles", proles)
 g.bind("prov", prov)
 g.bind("tvc", tvc)
-
 
 
 
@@ -114,52 +113,13 @@ for person in root.findall('.//tei:person', tei):
         value = etree.tostring(parent, pretty_print=True, method="xml")
         g.add( (parent_uri, RDF.value, Literal(value, datatype=RDF.XMLLiteral)) )
 
-
-
-
-
-
-
-
-
-
-#############################
-#                           #
-#        Relations          #
-#                           #
-#############################
-
-
-
-for person in root.findall('.//tei:person', tei):
-    person_id = person.get('{http://www.w3.org/XML/1998/namespace}id')
-    person_uri = URIRef(base_uri + '/person/' + person_id)
-    person_ref = '#' + person_id
-    for relation in root.findall('.//tei:listRelation/tei:relation', tei):
-        if relation.get('active') is not None and relation.get('active') == person_ref:
-            passive = relation.get('passive').replace("#", "").split()
-            i = 0
-            while i < len(passive):
-                g.add( (person_uri, agrelon[relation.get('name')], URIRef(base_uri + '/' + passive[i])))
-                i += 1
-        elif relation.get('mutual') is not None:
-            if person_ref in relation.get('mutual').split():
-                mutual = relation.get('mutual').replace("#", "").replace(person_id, "").split()
-                i = 0
-                while i < len(mutual):
-                    g.add( (person_uri, agrelon[relation.get('name')], URIRef(base_uri + '/' + mutual[i])))
-                    i += 1
-        # value
-        value = etree.tostring(relation, pretty_print=True, method="xml")
-        g.add( (person_uri, RDF.value, Literal(value, datatype=RDF.XMLLiteral)) )
-
-
+    
 
 # RDF/XML output
-g.serialize(destination="output.rdf", format='xml')
+g.serialize(destination="static/temp/output.rdf", format='xml')
 
 # Notation3 output
-g.serialize(destination="output.n3", format='n3')
+g.serialize(destination="static/temp/output.n3", format='n3')
 
 # N-triples output
-g.serialize(destination="output.nt", format='nt')
+g.serialize(destination="static/temp/output.nt", format='nt')

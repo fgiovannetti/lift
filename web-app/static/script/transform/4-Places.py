@@ -2,7 +2,7 @@
 from lxml import etree
 
 
-tree = etree.parse('input.xml')
+tree = etree.parse('static/temp/input.xml')
 
 
 root = tree.getroot()
@@ -107,10 +107,10 @@ for place in root.findall('.//tei:place', tei):
 
 
 # RDF/XML output
-g.serialize(destination="output.rdf", format='xml')
+g.serialize(destination="static/temp/output.rdf", format='xml')
 
 # Notation3 output
-g.serialize(destination="output.n3", format='n3')
+g.serialize(destination="static/temp/output.n3", format='n3')
 
 # N-triples output
-g.serialize(destination="output.nt", format='nt')
+g.serialize(destination="static/temp/output.nt", format='nt')

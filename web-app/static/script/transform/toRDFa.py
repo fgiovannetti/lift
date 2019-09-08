@@ -15,7 +15,7 @@ ns = {'rdf': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
       'xmlns' : 'http://www.w3.org/1999/xhtml'}
 
 
-v = open('static/temp/viz.html', mode='w')
+v = open('static/temp/output.html', mode='w')
 
 
 root = tree.getroot()

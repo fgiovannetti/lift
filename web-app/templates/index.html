@@ -1,0 +1,42 @@
+$def with ()
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="../static/css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="header">
+			<h1 id="short">LIFT</h1>
+			<h1 id="extended">Linked data from TEI</h1>
+		</div>
+		<nav>
+			<ul>
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="/quickstart.html">Quick start</a></li>
+				<li><a href="">Documentation</a></li>
+				<li><a href="https://github.com/fgiovannetti/lift" target="_blank">Source</a></li>
+				<li><a href="credit.html">Credits</a></li>
+			</ul>
+		</nav>
+		<div class="main">
+			<p>LIFT is a Python-based tool for transforming your TEI XML edition into a knowledge graph, ready for publication as linked open data on the web. LIFT comes with a thorough documentation, designed to help you understand and reuse the methodology and technology behind the tool.</p>
+			<ul>
+				<li>In order to get started, go to <a href="quickstart.html">Quick start</a> or <b>upload your TEI XML file below</b>. Make sure you read LIFT's encoding guidelines beforehand (see the section "Prepare your TEI XML edition for transformation" in <a href="">Documentation</a>).</li>
+				<li>Go to <a href="">Documentation</a> to access useful information to help you use LIFT, including how to prepare your TEI XML edition for transformation to linked data. A Jupyter notebook illustrating step-by-step how the scripts work is also available through the documentation.</li>
+				<li>From <a href="">Source</a> you can download the transformation scripts for local use.</li>
+			</ul>
+			</p>
+		</div>
+		<div class="form-inline">
+			<p>Upload the TEI XML source file of your edition:</p>
+			<form method="POST" enctype="multipart/form-data" action="">
+				<input type="file" id="myfile" name="myfile" accept=".xml, application/tei+xml"/>
+				<input type="submit" value="Upload" class="btn"/>
+			</form>
+		</div>
+		<footer>
+				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="margin-bottom:15px; " src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a><br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+		</footer>
+	</body>
+</html>

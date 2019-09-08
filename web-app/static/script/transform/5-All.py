@@ -1,7 +1,7 @@
 from lxml import etree
 
 
-tree = etree.parse('input.xml')
+tree = etree.parse('static/temp/input.xml')
 
 
 root = tree.getroot()
@@ -324,6 +324,6 @@ g.bind("proles", proles)
 g.bind("prov", prov)
 g.bind("tvc", tvc)
 
-g.serialize(destination='output.nt', format='nt')
-g.serialize(destination='output.n3', format='n3')
-g.serialize(destination='output.rdf', format='xml')
+g.serialize(destination='static/temp/output.nt', format='nt')
+g.serialize(destination='static/temp/output.n3', format='n3')
+g.serialize(destination='static/temp/output.rdf', format='xml')

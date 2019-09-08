@@ -1,7 +1,8 @@
+
 from lxml import etree
 
 
-tree = etree.parse('input.xml')
+tree = etree.parse('static/temp/input.xml')
 
 
 root = tree.getroot()
@@ -120,9 +121,6 @@ for person in root.findall('.//tei:person', tei):
 
 
 
-
-
-
 #############################
 #                           #
 #        Events             #
@@ -212,118 +210,18 @@ for person in root.findall('.//tei:person', tei):
             if source.get('sameAs') is not None:
                 sameAs = source.get('sameAs')
                 if sameAs.startswith('http'):
-                    g.add( (source_uri, OWL.sameAs, URIRef(source.get('sameAs')))) 
+                    g.add( (source_uri, OWL.sameAs, URIRef(source.get('sameAs'))))  
 
         # value
         value = etree.tostring(event, pretty_print=True, method="xml")
         g.add( (event_uri, RDF.value, Literal(value, datatype=RDF.XMLLiteral)) )
 
+   
+# RDF/XML output
+g.serialize(destination="static/temp/output.rdf", format='xml')
 
+# Notation3 output
+g.serialize(destination="static/temp/output.n3", format='n3')
 
-
-
-
-
-#############################
-#                           #
-#        Relations          #
-#                           #
-#############################
-
-
-
-for person in root.findall('.//tei:person', tei):
-    person_id = person.get('{http://www.w3.org/XML/1998/namespace}id')
-    person_uri = URIRef(base_uri + '/person/' + person_id)
-    person_ref = '#' + person_id
-    for relation in root.findall('.//tei:listRelation/tei:relation', tei):
-        if relation.get('active') is not None and relation.get('active') == person_ref:
-            passive = relation.get('passive').replace("#", "").split()
-            i = 0
-            while i < len(passive):
-                g.add( (person_uri, agrelon[relation.get('name')], URIRef(base_uri + '/' + passive[i])))
-                i += 1
-        elif relation.get('mutual') is not None:
-            if person_ref in relation.get('mutual').split():
-                mutual = relation.get('mutual').replace("#", "").replace(person_id, "").split()
-                i = 0
-                while i < len(mutual):
-                    g.add( (person_uri, agrelon[relation.get('name')], URIRef(base_uri + '/' + mutual[i])))
-                    i += 1
-
-        # value
-        value = etree.tostring(relation, pretty_print=True, method="xml")
-        g.add( (person_uri, RDF.value, Literal(value, datatype=RDF.XMLLiteral)) )
-
-
-
-
-
-
-
-#############################
-#                           #
-#        Places             #
-#                           #
-#############################
-
-
-for place in root.findall('.//tei:place', tei):
-    place_id = place.get('{http://www.w3.org/XML/1998/namespace}id')
-    place_uri = URIRef(base_uri + '/place/' + place_id)
-    place_ref = '#' + place_id
-    
-    #place
-    g.add( (place_uri, RDF.type, schema.Place))
-    
-    #place_sameas(place)
-    same_as = place.get('sameAs').split()
-    i = 0
-    while i < len(same_as):
-        same_as_uri = URIRef(same_as[i])
-        g.add( (place_uri, OWL.sameAs, same_as_uri))
-        i += 1
-
-    #placename(place)
-    placename = place.find('./tei:placeName', tei)
-    label = placename.text
-    label_lang = placename.get('{http://www.w3.org/XML/1998/namespace}lang')
-    if label_lang is not None:
-        g.add( (place_uri, RDFS.label, Literal(label, lang=label_lang)))
-    else:
-        g.add( (place_uri, RDFS.label, Literal(label)))
-    # value
-        value = etree.tostring(place, pretty_print=True, method="xml")
-        g.add( (place_uri, RDF.value, Literal(value, datatype=RDF.XMLLiteral)) )
-
-
-    #referenced_place(place_id)
-    ref = './/tei:placeName[@ref="#' + place_id + '"]'
-    for referenced_place in root.findall(ref, tei):
-        parent = referenced_place.getparent()
-        parent_id = parent.get('{http://www.w3.org/XML/1998/namespace}id')
-        parent_uri = URIRef(base_uri + '/text/' + parent_id)
-        g.add( (place_uri, DCTERMS.isReferencedBy, parent_uri))
-        g.add( (parent_uri, RDF.type, frbroo.F23_Expression_Fragment))
-        g.add( (parent_uri, frbroo.R15i_is_fragment_of, URIRef(base_uri + '/' + edition_id)))
-
-        # value
-        value = etree.tostring(parent, pretty_print=True, method="xml")
-        g.add( (parent_uri, RDF.value, Literal(value, datatype=RDF.XMLLiteral)) )
-
-
-# bind prefix
-g.bind("agrelon", agrelon)
-g.bind("crm", crm)
-g.bind("frbroo", frbroo)
-g.bind("dcterms", DCTERMS)
-g.bind("schema", schema)
-g.bind("owl", OWL)
-g.bind("pro", pro)
-g.bind("proles", proles)
-g.bind("prov", prov)
-g.bind("tvc", tvc)
-
-g.serialize(destination='output.nt', format='nt')
-g.serialize(destination='output.n3', format='n3')
-g.serialize(destination='output.rdf', format='xml')
+# N-triples output
+g.serialize(destination="static/temp/output.nt", format='nt')
