@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'lift'
+project = 'LIFT'
 copyright = '2019, Francesca Giovannetti'
 author = 'Francesca Giovannetti'
 
