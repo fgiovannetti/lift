@@ -56,3 +56,6 @@ html_static_path = ['_static']
 
 # Master file
 master_doc = 'index'
+
+# Coloured code
+pygments_style = 'sphinx'
