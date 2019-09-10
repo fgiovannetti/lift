@@ -7,7 +7,8 @@ TEI allows different ways to encode the same textual features. A trivial example
 
 Despite its important advantages, such a heterogeneity makes it challenging to develop transformation scripts that adapt to any encoding model.
 
-On this account, in order to ensure a correct functioning of the transformation script, it is necessary to follow specific encoding guidelines to prepare the input TEI XML document for transformation via LIFT. 
+On this account, in order to ensure a correct functioning of the transformation script, it is necessary to follow specific encoding guidelines to prepare the input TEI XML document for transformation via LIFT.
+
 
 1. Provide all TEI elements with unique identifiers 
 ---------------------------------------------------
@@ -32,12 +33,36 @@ If your TEI document does not already contain unique identifiers, you can run |t
 
 Once downloaded to your TEI project folder, you can run the transformation stylesheet via xsltproc (see |xsltproc tutorial|, last accessed 2019-09-09), a command line tool for applying XSLT stylesheets to XML documents.
 
-.. Add instructions for XSLT other than xsltproc stylesheet file in OSX Terminal
 
+2. Make sure your TEI header contains the minimal and recommended elements
+--------------------------------------------------------------------------
 
-.. People
+Supplying only the minimal and recommended elements, your TEI header should look like the following:
 
-2. Use <person> and <persName> for a person
+.. code-block:: xml
+
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>Example of TEI XML input for extraction via LIFT</title>
+				<author>Francesca Giovannetti</author>
+				<respStmt>
+					<resp>compiled by</resp>
+					<name>Francesca Giovannetti</name>
+				</respStmt>
+			</titleStmt>
+			<publicationStmt>
+				<distributor>Francesca Giovannetti</distributor>
+			</publicationStmt>
+			<sourceDesc>
+				<p>Born digital description of events and relations involving Socrates, Critias, Plato, Xenophon.</p>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+
+If there exist a source of the electronic text, this should be specified by a element :code:`<bibl>` within :code:`<sourceDesc>`.
+
+3. Use <person> and <persName> for a person
 -------------------------------------------
 
 Every personal name cited in the TEI text should be marked up as a :code:`<persName>`. The attribute :code:`@ref` should be used to relate such a personal name to the unique identifier of the person. 
@@ -70,7 +95,7 @@ It is possible to nest a set of :code:`<person>` elements within a :code:`<listP
 		<person xml:id="Socr">
 		...
 
-3. Use <place> and <placeName> for a place
+4. Use <place> and <placeName> for a place
 ------------------------------------------
 
 The same instructions as above are also valid for places. For example:
@@ -92,7 +117,7 @@ The same instructions as above are also valid for places. For example:
 		</text>
 	</TEI>
 
-4. Assign a @sameAs to disambiguate your entity
+5. Assign a @sameAs to disambiguate your entity
 -----------------------------------------------
 
 In order to disambiguate your named entities so to create meaningful connections between your linked data graph and related resources on the web, you should associate a permanent URI to your person or place. Such a URI should be provided by an authority record, such as |VIAF|, |Worldcat|, or the |Library of Congress|. 
@@ -105,7 +130,7 @@ You can use a @sameAs attribute to store your URIs, separated by whitespaces. Fo
 	
 	<person xml:id="Socr" sameAs="http://viaf.org/viaf/88039167">
 
-5. Express personal relationships through <listRelation>
+6. Express personal relationships through <listRelation>
 --------------------------------------------------------
 
 Use the element :code:`<relation>` nested within a :code:`<listRelation>` to mark up personal relationships. Note that :code:`<listRelation>` should be a child of :code:`<listPerson>`. 
@@ -123,18 +148,18 @@ For example:
 		<relation xml:id="rel02" name="hasColleague" mutual="#plat #xen"/>
 	</listRelation>
 
-6. Use <event> for an event, either within <person> or <place>
+7. Use <event> for an event, either within <person> or <place>
 --------------------------------------------------------------
 
-Accounts of events may be included within a related <person> elements or <place> element. The element <event> holds the entire event account. The attributes @type and @corresp can be used to describe the event using a textual label and a URI respectively (the example below uses the URI for the concept of "trial" provided by Wordnet).
+Accounts of events may be included within a related :code:`<person>` elements or :code:`<place>` element. The element :code:`<event>` holds the entire event account. The attributes :code:`@type` and :code:`@corresp` can be used to describe the event using a textual label and a URI respectively (the example below uses the URI for the concept of "trial" provided by Wordnet).
 
-An event's time can be marked up either using @when or @from/@to. Date should be represented using the |ISO 8601 standard|.
+An event's time can be marked up either using :code:`@when` or :code:`@from/@to`. Date should be represented using the |ISO 8601 standard|.
 
-The element <label> can be used to provide a short textual description of the event, while the element <desc> can contain a extended account of the event including detailed information such as personal names (marked up with <persName>), locations (marked up with <placeName>), times (marked up with <date>).
+The element :code:`<label>` can be used to provide a short textual description of the event, while the element :code:`<desc>` can contain a extended account of the event including detailed information such as personal names (marked up with :code:`<persName>`), locations (marked up with :code:`<placeName>`), times (marked up with :code:`<date>`).
 
-It is possible to specify the role held by the person in the event through the attribute @role and/or through the attribute @corresp on <persName>. As before, @corresp should contain a URI representing the role.  
+It is possible to specify the role held by the person in the event through the attribute :code:`@role` and/or through the attribute :code:`@corresp` on :code:`<persName>`. As before, :code:`@corresp` should contain a URI representing the role.  
 
-Finally, if there is a primary or secondary source narrating the event, the element <bibl> can be used (either as a child of <desc> or as a direct child of <event>). The element <bibl> may contain information about the <author>, the <title> and the <date> of publication. It is possible to attach a @sameAs holding an authority URI to the <bibl> element in order to disambiguate the source.
+Finally, if there is a primary or secondary source narrating the event, the element :code:`<bibl>` can be used (either as a child of :code:`<desc>` or as a direct child of :code:`<event>`). The element :code:`<bibl>` may contain information about the :code:`<author>`, the :code:`<title>` and the :code:`<date>` of publication. It is possible to attach a :code:`@sameAs` holding an authority URI to the :code:`<bibl>` element in order to disambiguate the source.
 
 .. FRBR
 
@@ -155,8 +180,6 @@ For example:
 .. bibliographic references upcoming
 
 .. critical apparatus upcoming
-
-.. provenance upcoming
 
 Full example
 ------------
