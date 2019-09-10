@@ -17,7 +17,6 @@ Each entity within a linked data graph is uniquely represented by a URI. LIFT tr
 For example, from this TEI input
 
 .. code-block:: xml
-   :linenos:
 
 	<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="https://example.org">
 		...
@@ -46,7 +45,6 @@ Every personal name cited in the TEI text should be marked up as a :code:`<persN
 A description of each person (intended as a real-world entity) should be included in the TEI header within an element :code:`<person>`, to which a unique identifier is assigned for reference later. In order to define a standard label for the person, a :code:`<persName>` can be nested within the :code:`<person>` element. Multiple labels can be specified. Use :code:`@xml:lang` to specify the language (refer to the |ISO 639 list| of language codes). For example:
 
 .. code-block:: xml
-   :linenos:
 
 	<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="https://example.org">
 		<teiHeader>
@@ -64,13 +62,20 @@ A description of each person (intended as a real-world entity) should be include
 		</text>
 	</TEI>
 
+It is possible to nest a set of :code:`<person>` elements within a :code:`<listPerson>`. The attributes @type and/or @corresp can be assigned to a <listPerson> (or even to a single <person>) to provide a description: @type is used for a literal description, with each word separated by an hyphen; @corresp is used to provide an external URL. For example:
+
+.. code-block:: xml
+
+	<listPerson type="ancient-athenian-philosophers" corresp="http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers">
+		<person xml:id="Socr">
+		...
+
 3. Use <place> and <placeName> for a place
 ------------------------------------------
 
 The same instructions as above are also valid for places. For example:
 
 .. code-block:: xml
-   :linenos:
 
 	<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="https://example.org">
 		<teiHeader>
@@ -87,21 +92,46 @@ The same instructions as above are also valid for places. For example:
 		</text>
 	</TEI>
 
-3. Assign @sameAs to disambiguate your entities
+4. Assign a @sameAs to disambiguate your entity
 -----------------------------------------------
 
+In order to disambiguate your named entities so to create meaningful connections between your linked data graph and related resources on the web, you should associate a permanent URI to your person or place. Such a URI should be provided by an authority record, such as |VIAF|, |Worldcat|, or the |Library of Congress|. 
+
+The servise |sameas.org| can help you find equivalent URIs.
+
+You can use a @sameAs attribute to store your URIs, separated by whitespaces. For example:
+
+.. code-block:: xml
+	
+	<person xml:id="Socr" sameAs="http://viaf.org/viaf/88039167">
+
+5. Express personal relationships through <listRelation>
+--------------------------------------------------------
+
+Use the element :code:`<relation>` nested within a :code:`<listRelation>` to mark up personal relationships. Note that :code:`<listRelation>` should be a child of :code:`<listPerson>`. 
+
+For a unidirectional relation, you should use the attributes :code:`@active` and :code:`@passive` to define the subject and the object of the relationship (e.g. Socrates has student Plato); for bidirectional relationships you should use the attribute :code:`@mutual` (e.g. Plato has colleague Xenophon). It is possible to express multiple values separated by whitespaces. 
+
+The @name attribute is used to express the nature of the relationship. Use terms from |AgRelOn| (Agent Relationship Ontology).  
+
+For example:
+
+.. code-block:: xml
+
+	<listRelation>
+		<relation xml:id="rel01" name="hasStudent" active="#socr" passive="#plat #xen #criti"/>
+		<relation xml:id="rel02" name="hasColleague" mutual="#plat #xen"/>
+	</listRelation>
 
 
-4. Describe a person through @type on <listPerson>
---------------------------------------------------
-
-
-.. People and relationships
 
 
 .. People and events
 
+Full example
+--------------
 
+You may dowload a TEI XML pseudo-edition featuring all the examples presented above from |this link|. 
 
 .. All links
 
@@ -128,3 +158,29 @@ The same instructions as above are also valid for places. For example:
 .. |ISO 639 list| raw:: html
 	
 	<a href="https://www.loc.gov/standards/iso639-2/php/English_list.php" target="_blank">ISO 639 list</a>
+
+.. |VIAF| raw:: html
+	
+	<a href="https://viaf.org/" target="_blank">VIAF</a>
+
+.. |Worldcat| raw:: html
+	
+	<a href="https://www.worldcat.org/" target="_blank">Worldcat</a>
+
+.. |Library of Congress| raw:: html
+	
+	<a href="https://id.loc.gov/" target="_blank">Library of Congress</a>
+
+.. |sameas.org| raw:: html
+	
+	<a href="http://sameas.org" target="_blank">sameas.org</a>
+
+.. |this link| raw:: html
+	
+	<a href="https://github.com/fgiovannetti/lift/blob/master/input-test/input-test.xml" target="_blank">this link</a>
+
+.. |AgRelOn| raw:: html
+	
+	<a href="https://d-nb.info/standards/elementset/agrelon" target="_blank">AgRelOn</a>
+
+
