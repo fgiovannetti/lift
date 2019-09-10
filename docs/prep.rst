@@ -123,15 +123,45 @@ For example:
 		<relation xml:id="rel02" name="hasColleague" mutual="#plat #xen"/>
 	</listRelation>
 
+6. Use <event> for an event, either within <person> or <place>
+--------------------------------------------------------------
 
+Accounts of events may be included within a related <person> elements or <place> element. The element <event> holds the entire event account. The attributes @type and @corresp can be used to describe the event using a textual label and a URI respectively (the example below uses the URI for the concept of "trial" provided by Wordnet).
 
+An event's time can be marked up either using @when or @from/@to. Date should be represented using the |ISO 8601 standard|.
 
-.. People and events
+The element <label> can be used to provide a short textual description of the event, while the element <desc> can contain a extended account of the event including detailed information such as personal names (marked up with <persName>), locations (marked up with <placeName>), times (marked up with <date>).
+
+It is possible to specify the role held by the person in the event through the attribute @role and/or through the attribute @corresp on <persName>. As before, @corresp should contain a URI representing the role.  
+
+Finally, if there is a primary or secondary source narrating the event, the element <bibl> can be used (either as a child of <desc> or as a direct child of <event>). The element <bibl> may contain information about the <author>, the <title> and the <date> of publication. It is possible to attach a @sameAs holding an authority URI to the <bibl> element in order to disambiguate the source.
+
+.. FRBR
+
+For example:
+
+.. code-block:: xml
+
+	<person xml:id="socr" sameAs="http://viaf.org/viaf/88039167">
+		...
+		<event xml:id="ev01" type="trial" when="-0399" corresp="http://wordnet-rdf.princeton.edu/id/01198357-n">
+			<label>Socrates trial</label>
+			<desc xml:id="desc01">The trial of <persName ref="#socr" role="defendant" corresp="http://wordnet-rdf.princeton.edu/id/09781524-n">Socrates</persName> for impiety and corruption of the youth took place in <placeName ref="#athens">Athens</placeName> in <date when="-0399">399 B.C.</date></desc>
+			<bibl xml:id="bibl01" sameAs="http://viaf.org/viaf/214045129"><author ref="#plat">Plato</author> gives a contemporary account of the trial in his work titled <title ref="Apology_of_Socr">Apology of Socrates</title>.</bibl>
+		</event>
+		...
+	</person>
+
+.. bibliographic references upcoming
+
+.. critical apparatus upcoming
+
+.. provenance upcoming
 
 Full example
---------------
+------------
 
-You may dowload a TEI XML pseudo-edition featuring all the examples presented above from |this link|. 
+You can dowload a TEI XML pseudo-edition featuring all the examples presented above from |this link|. 
 
 .. All links
 
@@ -183,4 +213,6 @@ You may dowload a TEI XML pseudo-edition featuring all the examples presented ab
 	
 	<a href="https://d-nb.info/standards/elementset/agrelon" target="_blank">AgRelOn</a>
 
+.. |ISO 8601 standard| raw:: html
 
+	<a href="https://www.iso.org/iso-8601-date-and-time-format.html" target="_blank">ISO 8601 standard</a>
