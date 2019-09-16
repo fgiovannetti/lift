@@ -3,4 +3,7 @@ Introduction
 ============
 
 
-LIFT is a Python-based tool for transforming your TEI XML edition into a knowledge graph, ready for publication as linked open data on the web. LIFT comes with a thorough documentation, designed to help you understand and reuse the methodology and technology behind the tool.
+LIFT is a Python-based tool (version 2.7) for transforming your TEI XML edition into a knowledge graph, ready for publication as linked open data on the web. LIFT comes with a thorough documentation, designed to help you understand and reuse the methodology and technology behind the tool.
+
+
+.. Organized in three main sections: 1) input; 2) output; 3) script from input to output
