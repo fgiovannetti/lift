@@ -2,4 +2,5 @@
 ===============================
 
 [tbc]
-... directions on how to use the jupyter notebook
+.. directions on how to use the jupyter notebook
+.. ADD INSTRUCTIONS FOR LOCAL USE

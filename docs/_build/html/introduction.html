@@ -36,7 +36,20 @@
             
   <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>LIFT is a Python-based tool (version 2.7) for transforming your TEI XML edition into a knowledge graph, ready for publication as linked open data on the web. LIFT comes with a thorough documentation, designed to help you understand and reuse the methodology and technology behind the tool.</p>
+<p>LIFT (<em>Linked data from TEI</em>) is a Digital Humanities tool based on Python 2.7 that you can use for generating linked open data out of TEI documents and editions.
+This documentation is devised to give you insight on how LIFT works both from the point of view of technology and methodology. After reading this documentation you should be able to leverage LIFT as is or adapt its scripts to your own project-specific needs.</p>
+<p>LIFT contains 4 different TEI-to-LOD scripts written in Python 2.7. Each script addresses the transformation to LOD of a set of specific TEI entities (persons, persons and events, persons and relations, places). The scripts can be used independently from one another. A fifth script comprehensive of all entities (i.e. persons, events, relations, and places) is also available. Two additional scripts, one for bibliographic entities and the other for critical apparatus entries, are currently under development (expected release: Spring 2021).</p>
+<p>This documentation has a pedagogical purpose: to show and discuss step-by-step a workflow for TEI-to-LOD transformation which does not entail the use of XSLT, but instead adopts Python with the library <a href="https://lxml.de/" target="_blank">lxml</a> for processing XML documents and the library <a href="https://rdflib.readthedocs.io/en/stable/" target="_blank">RDFLib</a> for creating RDF triples.</p>
+<p>Although XSLT is a widely-adopted language for XML processing within the Digital Humanities community, Python offers more powerful methods and tools for working with linked open data which we hope to be able to demonstrate through LIFT.</p>
+<p><strong>Please note that this documentation is still under development and growing.</strong></p>
+<p>This documentation is divided into four main parts:</p>
+<ol class="arabic simple">
+<li>“Prepare your TEI file”, which provides a set of encoding requirements for the input TEI document</li>
+<li>“The output knowledge graph”, illustrating the structure and semantics of the generated graph by juxtaposing the TEI input with the corresponding RDF output. This section explains why and how users may choose other ontologies for their projects or adapt the scripts to different input data</li>
+<li>“How the scripts work”, where users can access an interactive Jupyter Notebook containing the scripts with instructions and line-by-line explanations. The notebook should help users acquire the skills necessary to write their own transformation scripts</li>
+<li>“Further readings and resources”, which proposes relevant publications and provides examples of semantic TEI digital scholarly editions</li>
+</ol>
+<p>You can either run the scripts from the web application (<a class="reference external" href="https://projects.dharc.unibo.it/lift">https://projects.dharc.unibo.it/lift</a>) or download the scripts for local use (see Section 3 “How the scripts work” for detailed instructions on how to run the scripts locally from Terminal).</p>
 </div>
 
 
@@ -60,9 +73,9 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="input.html">Prepare your TEI file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="output.html">The output knowledge graph</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scripts.html">How the scripts work</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources.html">Further readings and resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output.html">2. The output knowledg graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts.html">3. How the scripts work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">4. Further readings and resources</a></li>
 </ul>
 
 <div class="relations">
