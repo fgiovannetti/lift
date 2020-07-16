@@ -13,6 +13,8 @@ Welcome to LIFT's documentation!
    introduction
    input
    output
+   scripts
+   resources
 
 
 

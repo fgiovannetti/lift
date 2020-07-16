@@ -7,3 +7,5 @@ LIFT is a Python-based tool (version 2.7) for transforming your TEI XML edition 
 
 
 .. Organized in three main sections: 1) input; 2) output; 3) script from input to output
+
+.. ADD INSTRUCTIONS FOR LOCAL USE

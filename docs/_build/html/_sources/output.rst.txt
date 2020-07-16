@@ -1,4 +1,4 @@
-The generated linked data graph
+The output knowledge graph
 ===============================
 
 LIFT takes as input a TEI XML file and outputs a linked data graph. The structure and semantcs of the generated linked data graph are defined by LIFT. You may need to adjust them according to your needs (you should be able to do so after reading this documentation). For example, you may decide to leverage different ontological vocabularies or modify the structure of the graph or treat specific TEI constructs in a different way. 
@@ -22,7 +22,7 @@ Personal entities
 -----------------
 
 The RDF statements shown below share the same subject, a person. The URI identifying such a person is :code:`https://example.org/person/Aristot` (line 1). This personal entity is assigned to the ontological class :code:`schema:Person`, which comprehends persons (either alive, dead, undead, or fictional). By assigning Aristotle to this class we are formally stating that he is a person. As anticipated in the previous chapter |"Prepare your TEI XML edition for transformation"|, the URI for Aristotle is build by using Aristotle's :code:`@xml:id` (see |"1. Provide all TEI elements with unique identifiers"|). 
-The property :code:`rdfs:label` relates the subject, Aristotle, to a human-readable version of a resource's name (line 2). LIFT extracts this information, alongside with the label language, from the :code:`<persName>` element.
+The property :code:`rdfs:label` relates the subject, Aristotle, to a human-readable version of the resource's name (line 2). LIFT extracts this information, alongside with the label language, from the :code:`<persName>` element.
 The property :code:`owl:sameAs` introduces two equivalent URIs for Aristotle (line 3-4). 
 .. (line 5-6-7)
 
@@ -40,7 +40,7 @@ The property :code:`owl:sameAs` introduces two equivalent URIs for Aristotle (li
     
 
 
-The TEI snipped which generated the RDF statements above is as follows: 
+The set of TEI annotations from which the RDF statements above derive is as follows: 
 
 .. code-block:: xml
 	:linenos:

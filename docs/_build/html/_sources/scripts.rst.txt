@@ -1,0 +1,5 @@
+How the scripts work
+===============================
+
+[tbc]
+... directions on how to use the jupyter notebook

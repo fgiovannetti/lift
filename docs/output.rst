@@ -1,4 +1,4 @@
-The generated linked data graph
+The output knowledge graph
 ===============================
 
 LIFT takes as input a TEI XML file and outputs a linked data graph. The structure and semantcs of the generated linked data graph are defined by LIFT. You may need to adjust them according to your needs (you should be able to do so after reading this documentation). For example, you may decide to leverage different ontological vocabularies or modify the structure of the graph or treat specific TEI constructs in a different way. 

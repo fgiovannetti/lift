@@ -1,5 +1,5 @@
 
-Prepare your TEI XML edition for transformation
+Prepare your TEI file
 ===============================================
 
 
@@ -10,8 +10,8 @@ Despite its important advantages, such a heterogeneity makes it challenging to d
 On this account, in order to ensure a correct functioning of the transformation script, it is necessary to follow specific encoding guidelines to prepare the input TEI XML document for transformation via LIFT.
 
 
-1. Provide all TEI elements with unique identifiers 
----------------------------------------------------
+1. Provide all TEI elements with unique identifiers (@xml:id) 
+-------------------------------------------------------------
 
 Each entity within a linked data graph is uniquely represented by a URI. LIFT transforms a TEI element unique identifier (defined through the attribute :code:`@xml:id`) into an entity URI by concatenating the TEI document base URI (defined on the :code:`<TEI>` element through the attribute :code:`@xml:base`) with the element unique identifier. 
 
@@ -37,7 +37,7 @@ Once downloaded to your TEI project folder, you can run the transformation style
 2. Make sure your TEI header contains the minimal and recommended elements
 --------------------------------------------------------------------------
 
-Supplying only the minimal and recommended elements, your TEI header should look like the following:
+Supplying only the minimal and recommended elements, your TEI header should look like this:
 
 .. code-block:: xml
 
@@ -177,9 +177,9 @@ For example:
 		...
 	</person>
 
-.. bibliographic references upcoming
+.. bibliographic references (upcoming)
 
-.. critical apparatus upcoming
+.. critical apparatus (upcoming)
 
 Full example
 ------------
