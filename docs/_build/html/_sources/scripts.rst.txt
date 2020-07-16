@@ -1,4 +1,4 @@
-How the scripts work
+3. How the scripts work
 ===============================
 
 [tbc]

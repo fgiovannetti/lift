@@ -1,5 +1,5 @@
 
-Prepare your TEI file
+1. Prepare your TEI file
 ===============================================
 
 
