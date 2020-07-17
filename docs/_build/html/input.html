@@ -16,7 +16,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2. The output knowledg graph" href="output.html" />
+    <link rel="next" title="The output knowledge graph" href="output.html" />
     <link rel="prev" title="Introduction" href="introduction.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -35,7 +35,7 @@
           <div class="body" role="main">
             
   <div class="section" id="prepare-your-tei-file">
-<h1>Prepare your TEI file<a class="headerlink" href="#prepare-your-tei-file" title="Permalink to this headline">¶</a></h1>
+<span id="input"></span><h1>Prepare your TEI file<a class="headerlink" href="#prepare-your-tei-file" title="Permalink to this headline">¶</a></h1>
 <p>TEI allows different ways to encode the same textual features. A trivial example is the possibility to validly mark up a person name using the tags <code class="code docutils literal notranslate"><span class="pre">&lt;persName&gt;</span></code>, <code class="code docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>, or <code class="code docutils literal notranslate"><span class="pre">&lt;rs&gt;</span></code> (<a href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html" target="_blank">TEI Guidelines, 13. Names, Dates, People, and Places</a>).</p>
 <p>Despite its important advantages, such a heterogeneity makes it challenging to develop transformation scripts that adapt to any encoding model.</p>
 <p>On this account, in order to ensure a correct functioning of the transformation script, it is necessary to follow specific encoding guidelines to prepare the input TEI XML document for transformation via LIFT:</p>
@@ -49,7 +49,7 @@
 <li><a class="reference external" href="place">Use &lt;event&gt; for events, either within &lt;person&gt; or</a></li>
 </ol>
 <div class="section" id="provide-all-tei-elements-with-unique-identifiers-xml-id">
-<h2>Provide all TEI elements with unique identifiers (&#64;xml:id)<a class="headerlink" href="#provide-all-tei-elements-with-unique-identifiers-xml-id" title="Permalink to this headline">¶</a></h2>
+<h2>Provide all TEI elements with unique identifiers (<code class="code docutils literal notranslate"><span class="pre">&#64;xml:id</span></code>)<a class="headerlink" href="#provide-all-tei-elements-with-unique-identifiers-xml-id" title="Permalink to this headline">¶</a></h2>
 <p>Each entity within a linked data graph is uniquely represented by a URI. LIFT transforms a TEI element unique identifier (defined through the attribute <code class="code docutils literal notranslate"><span class="pre">&#64;xml:id</span></code>) into an entity URI by concatenating the TEI document base URI (defined on the <code class="code docutils literal notranslate"><span class="pre">&lt;TEI&gt;</span></code> element through the attribute <code class="code docutils literal notranslate"><span class="pre">&#64;xml:base</span></code>) with the element unique identifier.</p>
 <p>For example, from this TEI input</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;TEI</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.tei-c.org/ns/1.0&quot;</span> <span class="na">xml:base=</span><span class="s">&quot;https://example.org&quot;</span><span class="nt">&gt;</span>
@@ -206,7 +206,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Prepare your TEI file</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#provide-all-tei-elements-with-unique-identifiers-xml-id">Provide all TEI elements with unique identifiers (&#64;xml:id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#provide-all-tei-elements-with-unique-identifiers-xml-id">Provide all TEI elements with unique identifiers (<code class="code docutils literal notranslate"><span class="pre">&#64;xml:id</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#include-at-least-a-minimal-tei-header">Include (at least) a minimal TEI header</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#use-person-and-persname-to-represent-persons-and-in-text-references-to-such-persons">Use &lt;person&gt; and &lt;persName&gt; to represent persons and in-text references to such persons</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#use-place-and-placename-to-represent-place-and-in-text-references-to-such-places">Use &lt;place&gt; and &lt;placeName&gt; to represent place and in-text references to such places</a></li>
@@ -216,9 +216,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#full-example">Full example</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="output.html">2. The output knowledg graph</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scripts.html">3. How the scripts work</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources.html">4. Further readings and resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output.html">The output knowledge graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts.html">How the scripts work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Further readings and resources</a></li>
 </ul>
 
 <div class="relations">
@@ -226,7 +226,7 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="introduction.html" title="previous chapter">Introduction</a></li>
-      <li>Next: <a href="output.html" title="next chapter">2. The output knowledg graph</a></li>
+      <li>Next: <a href="output.html" title="next chapter">The output knowledge graph</a></li>
   </ul></li>
 </ul>
 </div>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>3. How the scripts work &#8212; LIFT 0.1.0 documentation</title>
+    <title>How the scripts work &#8212; LIFT 0.1.0 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -16,8 +16,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4. Further readings and resources" href="resources.html" />
-    <link rel="prev" title="2. The output knowledg graph" href="output.html" />
+    <link rel="next" title="Further readings and resources" href="resources.html" />
+    <link rel="prev" title="The output knowledge graph" href="output.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -35,10 +35,16 @@
           <div class="body" role="main">
             
   <div class="section" id="how-the-scripts-work">
-<h1>3. How the scripts work<a class="headerlink" href="#how-the-scripts-work" title="Permalink to this headline">¶</a></h1>
-<p>[tbc]
-.. directions on how to use the jupyter notebook
-.. ADD INSTRUCTIONS FOR LOCAL USE</p>
+<span id="scripts"></span><h1>How the scripts work<a class="headerlink" href="#how-the-scripts-work" title="Permalink to this headline">¶</a></h1>
+<p>LIFT contains a set of Python 2.7 scripts. The scripts use the Python library <a class="reference external" href="https://lxml.de">lxml</a> to find and extract relevant data from the input TEI document, and the Python library <a class="reference external" href="https://rdflib.readthedocs.io/en/stable">RDFLib</a> to create RDF triples and merge them into a single knowledge graph.</p>
+<p>You can apply any of the scripts to your TEI document. If you opt for using the scripts as are, make sure you read LIFT encoding guidelines at <a class="reference internal" href="input.html#input"><span class="std std-ref">Prepare your TEI file</span></a> and update your input TEI document accordingly (unless you modify them, the scripts will look for specific constructs in your input TEI document which will serve as a basis for creating RDF triples).</p>
+<p>The previous section, <a class="reference internal" href="output.html#output"><span class="std std-ref">The output knowledge graph</span></a>, shows the input TEI constructs next to the corresponding output RDF statements. A Jupyter notebook, available from <a class="reference external" href="https://nbviewer.jupyter.org/github/fgiovannetti/lift/blob/master/jupyter_nb/TEItoRDF.ipynb">https://nbviewer.jupyter.org/github/fgiovannetti/lift/blob/master/jupyter_nb/TEItoRDF.ipynb</a>, explains the code of the scripts line-by-line.</p>
+<p>You can either read a non-interactive preview of the notebook from the link above or install Jupyer to access the notebook interactively. The second option assumes some familiarity with the command line or check the tutorials by the <a class="reference external" href="https://programminghistorian.org/">Programming Historian</a> (for <a class="reference external" href="https://programminghistorian.org/en/lessons/intro-to-powershell">Windows here</a>, or <a class="reference external" href="https://programminghistorian.org/en/lessons/intro-to-bash">Mac/Linux here</a>):</p>
+<ol class="arabic simple">
+<li>If you already have Python installed, you can run <code class="code docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">notebook</span></code> on your Terminal or Prompt (visit <a class="reference external" href="https://jupyter.org/install">https://jupyter.org/install</a> for further help);</li>
+<li><a class="reference external" href="https://github.com/fgiovannetti/lift/blob/master/jupyter_nb/TEItoRDF.ipynb">Download the LIFT notebook</a>, then from Terminal or Prompt, navigate to the folder where the notebook has been saved;</li>
+<li>You can now run <code class="code docutils literal notranslate"><span class="pre">juptyter</span> <span class="pre">notebook</span></code> to launch a web browser with the Jupyter Notebook applications.</li>
+</ol>
 </div>
 
 
@@ -62,17 +68,17 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="input.html">Prepare your TEI file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="output.html">2. The output knowledg graph</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">3. How the scripts work</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources.html">4. Further readings and resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output.html">The output knowledge graph</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How the scripts work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Further readings and resources</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="output.html" title="previous chapter">2. The output knowledg graph</a></li>
-      <li>Next: <a href="resources.html" title="next chapter">4. Further readings and resources</a></li>
+      <li>Previous: <a href="output.html" title="previous chapter">The output knowledge graph</a></li>
+      <li>Next: <a href="resources.html" title="next chapter">Further readings and resources</a></li>
   </ul></li>
 </ul>
 </div>

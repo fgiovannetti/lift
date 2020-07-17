@@ -64,10 +64,10 @@ for place in root.findall('.//tei:place', tei):
     place_id = place.get('{http://www.w3.org/XML/1998/namespace}id')
     place_uri = URIRef(base_uri + '/place/' + place_id)
     place_ref = '#' + place_id
-    
+
     #place
     g.add( (place_uri, RDF.type, schema.Place))
-    
+
     #place_sameas(place)
     same_as = place.get('sameAs').split()
     i = 0

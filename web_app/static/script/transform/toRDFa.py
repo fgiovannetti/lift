@@ -43,14 +43,14 @@ for node in nodes:
     target = '_blank'
     newroot.set('style', 'margin-bottom:15px' ) 
     newroot.set('resource', about)
-    
+
     lis = []
     for rdftype in node.findall('./rdf:type', ns):
         typeof = rdftype.get('{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource')
         lis.append(typeof)
     typeof = " ".join(lis)
     newroot.set('typeof', typeof)
-    
+
     opangle = etree.SubElement(newroot, 'span')
     opangle.text = '<' 
     subject = etree.SubElement(newroot, 'a')
@@ -59,20 +59,20 @@ for node in nodes:
     subject.text = about
     clangle = etree.SubElement(newroot, 'span')
     clangle.text = '>' 
-    
+
     label = node.find('{http://www.w3.org/2000/01/rdf-schema#}label')
     if label is not None:
         slabel = etree.SubElement(newroot, 'span')
         slabel.set('style', 'color: orange')
         slabel.text = ' # ' + label.text
-    
+
     etree.SubElement(newroot, 'br')
     a = etree.SubElement(newroot, 'span')
     a.set('style', 'margin-left:2rem;')
     a.text = 'a '
-    
+
     classdecl = etree.SubElement(newroot, 'a')
-    
+
     list2=[]
     for i in lis:
             i = '<' + str(i) + '>'
@@ -80,18 +80,18 @@ for node in nodes:
 
     classdecl.set('href', typeof)
     classdecl.set('target', target)
-    
+
     lis2=[]
     for i in lis:
             i = '<' + str(i) + '>'
             lis2.append(i)
     typeof = " , ".join(lis2)
     classdecl.text = typeof
-    
+
     semic = etree.SubElement(newroot, 'span')
     semic.text = ' ;'
     etree.SubElement(newroot, 'br')
-    
+
     # all properties except rdf:type and rdfs:label
     children = node.getchildren()
     for child in children:
@@ -134,7 +134,3 @@ for node in nodes:
 v.write('</div>')
 
 v.close()
-
-
-
-

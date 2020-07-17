@@ -6,26 +6,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
-  <rdf:Description rdf:about="https://example.org/person/Xen">
-    <rdf:type rdf:resource="https://schema.org/Person"/>
-    <dcterms:description>ancient-athenian-philosophers</dcterms:description>
-    <rdfs:label xml:lang="en">Xenophon</rdfs:label>
-    <rdf:value rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">&lt;person sameAs="http://viaf.org/viaf/89597697" xml:id="Xen" xmlns="http://www.tei-c.org/ns/1.0"&gt;
-            &lt;persName xml:lang="en"&gt;Xenophon&lt;/persName&gt;
-            &lt;persName xml:lang="el"&gt;Ξενοφῶν&lt;/persName&gt;
-          &lt;/person&gt;
-          
-</rdf:value>
-    <owl:sameAs rdf:resource="http://viaf.org/viaf/89597697"/>
-    <dcterms:subject rdf:resource="http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://example.org/person/Criti">
-    <owl:sameAs rdf:resource="http://id.loc.gov/authorities/names/n00087919"/>
-    <rdf:type rdf:resource="https://schema.org/Person"/>
-    <dcterms:subject rdf:resource="http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers"/>
-    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Critias"/>
-    <owl:sameAs rdf:resource="http://viaf.org/viaf/17263602"/>
-    <rdfs:label xml:lang="en">Critias (approximately 460 B.C.-approximately 403 B.C.)</rdfs:label>
     <rdf:value rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">&lt;person sameAs="http://viaf.org/viaf/17263602 http://id.loc.gov/authorities/names/n00087919 http://dbpedia.org/resource/Critias" xml:id="Criti" xmlns="http://www.tei-c.org/ns/1.0"&gt;
             &lt;persName xml:lang="en"&gt;Critias (approximately 460 B.C.-approximately 403 B.C.)&lt;/persName&gt;
             &lt;persName xml:lang="el"&gt;Κριτίας&lt;/persName&gt;
@@ -35,28 +16,15 @@
           &lt;/person&gt;
           
 </rdf:value>
-    <dcterms:description>ancient-athenian-philosophers</dcterms:description>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://example.org/person/Plat">
-    <dcterms:subject rdf:resource="http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers"/>
-    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Plato"/>
-    <dcterms:isReferencedBy rdf:resource="https://example.org/text/para01"/>
-    <rdfs:label xml:lang="en">Plato</rdfs:label>
-    <dcterms:description>ancient-athenian-philosophers</dcterms:description>
-    <rdf:value rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">&lt;person sameAs="https://viaf.org/viaf/108159964/ http://dbpedia.org/resource/Plato" xml:id="Plat" xmlns="http://www.tei-c.org/ns/1.0"&gt;
-            &lt;persName xml:lang="en"&gt;Plato&lt;/persName&gt;
-            &lt;persName xml:lang="el"&gt;Πλάτων&lt;/persName&gt;
-          &lt;/person&gt;
-          
-</rdf:value>
-    <owl:sameAs rdf:resource="https://viaf.org/viaf/108159964/"/>
+    <owl:sameAs rdf:resource="http://viaf.org/viaf/17263602"/>
+    <owl:sameAs rdf:resource="http://id.loc.gov/authorities/names/n00087919"/>
     <rdf:type rdf:resource="https://schema.org/Person"/>
+    <dcterms:description>ancient-athenian-philosophers</dcterms:description>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Critias"/>
+    <dcterms:subject rdf:resource="http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers"/>
+    <rdfs:label xml:lang="en">Critias (approximately 460 B.C.-approximately 403 B.C.)</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://example.org/person/Socr">
-    <dcterms:subject rdf:resource="http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers"/>
-    <owl:sameAs rdf:resource="http://viaf.org/viaf/88039167"/>
-    <rdfs:label xml:lang="en">Socrates</rdfs:label>
-    <dcterms:description>ancient-athenian-philosophers</dcterms:description>
     <rdf:value rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">&lt;person sameAs="http://viaf.org/viaf/88039167" xml:id="Socr" xmlns="http://www.tei-c.org/ns/1.0"&gt;
             &lt;persName xml:lang="en"&gt;Socrates&lt;/persName&gt;
             &lt;persName xml:lang="el"&gt;Σωκρᾰ́της&lt;/persName&gt;
@@ -68,41 +36,73 @@
           &lt;/person&gt;
           
 </rdf:value>
+    <dcterms:subject rdf:resource="http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers"/>
+    <dcterms:description>ancient-athenian-philosophers</dcterms:description>
     <dcterms:isReferencedBy rdf:resource="https://example.org/text/line01"/>
+    <owl:sameAs rdf:resource="http://viaf.org/viaf/88039167"/>
     <rdf:type rdf:resource="https://schema.org/Person"/>
+    <rdfs:label xml:lang="en">Socrates</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://example.org/text/para01">
-    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
-    <rdf:value rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">&lt;p xml:id="para01" xmlns="http://www.tei-c.org/ns/1.0"&gt;Some text mentioning &lt;persName ref="#Plat"&gt;Plato&lt;/persName&gt; here and &lt;placeName ref="#Athens"&gt;Athens&lt;/placeName&gt;.&lt;/p&gt;
+  <rdf:Description rdf:about="https://example.org/person/Plat">
+    <dcterms:isReferencedBy rdf:resource="https://example.org/text/para01"/>
+    <rdfs:label xml:lang="en">Plato</rdfs:label>
+    <rdf:type rdf:resource="https://schema.org/Person"/>
+    <rdf:value rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">&lt;person sameAs="https://viaf.org/viaf/108159964/ http://dbpedia.org/resource/Plato" xml:id="Plat" xmlns="http://www.tei-c.org/ns/1.0"&gt;
+            &lt;persName xml:lang="en"&gt;Plato&lt;/persName&gt;
+            &lt;persName xml:lang="el"&gt;Πλάτων&lt;/persName&gt;
+          &lt;/person&gt;
+          
+</rdf:value>
+    <dcterms:description>ancient-athenian-philosophers</dcterms:description>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Plato"/>
+    <owl:sameAs rdf:resource="https://viaf.org/viaf/108159964/"/>
+    <dcterms:subject rdf:resource="http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/text/line01">
+    <frbroo:R15i_is_fragment_of rdf:resource="https://example.org/example_v1"/>
+    <rdf:value rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">&lt;l xml:id="line01" xmlns="http://www.tei-c.org/ns/1.0"&gt;Some text mentioning &lt;persName ref="#Socr"&gt;Socrates&lt;/persName&gt;&lt;/l&gt;
       
 </rdf:value>
-    <frbroo:R15i_is_fragment_of rdf:resource="https://example.org/example_v1"/>
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://example.org/person/Aristot">
-    <dcterms:isReferencedBy rdf:resource="https://example.org/text/para02"/>
-    <dcterms:subject rdf:resource="http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers"/>
-    <rdfs:label xml:lang="en">Aristotle</rdfs:label>
-    <rdf:type rdf:resource="https://schema.org/Person"/>
-    <owl:sameAs rdf:resource="http://viaf.org/viaf/7524651"/>
+    <dcterms:description>ancient-athenian-philosophers</dcterms:description>
     <rdf:value rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">&lt;person sameAs="http://viaf.org/viaf/7524651 http://dbpedia.org/resource/Aristotle" xml:id="Aristot" xmlns="http://www.tei-c.org/ns/1.0"&gt;
             &lt;persName xml:lang="en"&gt;Aristotle&lt;/persName&gt;
             &lt;persName xml:lang="el"&gt;Ἀριστοτέλης&lt;/persName&gt;
           &lt;/person&gt;
           
 </rdf:value>
-    <dcterms:description>ancient-athenian-philosophers</dcterms:description>
+    <dcterms:isReferencedBy rdf:resource="https://example.org/text/para02"/>
+    <dcterms:subject rdf:resource="http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers"/>
     <owl:sameAs rdf:resource="http://dbpedia.org/resource/Aristotle"/>
+    <rdfs:label xml:lang="en">Aristotle</rdfs:label>
+    <owl:sameAs rdf:resource="http://viaf.org/viaf/7524651"/>
+    <rdf:type rdf:resource="https://schema.org/Person"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://example.org/text/line01">
-    <frbroo:R15i_is_fragment_of rdf:resource="https://example.org/example_v1"/>
-    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
-    <rdf:value rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">&lt;l xml:id="line01" xmlns="http://www.tei-c.org/ns/1.0"&gt;Some text mentioning &lt;persName ref="#Socr"&gt;Socrates&lt;/persName&gt;&lt;/l&gt;
-      
+  <rdf:Description rdf:about="https://example.org/person/Xen">
+    <rdfs:label xml:lang="en">Xenophon</rdfs:label>
+    <owl:sameAs rdf:resource="http://viaf.org/viaf/89597697"/>
+    <rdf:type rdf:resource="https://schema.org/Person"/>
+    <dcterms:description>ancient-athenian-philosophers</dcterms:description>
+    <rdf:value rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">&lt;person sameAs="http://viaf.org/viaf/89597697" xml:id="Xen" xmlns="http://www.tei-c.org/ns/1.0"&gt;
+            &lt;persName xml:lang="en"&gt;Xenophon&lt;/persName&gt;
+            &lt;persName xml:lang="el"&gt;Ξενοφῶν&lt;/persName&gt;
+          &lt;/person&gt;
+          
 </rdf:value>
+    <dcterms:subject rdf:resource="http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://example.org/text/para02">
-    <frbroo:R15i_is_fragment_of rdf:resource="https://example.org/example_v1"/>
     <rdf:value rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">&lt;p xml:id="para02" xmlns="http://www.tei-c.org/ns/1.0"&gt;Some text mentioning &lt;persName ref="#Aristot"&gt;Aristotle&lt;/persName&gt; and &lt;placeName ref="#Sparta"&gt;Sparta&lt;/placeName&gt; here.&lt;/p&gt;
+      
+</rdf:value>
+    <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>
+    <frbroo:R15i_is_fragment_of rdf:resource="https://example.org/example_v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/text/para01">
+    <frbroo:R15i_is_fragment_of rdf:resource="https://example.org/example_v1"/>
+    <rdf:value rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">&lt;p xml:id="para01" xmlns="http://www.tei-c.org/ns/1.0"&gt;Some text mentioning &lt;persName ref="#Plat"&gt;Plato&lt;/persName&gt; here and &lt;placeName ref="#Athens"&gt;Athens&lt;/placeName&gt;.&lt;/p&gt;
       
 </rdf:value>
     <rdf:type rdf:resource="http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"/>

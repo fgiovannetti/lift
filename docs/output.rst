@@ -1,3 +1,5 @@
+.. _output:
+
 The output knowledge graph
 ===============================
 

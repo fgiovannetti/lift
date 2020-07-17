@@ -1,3 +1,5 @@
+.. _input:
+
 Prepare your TEI file
 =====================
 
@@ -17,8 +19,8 @@ On this account, in order to ensure a correct functioning of the transformation 
 7. `Use <event> for events, either within <person> or <place>`_
 
 
-Provide all TEI elements with unique identifiers (@xml:id) 
--------------------------------------------------------------
+Provide all TEI elements with unique identifiers (:code:`@xml:id`) 
+---------------------------------------------------------------------
 
 Each entity within a linked data graph is uniquely represented by a URI. LIFT transforms a TEI element unique identifier (defined through the attribute :code:`@xml:id`) into an entity URI by concatenating the TEI document base URI (defined on the :code:`<TEI>` element through the attribute :code:`@xml:base`) with the element unique identifier. 
 

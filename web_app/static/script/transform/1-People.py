@@ -1,4 +1,3 @@
-
 from lxml import etree
 
 
@@ -62,10 +61,10 @@ for person in root.findall('.//tei:person', tei):
     person_id = person.get('{http://www.w3.org/XML/1998/namespace}id')
     person_uri = URIRef(base_uri + '/person/' + person_id)
     person_ref = '#' + person_id
-    
+
     # person 
     g.add( (person_uri, RDF.type, schema.Person))
-    
+
     # same as
     same_as = person.get('sameAs')
     if same_as is not None:
@@ -75,7 +74,7 @@ for person in root.findall('.//tei:person', tei):
             same_as_uri = URIRef(same_as[i])
             g.add( (person_uri, OWL.sameAs, same_as_uri))
             i += 1
-    
+
     # person name
     persname = person.find('./tei:persName', tei)
     if persname is not None:
@@ -85,7 +84,7 @@ for person in root.findall('.//tei:person', tei):
             g.add( (person_uri, RDFS.label, Literal(label, lang=label_lang)))
         else:
             g.add( (person_uri, RDFS.label, Literal(label)))
-    
+
     # person type
     listperson = person.find('./...', tei)
     perstype = listperson.get('type')
@@ -99,7 +98,7 @@ for person in root.findall('.//tei:person', tei):
 
     value = etree.tostring(person, pretty_print=True, method="xml")
     g.add( (person_uri, RDF.value, Literal(value, datatype=RDF.XMLLiteral)) )
-    
+
     # person references
     ref = './tei:text//tei:persName[@ref="#' + person_id + '"]'
     for referenced_person in root.findall(ref, tei):
@@ -112,8 +111,6 @@ for person in root.findall('.//tei:person', tei):
         # value
         value = etree.tostring(parent, pretty_print=True, method="xml")
         g.add( (parent_uri, RDF.value, Literal(value, datatype=RDF.XMLLiteral)) )
-
-    
 
 # RDF/XML output
 g.serialize(destination="static/temp/output.rdf", format='xml')

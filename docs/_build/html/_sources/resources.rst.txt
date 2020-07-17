@@ -1,4 +1,6 @@
-4. Further readings and resources
+.. _resources:
+
+Further readings and resources
 ===============================
 
 [tbc]

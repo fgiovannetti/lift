@@ -1,17 +1,26 @@
+.. _input:
 
 Prepare your TEI file
-===============================================
+=====================
 
 
 TEI allows different ways to encode the same textual features. A trivial example is the possibility to validly mark up a person name using the tags :code:`<persName>`, :code:`<name>`, or :code:`<rs>` (|TEI Guidelines, 13. Names, Dates, People, and Places|).
 
 Despite its important advantages, such a heterogeneity makes it challenging to develop transformation scripts that adapt to any encoding model.
 
-On this account, in order to ensure a correct functioning of the transformation script, it is necessary to follow specific encoding guidelines to prepare the input TEI XML document for transformation via LIFT.
+On this account, in order to ensure a correct functioning of the transformation script, it is necessary to follow specific encoding guidelines to prepare the input TEI XML document for transformation via LIFT:
+
+1. `Provide all TEI elements with unique identifiers (@xml:id)`_
+2. `Include (at least) a minimal TEI header`_
+3. `Use <person> and <persName> to represent persons and in-text references to such persons`_
+4. `Use <place> and <placeName> to represent place and in-text references to such places`_
+5. `Assign @sameAs attributes to your entities`_
+6. `Encode relationships between people within <listRelation>`_
+7. `Use <event> for events, either within <person> or <place>`_
 
 
-1. Provide all TEI elements with unique identifiers (@xml:id) 
--------------------------------------------------------------
+Provide all TEI elements with unique identifiers (:code:`@xml:id`) 
+---------------------------------------------------------------------
 
 Each entity within a linked data graph is uniquely represented by a URI. LIFT transforms a TEI element unique identifier (defined through the attribute :code:`@xml:id`) into an entity URI by concatenating the TEI document base URI (defined on the :code:`<TEI>` element through the attribute :code:`@xml:base`) with the element unique identifier. 
 
@@ -34,8 +43,8 @@ If your TEI document does not already contain unique identifiers, you can run |t
 Once downloaded to your TEI project folder, you can run the transformation stylesheet via xsltproc (see |xsltproc tutorial|, last accessed 2019-09-09), a command line tool for applying XSLT stylesheets to XML documents.
 
 
-2. Make sure your TEI header contains the minimal and recommended elements
---------------------------------------------------------------------------
+Include (at least) a minimal TEI header
+-----------------------------------------------------------------------------------------
 
 Supplying only the minimal and recommended elements, your TEI header should look like this:
 
@@ -62,8 +71,8 @@ Supplying only the minimal and recommended elements, your TEI header should look
 
 If there exist a source of the electronic text, this should be specified by a element :code:`<bibl>` within :code:`<sourceDesc>`.
 
-3. Use <person> and <persName> for a person
--------------------------------------------
+Use <person> and <persName> to represent persons and in-text references to such persons
+-----------------------------------------------------------------------------------------
 
 Every personal name cited in the TEI text should be marked up as a :code:`<persName>`. The attribute :code:`@ref` should be used to relate such a personal name to the unique identifier of the person. 
 
@@ -95,8 +104,8 @@ It is possible to nest a set of :code:`<person>` elements within a :code:`<listP
 		<person xml:id="Socr">
 		...
 
-4. Use <place> and <placeName> for a place
-------------------------------------------
+Use <place> and <placeName> to represent place and in-text references to such places
+-----------------------------------------------------------------------------------------
 
 The same instructions as above are also valid for places. For example:
 
@@ -117,8 +126,8 @@ The same instructions as above are also valid for places. For example:
 		</text>
 	</TEI>
 
-5. Assign a @sameAs to disambiguate your entity
------------------------------------------------
+Assign @sameAs attributes to your entities
+-----------------------------------------------------------------------------------------
 
 In order to disambiguate your named entities so to create meaningful connections between your linked data graph and related resources on the web, you should associate a permanent URI to your person or place. Such a URI should be provided by an authority record, such as |VIAF|, |Worldcat|, or the |Library of Congress|. 
 
@@ -130,8 +139,9 @@ You can use a @sameAs attribute to store your URIs, separated by whitespaces. Fo
 	
 	<person xml:id="Socr" sameAs="http://viaf.org/viaf/88039167">
 
-6. Express personal relationships through <listRelation>
---------------------------------------------------------
+
+Encode relationships between people within <listRelation>
+-----------------------------------------------------------------------------------------
 
 Use the element :code:`<relation>` nested within a :code:`<listRelation>` to mark up personal relationships. Note that :code:`<listRelation>` should be a child of :code:`<listPerson>`. 
 
@@ -148,7 +158,7 @@ For example:
 		<relation xml:id="rel02" name="hasColleague" mutual="#plat #xen"/>
 	</listRelation>
 
-7. Use <event> for an event, either within <person> or <place>
+Use <event> for events, either within <person> or <place>
 --------------------------------------------------------------
 
 Accounts of events may be included within a related :code:`<person>` elements or :code:`<place>` element. The element :code:`<event>` holds the entire event account. The attributes :code:`@type` and :code:`@corresp` can be used to describe the event using a textual label and a URI respectively (the example below uses the URI for the concept of "trial" provided by Wordnet).
