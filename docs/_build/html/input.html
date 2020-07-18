@@ -40,7 +40,7 @@
 <p>Despite its important advantages, such a heterogeneity makes it challenging to develop transformation scripts that adapt to any encoding model.</p>
 <p>On this account, in order to ensure a correct functioning of the transformation script, it is necessary to follow specific encoding guidelines to prepare the input TEI XML document for transformation via LIFT:</p>
 <ol class="arabic simple">
-<li><a class="reference internal" href="#provide-all-tei-elements-with-unique-identifiers-xml-id">Provide all TEI elements with unique identifiers (&#64;xml:id)</a></li>
+<li><a class="reference internal" href="#provide-tei-elements-with-unique-identifiers-xml-id">Provide TEI elements with unique identifiers (&#64;xml:id)</a></li>
 <li><a class="reference internal" href="#include-at-least-a-minimal-tei-header">Include (at least) a minimal TEI header</a></li>
 <li><a class="reference internal" href="#use-person-and-persname-to-represent-persons-and-in-text-references-to-such-persons">Use &lt;person&gt; and &lt;persName&gt; to represent persons and in-text references to such persons</a></li>
 <li><a class="reference internal" href="#use-place-and-placename-to-represent-place-and-in-text-references-to-such-places">Use &lt;place&gt; and &lt;placeName&gt; to represent place and in-text references to such places</a></li>
@@ -48,8 +48,8 @@
 <li><a class="reference external" href="listRelation">Encode relationships between people within</a></li>
 <li><a class="reference external" href="place">Use &lt;event&gt; for events, either within &lt;person&gt; or</a></li>
 </ol>
-<div class="section" id="provide-all-tei-elements-with-unique-identifiers-xml-id">
-<h2>Provide all TEI elements with unique identifiers (<code class="code docutils literal notranslate"><span class="pre">&#64;xml:id</span></code>)<a class="headerlink" href="#provide-all-tei-elements-with-unique-identifiers-xml-id" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="provide-tei-elements-with-unique-identifiers-xml-id">
+<h2>Provide TEI elements with unique identifiers (<code class="code docutils literal notranslate"><span class="pre">&#64;xml:id</span></code>)<a class="headerlink" href="#provide-tei-elements-with-unique-identifiers-xml-id" title="Permalink to this headline">¶</a></h2>
 <p>Each entity within a linked data graph is uniquely represented by a URI. LIFT transforms a TEI element unique identifier (defined through the attribute <code class="code docutils literal notranslate"><span class="pre">&#64;xml:id</span></code>) into an entity URI by concatenating the TEI document base URI (defined on the <code class="code docutils literal notranslate"><span class="pre">&lt;TEI&gt;</span></code> element through the attribute <code class="code docutils literal notranslate"><span class="pre">&#64;xml:base</span></code>) with the element unique identifier.</p>
 <p>For example, from this TEI input</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;TEI</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.tei-c.org/ns/1.0&quot;</span> <span class="na">xml:base=</span><span class="s">&quot;https://example.org&quot;</span><span class="nt">&gt;</span>
@@ -206,7 +206,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Prepare your TEI file</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#provide-all-tei-elements-with-unique-identifiers-xml-id">Provide all TEI elements with unique identifiers (<code class="code docutils literal notranslate"><span class="pre">&#64;xml:id</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#provide-tei-elements-with-unique-identifiers-xml-id">Provide TEI elements with unique identifiers (<code class="code docutils literal notranslate"><span class="pre">&#64;xml:id</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#include-at-least-a-minimal-tei-header">Include (at least) a minimal TEI header</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#use-person-and-persname-to-represent-persons-and-in-text-references-to-such-persons">Use &lt;person&gt; and &lt;persName&gt; to represent persons and in-text references to such persons</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#use-place-and-placename-to-represent-place-and-in-text-references-to-such-places">Use &lt;place&gt; and &lt;placeName&gt; to represent place and in-text references to such places</a></li>
