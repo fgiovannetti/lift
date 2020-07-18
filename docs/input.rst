@@ -10,7 +10,7 @@ Despite its important advantages, such a heterogeneity makes it challenging to d
 
 On this account, in order to ensure a correct functioning of the transformation script, it is necessary to follow specific encoding guidelines to prepare the input TEI XML document for transformation via LIFT:
 
-1. `Provide all TEI elements with unique identifiers (@xml:id)`_
+1. `Provide TEI elements with unique identifiers (@xml:id)`_
 2. `Include (at least) a minimal TEI header`_
 3. `Use <person> and <persName> to represent persons and in-text references to such persons`_
 4. `Use <place> and <placeName> to represent place and in-text references to such places`_
@@ -19,7 +19,7 @@ On this account, in order to ensure a correct functioning of the transformation 
 7. `Use <event> for events, either within <person> or <place>`_
 
 
-Provide all TEI elements with unique identifiers (:code:`@xml:id`) 
+Provide TEI elements with unique identifiers (:code:`@xml:id`) 
 ---------------------------------------------------------------------
 
 Each entity within a linked data graph is uniquely represented by a URI. LIFT transforms a TEI element unique identifier (defined through the attribute :code:`@xml:id`) into an entity URI by concatenating the TEI document base URI (defined on the :code:`<TEI>` element through the attribute :code:`@xml:base`) with the element unique identifier. 
