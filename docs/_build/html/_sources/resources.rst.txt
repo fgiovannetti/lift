@@ -11,6 +11,25 @@ Further readings and resources
 Tutorials
 ---------
 
+
+Understanding linked open data and the Semantic Web
+===================================================
+
+- Tim Berners-Lee, "Linked Data", *Design Issues for the World Wide Web* (2006), `<https://www.w3.org/DesignIssues/LinkedData.html>`_.
+
+- Jonathan Blaney, "Introduction to the Principles of Linked Open Data," *The Programming Historian* 6 (2017), `<https://doi.org/10.46430/phen0068>`_.
+
+
+Using the command line
+======================
+
+- (for Mac/Linux) Ian Milligan and James Baker, "Introduction to the Bash Command Line", *The Programming Historian* 3 (2014), `<https://doi.org/10.46430/phen0037>`_.
+
+- (for Windows) Ted Dawson, "Introduction to the Windows Command Line with PowerShell", *The Programming Historian* 5 (2016), `<https://doi.org/10.46430/phen0054>`_.
+
+- W3C Working Group Note, *RDF 1.1 Primer* (24 June 2014), `<https://www.w3.org/TR/rdf11-primer/>`_.
+
+
 Programming with Python for the Humanities
 ==========================================
 
@@ -20,32 +39,34 @@ Programming with Python for the Humanities
 
 - Folgert Karsdorp, Maarten van Gompel and Matt Munson, *Python Programming for the Humanities* (last updated 2017), `<https://www.karsdorp.io/python-course/>`_.
 
-Using the command line
-======================
 
-- (for Mac/Linux) Ian Milligan and James Baker, "Introduction to the Bash Command Line", *The Programming Historian* 3 (2014), `<https://doi.org/10.46430/phen0037>`_.
-
-- (for Windows) Ted Dawson, "Introduction to the Windows Command Line with PowerShell", *The Programming Historian* 5 (2016), `<https://doi.org/10.46430/phen0054>`_.
+Suggested readings
+------------------
 
 
-Understanding linked open data and the Semantic Web
-===================================================
+Linked data and the TEI
+=======================
 
-- Tim Berners-Lee, "Linked Data", *Design Issues for the World Wide Web* (2006), `<https://www.w3.org/DesignIssues/LinkedData.html>`_.
+- Fabio Ciotti and Francesca Tomasi, “Formal Ontologies, Linked Data, and TEI Semantics”, *Journal of the Text Encoding Initiative* 9 (2016), `<https://doi.org/10.4000/jtei.1480>`_.
 
-- Jonathan Blaney, "Introduction to the Principles of Linked Open Data," *The Programming Historian* 6 (2017), `<https://doi.org/10.46430/phen0068>`_.
+- Marilena Daquino, Francesca Giovannetti and Francesca Tomasi, “Linked Data per le edizioni scientifiche digitali. Il workflow di pubblicazione dell’edizione semantica del quaderno di appunti di Paolo Bufalini”, *Umanistica Digitale* 7 (2019), `<https://doi.org/10.6092/issn.2532-8816/9091>`_.
 
-- W3C Working Group Note, *RDF 1.1 Primer* (24 June 2014), `<https://www.w3.org/TR/rdf11-primer/>`_.
+- Eide, Ø. “Ontologies, Data Modeling, and TEI”, *Journal of the Text Encoding Initiative* 8 (2014). `<https://doi.org/10.4000/jtei.1191>`_.
 
 
+Resources
+---------
+
+Pierre-Yves Vandenbussche, Bernard Vatant et al., *Linked Open Vocabularies (LOV): A gateway to reusable semantic vocabularies on the Web*, `<https://lov.linkeddata.es/dataset/lov/>`_.
+
+María Poveda-Villalón, Asunción Gómez-Pérez and Mari Carmen Suárez-Figueroa, "OOPS!(Ontology Pitfall Scanner!): An on-line tool for ontology evaluation", *International Journal on Semantic Web and Information Systems (IJSWIS)* 10.2 (2014): 7-34, `<http://oops.linkeddata.es/>`_.
 
 
 .. https://lod-cloud.net/
 .. [Andrews 2013] Andrews, T. L. “The Third Way: Philology and Critical Edition in the Digital Age”, The Journal of the European Society for Textual Scholarship (2013): 61-76. https://doi.org/10.7892/boris.43071
-.. [Berners-Lee 2006] Berners-Lee, T. Design issues: Linked data (2006). https://www.w3.org/DesignIssues/LinkedData.html 
+
 .. [Bekiari et al. 2015] Bekiari, C., Doerr, M., LeBoeuf, P., Riva, P. (eds) Definition of FRBRoo: A Conceptual Model for Bibliographic Information in Object-Oriented Formalism (2015).
-.. [Ciotti and Tomasi 2016] Ciotti, F., Tomasi, F. “Formal Ontologies, Linked Data, and TEI Semantics”, Journal of the Text Encoding Initiative, 9 (2016). https://doi.org/10.4000/jtei.1480
-.. [Daquino et al. 2019] Daquino, M., Giovannetti, F., Tomasi. “Linked Data per le edizioni scientifiche digitali. Il workflow di pubblicazione dell’edizione semantica del quaderno di appunti di Paolo Bufalini”, Umanistica Digitale, 7 (2019). 
+
 .. [Crofts et al. 2011] Crofts, N., Doerr, M., Gill, T., Stead, S., Stiff, M., eds. CIDOC CRM: CIDOC Conceptual Reference Model (2011). http://www.cidoc-crm.org/cidoc-crm/
 .. [Daquino et al. 2014] Daquino, M., Peroni, S., Tomasi, F., Vitali, F. “Political Roles Ontology (PRoles): Enhancing archival authority records through Semantic Web technologies”, Procedia Computer Science, 38, (2014): 60–67.
 .. [DeRose et al. 1990] DeRose, S. J., Durand, D. G., Mylonas, E., Renear, A. H. “What is text, really?”, Journal of Computing in Higher Education, 1(2) (1990): 3–26.
