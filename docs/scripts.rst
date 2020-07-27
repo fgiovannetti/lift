@@ -16,7 +16,7 @@ You can either read a non-interactive preview of the notebook from the link abov
 
 1. Open your Terminal or Prompt. If you already have Python installed, you can run :code:`pip install notebook` (visit `<https://jupyter.org/install>`_ for further help); 
 
-2. `Download the LIFT notebook <https://github.com/fgiovannetti/lift/blob/master/jupyter_nb/TEItoRDF.ipynb>`_. 
+2. `Download LIFT notebook <https://github.com/fgiovannetti/lift/blob/master/jupyter_nb/TEItoRDF.ipynb>`_. 
 
 3. Go back to Terminal or Prompt and navigate to the folder where the notebook has been saved;
 
@@ -30,9 +30,9 @@ Modify LIFT's scripts and/or run them locally
 
 After reading the Jupyter notebook, you should be able to modify LIFT's scripts to meet your project needs. For example, you may adapt the way LIFT extract information from the input TEI file so to avoid modifying your original TEI document, or you may enrich the transformation with new RDF triples.
 
-To modify LIFT's transformations and/or run them locally on your machine:
+To modify LIFT transformations and/or run them locally on your machine:
 
-1. Go to `LIFT's repository on Github <https://github.com/fgiovannetti/lift/tree/master/TEI2RDF_scripts>`_ and download the scripts; 
+1. Go to `LIFT repository on Github <https://github.com/fgiovannetti/lift/tree/master/TEI2RDF_scripts>`_ and download the scripts; 
 
 2. You can then open and change the scripts with any code editor. Remeber to update the path to the XML document to be parsed (modify the line :code:`tree = etree.parse('input.xml')` on top of the script).
 
