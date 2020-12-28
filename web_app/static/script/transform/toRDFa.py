@@ -125,7 +125,10 @@ for node in nodes:
                 quot.text = '"'
             val.text = value
             semic = etree.SubElement(newroot, 'span')
-            semic.text = ' ;' 
+            if child == children[-1]:
+                semic.text = ' .'
+            else:
+                semic.text = ' ;'
             etree.SubElement(newroot, 'br')
 
     v.write(etree.tostring(newroot))
