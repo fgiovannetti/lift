@@ -94,7 +94,7 @@ All in-text occurrences of personal names must be encoded using :code:`<persName
 	</TEI>
 
 
- Persons can be grouped using :code:`<listPerson>`. Each :code:`<listPerson>` (or, alternatively, each :code:`<person>` element if :code:`<listPerson>` is not present) can be assigned a :code:`@type` and/or :code:`@corresp` containing a short description of the group or individual. In particular, use :code:`@type` for free-text descriptions (if using multi-word descriptions, please separate each word with an hyphen) or :code:`@corresp` to provide a URI from a controlled vocabulary. For example:
+Persons can be grouped using :code:`<listPerson>`. Each :code:`<listPerson>` (or, alternatively, each :code:`<person>` element if :code:`<listPerson>` is not present) can be assigned a :code:`@type` and/or :code:`@corresp` containing a short description of the group or individual. In particular, use :code:`@type` for free-text descriptions (if using multi-word descriptions, please separate each word with an hyphen) or :code:`@corresp` to provide a URI from a controlled vocabulary. For example:
 
 .. code-block:: xml
 
