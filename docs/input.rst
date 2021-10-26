@@ -1,26 +1,26 @@
 .. _input:
 
-Prepare your TEI file
-=====================
+Prepare your TEI document
+==================================================
 
 
-TEI allows different ways to encode the same textual features. For example, it is possible to validly markup a person's name using either the tag :code:`<persName>`, or the tag :code:`<name>`, or even the tag :code:`<rs>` (cf. |TEI Guidelines, 13. Names, Dates, People, and Places|).
+The TEI standard allows for multiple ways to encode the same textual features. For example, you can use the tag :code:`<persName>`, the tag :code:`<name>`, or even the tag :code:`<rs>` to markup a personal name (cf. |TEI Guidelines, 13. Names, Dates, People, and Places|).
 
-Such a characteristic of the TEI has the advantage of flexibility, but makes the creation of a universal TEI-to-RDF transformation script a complex  task. This is the reasong that this documentation provides a set of encoding guidelines aimed at ensuring a smooth TEI-to-RDF transformation via LIFT. In particular, in order for LIFT to work on your TEI document, you must follow these simple rules:
+This TEI feature has the advantage of flexibility, but it makes creating a universal TEI-to-RDF transformation script a difficult task. This is why this documentation includes a set of encoding guidelines designed to ensure a smooth TEI-to-RDF transformation via LIFT. In particular, in order for LIFT to work on your TEI document, you must adhere to the following simple guidelines:
 
-1. `Provide TEI elements with unique identifiers (@xml:id)`_
-2. `Include (at least) a minimal TEI header`_
-3. `Use <person> and <persName> to represent persons and in-text references to such persons`_
-4. `Use <place> and <placeName> to represent place and in-text references to such places`_
-5. `Assign a @sameAs attribute to each of your real-world entities`_
-6. `Encode relationships between persons within a <listRelation> element`_
-7. `Use <event> to represent events, either within a <person> or a <place> element`_
+1. `Provide TEI elements with unique identifiers using the @xml:id attribute`_;
+2. `Provide an at least minimal TEI header`_;
+3. `Use <person> and <persName> to represent persons and in-text references to such persons, respectively`_;
+4. `Use <place> and <placeName> to represent places and in-text references to such places, respectively`_;
+5. `Assign a @sameAs attribute to each real-world entity`_;
+6. `Encode relationships between persons within <listRelation>`_;
+7. `Use <event> to represent events, either within <person> or <place>`_.
 
 
-Provide TEI elements with unique identifiers (@xml:id) 
+Provide TEI elements with unique identifiers using the @xml:id attribute 
 ---------------------------------------------------------------------
 
-Each entity of a linked data graph (e.g. a person, a place, a literary work, etc.) is represented by a unique URI. LIFT leverages @xml:id attributes to build a unique URI for the element. To do this, LIFT concatenates the value of the attribute @xml:base assigned to the <TEI> element on top of the TEI document with the value of the @xml:id attribute assigned to the element. For example, this TEI encoding
+A unique URI must be assigned to each entity of a linked data graph (for example, a person, a place, a literary work, etc.). LIFT uses @xml:id attributes to create unique URIs. To accomplish this, LIFT concatenates the value of the attribute @xml:base attribute of the <TEI> element is concatenated with the value of the @xml:id attribute of the element. For example, the element below representing a person
 
 .. code-block:: xml
 
@@ -30,48 +30,49 @@ Each entity of a linked data graph (e.g. a person, a place, a literary work, etc
 		...
 	</TEI>
 
-will result in the following unique URI: 
+will be assigned the following URI: 
 
 .. code-block:: xml
 
 <https://example.org/person/socr>
 
-A couple of points to consider:
 
-- The value of the attribute @xml:base should be registered as a permanent URL (e.g. through services such as `w3id.org <https://w3id.org>`_). Check the |W3C Permanent Identifier Community Group| for more information on how to register your edition URL.  
+Note that the value of your @xml:base attribute should be registered as a permanent URL (i.e. through services such as `w3id.org <https://w3id.org>`_). Check the |W3C Permanent Identifier Community Group| for more information on how to register your URL. 
 
-- If your TEI document does not already feature unique identifiers, you can run |this XSLT transformation| on your document. The script, originally provided by Charlotte Tupman for the |SAWS project|, creates a unique identifier for each element where an :code:`@xml:id` is not already present. After downloading the stylesheet to the same folder where your TEI document is, you can run the transformation via xsltproc. You can check this `tutorial <http://fhoerni.free.fr/comp/xslt.html>`_ for detailed instructions about the process (last accessed 2020-07-24).
+If your TEI document lacks unique identifiers, you can use Charlotte Tupman's |XSLT transformation stylesheet| (written for |SAWS|), which generates a unique identifier for each element that has no :code:`@xml:id`. You can run the transformation using `xsltproc <http://xmlsoft.org/XSLT/xsltproc2.html>`_ after downloading the stylesheet to the same folder as your TEI document. You can look at this `tutorial <http://fhoerni.free.fr/comp/xslt.html>`_ for detailed instructions about the process (last accessed 2021-10-25).
 
 
-Include (at least) a minimal TEI header
+Provide an at least minimal TEI header
 -----------------------------------------------------------------------------------------
 
-Your TEI header should at least comprise the minimal recommended elements, as shown below:
+Your TEI header should comprise, at least, the minimal recommended elements as shown below:
 
 .. code-block:: xml
 
 	<teiHeader>
 		<fileDesc>
 			<titleStmt>
-				<title><!-- title of the resource --></title>
-				<author><!-- author of the resource --></author>
+				<title><!-- Title of the resource --></title>
+				<author><!-- Author of the resource --></author>
 			</titleStmt>
 			<publicationStmt>
-				<p><!-- Information about distribution of the resource --></p>
+				<p><!-- Information about the distribution of the resource --></p>
 			</publicationStmt>
 			<sourceDesc>
-				<p><!-- Information about source from which the resource derives --></p>
+				<p><!-- Information about the source from which the resource derives --></p>
 			</sourceDesc>
 		</fileDesc>
 	</teiHeader>
 
 
-Use <person> and <persName> to represent persons and in-text references to such persons
+Use <person> and <persName> to represent persons and in-text references to such persons, respectively
 -----------------------------------------------------------------------------------------
 
-All persons of the document must be described in the TEI header within :code:`<person>` elements, to which an @xml:id must be assigned. It is possible to provide a normalized form of each person's name by nesting a <persName> element containing the normalized name within <person>. You can also provide multiple normalizations, one for each language (to specify the language use the @xml:lang attribute and a value from the |ISO 639 list| of language codes).
+Each person mentioned in the TEI document must be described in the TEI header within a :code:`<person>` element to which an :code:`@xml:id` has been assigned. 
 
-All in-text occurrences of personal names must be encoded using :code:`<persName>` elements. The attribute :code:`@ref` should be used on the element to relate each name to the corresponding person (via the person's @xml:id). For example:
+It is possible to provide a normalized form of each person's name by nesting a :code:`<persName>` element containing the normalized name within :code:`<person>`. You can provide multiple normalizations, e.g. in different languages (to specify the language use the :code:`@xml:lang` attribute and a value from the |ISO 639 list| of language codes).
+
+All in-text occurrences of personal names must be encoded using :code:`<persName>`. The attribute :code:`@ref` should be used on the element to relate each name to the corresponding person (via the person's :code:`@xml:id`). For example:
 
 
 .. code-block:: xml
@@ -92,7 +93,7 @@ All in-text occurrences of personal names must be encoded using :code:`<persName
 		</text>
 	</TEI>
 
-Sets of persons can be nested within a :code:`<listPerson>` element. The attributes @type and/or @corresp can be assigned to each <listPerson> (or, alternatively, to the single <person> if a <listPerson> is not present) to provide a short description of the group or individual: in particular, use the attribute @type for free-text descriptions (separate each word using an hyphen); or use the attribute @corresp to provide a URI from a controlled vocabulary. For example:
+ Persons can be grouped using :code:`<listPerson>`. Each :code:`<listPerson>` (or, alternatively, each :code:`<person>` element if :code:`<listPerson>` is not present) can be assigned a :code:`@type` and/or :code:`@corresp` containing a short description of the group or individual. In particular, use :code:`@type` for free-text descriptions (if using multi-word descriptions, please separate each word with an hyphen) or :code:`@corresp` to provide a URI from a controlled vocabulary. For example:
 
 .. code-block:: xml
 
@@ -101,10 +102,10 @@ Sets of persons can be nested within a :code:`<listPerson>` element. The attribu
 		...
 
 
-Use <place> and <placeName> to represent place and in-text references to such places
+Use <place> and <placeName> to represent places and in-text references to such places, respectively
 -----------------------------------------------------------------------------------------
 
-Places follow similar rules to persons. For example:
+The guidelines for encoding persons apply to places as well. For example:
 
 .. code-block:: xml
 
@@ -123,24 +124,24 @@ Places follow similar rules to persons. For example:
 		</text>
 	</TEI>
 
-Assign a @sameAs attribute to each of your real-world entities
+Assign a @sameAs attribute to each real-world entity
 -----------------------------------------------------------------------------------------
 
-By attributing a @sameAs attribute to your entities, you can disambiguate them by creating connections with external authority files or datasets, such as |VIAF|, |Worldcat|, and the |Library of Congress|. 
+By assigning a @sameAs attribute to your entities, you can disambiguate them by connecting them to external authority files, such as |VIAF|, |Worldcat|, or the |Library of Congress|. 
 
-Provide a URI in a @sameAs attribute. You can provide multiple URIs, each separated by a whitespace. For example:
+Provide a URI in a :code:`@sameAs` attribute. You can supply multiple URIs, separated by a whitespace. For example:
 
 .. code-block:: xml
 	
 	<person xml:id="Socr" sameAs="http://viaf.org/viaf/88039167 http://id.loc.gov/rwo/agents/n79055329">
 
 
-Encode relationships between persons within a <listRelation> element
+Encode relationships between persons within <listRelation>
 -----------------------------------------------------------------------------------------
 
-Use the element :code:`<relation>` nested within a :code:`<listRelation>` to markup relationships between persons. Note that :code:`<listRelation>` must be a child element of :code:`<listPerson>`. 
+Use a series of :code:`<relation>` elements nested within :code:`<listRelation>` to markup relationships between persons in the TEI header. Note that :code:`<listRelation>` must be a child element of :code:`<listPerson>`. 
 
-For unidirectional relationships (e.g. Socrates has student Plato), use the attributes :code:`@active` and :code:`@passive` to express the subject and the object of the relationship respectively; for bidirectional relationships (e.g. Plato has colleague Xenophon), use the attribute :code:`@mutual` . It is possible to represent a mutual relationship involving multiple persons by declaring more than one value for the @mutual attribute. Values must be separated by whitespaces. Finally, use the @name attribute to express the nature of the relationship. You can take terms from |AgRelOn|, the Agent Relationship Ontology. For example:
+In particular, for unidirectional relationships (e.g. 'Socrates has student Plato') use the attributes :code:`@active` and :code:`@passive` to express the subject and the object of the relationship respectively; for bidirectional relationships (e.g. 'Plato has colleague Xenophon') use the attribute :code:`@mutual`. It is possible to represent a mutual relationship involving multiple persons by declaring more than one value for the :code:`@mutual` attribute. Multiple values must be separated by whitespaces. Finally, use the :code:`@name` attribute to express the nature of the relationship. You can reuse terms from |AgRelOn|, the Agent Relationship Ontology. For example:
 
 .. code-block:: xml
 
@@ -149,20 +150,20 @@ For unidirectional relationships (e.g. Socrates has student Plato), use the attr
 		<relation xml:id="rel02" name="hasColleague" mutual="#plat #xen"/>
 	</listRelation>
 
-Use <event> to represent events, either within a <person> or a <place> element
+Use <event> to represent events, either within <person> or <place>
 ----------------------------------------------------------------------------------------
 
-It is possible to describe events related to a particular person or place. Such a description should be nested within the relevant <person> or <place> element. 
+It is possible to describe events that occur in relation to a specific person or place. Such descriptions should be nested within the corresponding <person> or <place> elements. 
 
-The element :code:`<event>` contains the entire account of the event. The attributes :code:`@type` and :code:`@corresp` can be used to provide a free-text label or a URI respectively.
+The element :code:`<event>` contains the description of the event. The attributes :code:`@type` and :code:`@corresp` can be assigned to :code:`<event>` to provide a free-text label or a URI, respectively.
 
-The date of the event can be provided in a :code:`@when` or :code:`@from/@to` attribute. Date should be represented according to |ISO 8601|.
+The date of the event must be recorded in :code:`@when` or :code:`@from/@to` attributes. Dates should be represented according to the |ISO 8601| standard.
 
-A :code:`<label>` can be used to provide a short textual description of the event, while a :code:`<desc>` can contain the extended account of the event, including personal names, place names, dates (encoded using the :code:`<date>` element).
+A :code:`<label>` can be used to provide a short textual description of the event, while a :code:`<desc>` can contain the extended account of the event, including personal names, place names, and dates (encoded using the :code:`<date>` element).
 
-It is possible to specify the role that the person held in the event using the attribute :code:`@role` and/or using the attribute :code:`@corresp` on :code:`<persName>`. The attribute :code:`@corresp` should only contain a URI for the role.  
+It is possible to specify the role held by the person in the event using the attribute :code:`@role` and/or using the attribute :code:`@corresp` on :code:`<persName>`. The attribute :code:`@corresp` should only contain a URI representing the role.  
 
-Furthermore, if there exist a primary or secondary source for the event, the element :code:`<bibl>` can be used to express it (either as a child of :code:`<desc>` or as a direct child of :code:`<event>`). :code:`<bibl>` may contain information about the :code:`<author>`, the :code:`<title>` and the :code:`<date>` of publication. A :code:`@sameAs` can be attributed to the :code:`<bibl>`.
+Furthermore, if there exist a primary or secondary source about the event, the element :code:`<bibl>` can be used to express it (either as a child of :code:`<desc>` or as a direct child of :code:`<event>`). The :code:`<bibl>` element may contain information about the :code:`<author>`, the :code:`<title>` and the :code:`<date>` of publication of the source. A :code:`@sameAs` can be associated to :code:`<bibl>`.
 
 .. FRBR
 
@@ -187,7 +188,7 @@ For example:
 Full example
 ------------
 
-You can dowload a TEI XML pseudo-edition featuring all the examples presented above from |this link|. 
+You can download a TEI XML pseudo-edition featuring all of the examples presented above from |this link|. 
 
 .. All links
 
@@ -195,11 +196,11 @@ You can dowload a TEI XML pseudo-edition featuring all the examples presented ab
 
    <a href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html" target="_blank">TEI Guidelines, 13. Names, Dates, People, and Places</a>
 
-.. |SAWS project| raw:: html
+.. |SAWS| raw:: html
 
 	<a href="http://www.ancientwisdoms.ac.uk" target="_blank">SAWS project</a>
 
-.. |this XSLT transformation| raw:: html
+.. |XSLT transformation stylesheet| raw:: html
 
 	<a href="https://github.com/fgiovannetti/lift/blob/master/TEI2RDF_scripts/add_ids_to_elements.xsl" target="_blank">this XSLT transformation</a>
 

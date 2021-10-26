@@ -3,40 +3,39 @@
 How the scripts work
 ===============================
 
-LIFT contains a set of Python 2.7 scripts. The scripts use the Python library `lxml <https://lxml.de>`_ to find and extract relevant data from the input TEI document, and the Python library `RDFLib <https://rdflib.readthedocs.io/en/stable>`_ to create RDF triples and merge them into a single knowledge graph.
+LIFT features a set of five transformation scripts written in Python 2.7. LIFT leverages two libraries:
 
-You can apply any of the scripts to your TEI document. If you opt for using the scripts as are, make sure you read LIFT encoding guidelines at :ref:`input` and update your input TEI document accordingly (unless you modify them, the scripts will look for specific constructs in your input TEI document which will serve as a basis for creating RDF triples).
+* `lxml <https://lxml.de>`_ to find and select the relevant TEI constructs from the input XML document;
+* `RDFLib <https://rdflib.readthedocs.io/en/stable>`_ to create the RDF triples forming the knowledge graph.
 
-TEI to RDF: a Jupyter notebook with line-by-line explanations of LIFT's scripts
+Any of the scripts can be applied to your TEI document. If you use the scripts as is, make sure to read LIFT's encoding guidelines at :ref:`input` and update your input TEI document accordingly.
+
+A Jupyter notebook walking through LIFT's TEI to RDF transformation line-by-line
 -----------------------------------------------------------------------------------------------
 
-The previous section, :ref:`output`, shows the input TEI constructs next to the corresponding output RDF statements. A Jupyter notebook, available from `<https://nbviewer.jupyter.org/github/fgiovannetti/lift/blob/master/jupyter_nb/TEItoRDF.ipynb>`_, explains the code of the scripts line-by-line. 
+The section :ref:`output` displays the input TEI constructs next to the output RDF statements. A Jupyter notebook, available from `<https://nbviewer.jupyter.org/github/fgiovannetti/lift/blob/master/jupyter_nb/TEItoRDF.ipynb>`_, walks you through the scripts line-by-line. 
 
-You can either read a non-interactive preview of the notebook from the link above or install Jupyer to access the notebook interactively. The second option assumes some familiarity with the command line or check the tutorials by the `Programming Historian <https://programminghistorian.org/>`_ (for `Windows here <https://programminghistorian.org/en/lessons/intro-to-powershell>`_, or `Mac/Linux here <https://programminghistorian.org/en/lessons/intro-to-bash>`_): 
+You can read a non-interactive preview of the notebook by following the link above, or you can install Jupyer to access the notebook interactively. The second option requires a minimum familiarity with the command line (the `Programming Historian <https://programminghistorian.org/>`_ provides excellent introductory tutorials for `Windows <https://programminghistorian.org/en/lessons/intro-to-powershell>`_ as well as `Mac/Linux <https://programminghistorian.org/en/lessons/intro-to-bash>`_ users).
 
-1. Open your Terminal or Prompt. If you already have Python installed, you can run :code:`pip install notebook` (visit `<https://jupyter.org/install>`_ for further help); 
+In order to access the notebook interactively
 
-2. `Download LIFT notebook <https://github.com/fgiovannetti/lift/blob/master/jupyter_nb/TEItoRDF.ipynb>`_. 
-
-3. Go back to Terminal or Prompt and navigate to the folder where the notebook has been saved;
-
-3. Run :code:`juptyter notebook` to launch a web browser with the Jupyter Notebook applications;
-
-4. On the web browser, click on TEItoRDF.ipynb to open the notebook interactively.
+1. open Terminal or Prompt. If Python is already installed on your machine, run :code:`pip install notebook` (visit `<https://jupyter.org/install>`_ for further help); 
+2. `download the notebook <https://github.com/fgiovannetti/lift/blob/master/jupyter_nb/TEItoRDF.ipynb>`_;
+3. in Terminal or Prompt navigate to the folder where the notebook was saved;
+4. run :code:`juptyter notebook` to open Jupyter on your browser;
+5. from the browser, click on TEItoRDF.ipynb to access the notebook.
 
 
-Modify LIFT's scripts and/or run them locally
+Modify the scripts and/or run them locally
 -----------------------------------------------------------------------------------------------
 
-After reading the Jupyter notebook, you should be able to modify LIFT's scripts to meet your project needs. For example, you may adapt the way LIFT extract information from the input TEI file so to avoid modifying your original TEI document, or you may enrich the transformation with new RDF triples.
+After reading the notebook, you should be able to modify LIFT's scripts to meet the needs of your project. You can, for example, change how LIFT extracts information from the input file to avoid modifying your original TEI encoding, or you can enrich the knowledge graph with new RDF triples.
 
-To modify LIFT transformations and/or run them locally on your machine:
+To modify LIFT the scripts and/or run them locally
 
-1. Go to `LIFT repository on Github <https://github.com/fgiovannetti/lift/tree/master/TEI2RDF_scripts>`_ and download the scripts; 
-
-2. You can then open and change the scripts with any code editor. Remeber to update the path to the XML document to be parsed (modify the line :code:`tree = etree.parse('input.xml')` on top of the script).
-
-3. In order to run the transformation locally
-	1. Open your Terminal or Prompt;
-	2. Navigate to the folder where the scripts have been saved;
-	3. Run :code:`python the_name_of_your_script.py`.
+1. go to `LIFT's repository on Github <https://github.com/fgiovannetti/lift/tree/master/TEI2RDF_scripts>`_ and download the scripts; 
+2. open and change the scripts with an editor of your choice (remeber to update the path to the input TEI document (modify the line :code:`tree = etree.parse('input.xml')` at the very beginning of the script);
+3. to run the transformation locally
+	1. open your Terminal or Prompt;
+	2. navigate to the folder where the scripts are;
+	3. run :code:`python [name-of-your-script].py`.

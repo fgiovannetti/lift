@@ -5,14 +5,14 @@
 Further readings and resources
 ==============================
 
-*Note: this section gets updated on a regular basis*
+*Note: this section is updated on a regular basis*
 
 
 Tutorials
 ---------
 
 
-Understanding linked open data and the Semantic Web
+Understanding linked open data and the semantic web
 ===================================================
 
 - Tim Berners-Lee, "Linked Data", *Design Issues for the World Wide Web* (2006), `<https://www.w3.org/DesignIssues/LinkedData.html>`_.
@@ -54,7 +54,7 @@ Linked data and the TEI
 - Eide, Ø. “Ontologies, Data Modeling, and TEI”, *Journal of the Text Encoding Initiative* 8 (2014). `<https://doi.org/10.4000/jtei.1191>`_.
 
 
-Resources
+Useful resources
 ---------
 
 Pierre-Yves Vandenbussche, Bernard Vatant et al., *Linked Open Vocabularies (LOV): A gateway to reusable semantic vocabularies on the Web*, `<https://lov.linkeddata.es/dataset/lov/>`_.
