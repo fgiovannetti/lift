@@ -34,7 +34,7 @@ will be assigned the following URI:
 
 .. code-block:: xml
 
-<https://example.org/person/socr>
+	<https://example.org/person/socr>
 
 
 Note that the value of your @xml:base attribute should be registered as a permanent URL (i.e. through services such as `w3id.org <https://w3id.org>`_). Check the |W3C Permanent Identifier Community Group| for more information on how to register your URL. 
@@ -79,19 +79,20 @@ All in-text occurrences of personal names must be encoded using :code:`<persName
 
 	<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="https://example.org">
 		<teiHeader>
-		...
+			...
 			<person xml:id="socr">
 				<persName xml:lang="en">Socrates</persName>
 				<persName xml:lang="el">Σωκρᾰ́της</persName>
 			</person>
-		...
+			...
 		</teiHeader>
 		<text>
-		...
+			...
 			<persName ref="#socr">Socrates</persName>
-		...
+			...
 		</text>
 	</TEI>
+
 
  Persons can be grouped using :code:`<listPerson>`. Each :code:`<listPerson>` (or, alternatively, each :code:`<person>` element if :code:`<listPerson>` is not present) can be assigned a :code:`@type` and/or :code:`@corresp` containing a short description of the group or individual. In particular, use :code:`@type` for free-text descriptions (if using multi-word descriptions, please separate each word with an hyphen) or :code:`@corresp` to provide a URI from a controlled vocabulary. For example:
 
