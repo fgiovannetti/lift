@@ -18,7 +18,7 @@ This TEI feature has the advantage of flexibility, but it makes creating a unive
 
 
 Provide TEI elements with unique identifiers using the @xml:id attribute 
----------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 A unique URI must be assigned to each entity of a linked data graph (for example, a person, a place, a literary work, etc.). LIFT uses @xml:id attributes to create unique URIs. To accomplish this, LIFT concatenates the value of the attribute @xml:base attribute of the <TEI> element is concatenated with the value of the @xml:id attribute of the element. For example, the element below representing a person
 
@@ -66,7 +66,7 @@ Your TEI header should comprise, at least, the minimal recommended elements as s
 
 
 Use <person> and <persName> to represent persons and in-text references to such persons, respectively
------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
 
 Each person mentioned in the TEI document must be described in the TEI header within a :code:`<person>` element to which an :code:`@xml:id` has been assigned. 
 
@@ -104,7 +104,7 @@ Persons can be grouped using :code:`<listPerson>`. Each :code:`<listPerson>` (or
 
 
 Use <place> and <placeName> to represent places and in-text references to such places, respectively
------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
 
 The guidelines for encoding persons apply to places as well. For example:
 
@@ -187,7 +187,7 @@ For example:
 .. critical apparatus (upcoming)
 
 Full example
-------------
+--------------------------------------
 
 You can download a TEI XML pseudo-edition featuring all of the examples presented above from |this link|. 
 
