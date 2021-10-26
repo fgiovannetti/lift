@@ -5,8 +5,6 @@
 Persons
 -----------
 
-Test
-
 .. code-block:: xml
 	:linenos:
 
@@ -164,20 +162,20 @@ Events
 .. code-block:: ttl
 	:linenos:
 
-	<https://example.org/person/Socr> a schema:Person ;
-    	pro:holdsRoleInTime <https://example.org/Socr-in-ev01> .
+	<https://example.org/person/Socr> a crm:E21_Person ;
+		pro:holdsRoleInTime <https://example.org/Socr-in-ev01> .
 
-    <https://example.org/rit/Socr-at-ev01> a pro:RoleInTime ;
+	<https://example.org/rit/Socr-at-ev01> a pro:RoleInTime ;
     	pro:relatesToEntity <https://example.org/event/ev01> ;
-    	pro:withRole <https://example.org/role/defendant> ;
-    	tvc:atTime <https://example.org/ev01-time> ;
-    	proles:relatesToPlace <https://example.org/place/Athens> .
+		pro:withRole <https://example.org/role/defendant> ;
+		tvc:atTime <https://example.org/ev01-time> ;
+		proles:relatesToPlace <https://example.org/place/Athens> .
 
-    <https://example.org/ev01-time> a <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> ;
-    	owl:hasIntervalEndDate "-0399"^^xsd:date ;
-    	owl:hasIntervalStartDate "-0399"^^xsd:date .
+	<https://example.org/ev01-time> a <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> ;
+		owl:hasIntervalEndDate "-0399"^^xsd:date ;
+		owl:hasIntervalStartDate "-0399"^^xsd:date .
 
-    <https://example.org/role/defendant> a pro:Role ;
-    	rdfs:label "defendant" ;
-    	owl:sameAs <http://wordnet-rdf.princeton.edu/id/09781524-n> .
+	<https://example.org/role/defendant> a pro:Role ;
+		rdfs:label "defendant" ;
+		owl:sameAs <http://wordnet-rdf.princeton.edu/id/09781524-n> .
 
