@@ -1,4 +1,4 @@
-.. _output:
+.. _output_old:
 
 The output RDF graph
 ============================
