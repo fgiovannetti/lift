@@ -73,8 +73,8 @@
   </teiHeader>
   <text>
     <body>
-      <p xml:id="para01">Some text mentioning <persName ref="#Plat">Plato</persName> here and <placeName ref="#Athens">Athens</placeName>.</p>
-      <p xml:id="para02">Some text mentioning <persName ref="#Aristot">Aristotle</persName> and <placeName ref="#Sparta">Sparta</placeName> here.</p>
+      <p xml:id="para01">Some text mentioning <persName ref="#Plat">Plato</persName> and <placeName ref="#Athens">Athens</placeName>.</p>
+      <p xml:id="para02">Some text mentioning <persName ref="#Aristot">Aristotle</persName> and <placeName ref="#Sparta">Sparta</placeName>.</p>
       <lg>
         <l xml:id="line01">Some text mentioning <persName ref="#Socr">Socrates</persName></l>
       </lg>

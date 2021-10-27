@@ -77,45 +77,49 @@ class transform():
 		opt = "%s" % (btn.transform)
 		if opt == "1-people":
 			execfile('static/script/transform/1-People.py')
-			execfile('static/script/transform/toRDFa.py')
+			#execfile('static/script/transform/toRDFa.py')
 			raise web.seeother('/viewer.html')
 		elif opt == "2-people_ev":
 			execfile('static/script/transform/2-People_Events.py')
-			execfile('static/script/transform/toRDFa.py')
+			#execfile('static/script/transform/toRDFa.py')
 			raise web.seeother('/viewer.html')
 		elif opt == "3-people_rel":
 			execfile('static/script/transform/3-People_Relations.py')
-			execfile('static/script/transform/toRDFa.py')
+			#execfile('static/script/transform/toRDFa.py')
 			raise web.seeother('/viewer.html')
 		elif opt == "4-places":
 			execfile('static/script/transform/4-Places.py')
-			execfile('static/script/transform/toRDFa.py')
+			#execfile('static/script/transform/toRDFa.py')
 			raise web.seeother('/viewer.html')
 		elif opt == "5-all":
 			execfile('static/script/transform/5-All.py')
-			execfile('static/script/transform/toRDFa.py')
+			#execfile('static/script/transform/toRDFa.py')
 			raise web.seeother('/viewer.html')
 		elif opt == "6-bibl":
 			execfile('static/script/transform/6-Bibl.py')
-			execfile('static/script/transform/toRDFa.py')
+			#execfile('static/script/transform/toRDFa.py')
 			raise web.seeother('/viewer.html')
 		elif opt == "7-critapp":
 			execfile('static/script/transform/7-CritApp.py')
-			execfile('static/script/transform/toRDFa.py')
+			#execfile('static/script/transform/toRDFa.py')
 			raise web.seeother('/viewer.html')
 		else:
 			raise web.seeother('/transform.html')		
 # Viewer
 class viewer(object):
 	def GET(self):
-		output_path = 'static/temp/output.html'
+		# output_path = 'static/temp/output.html'
+		output_path = 'static/temp/output.rdf'
 		if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-			bs = BeautifulSoup(open(output_path), 'html')
+			# bs = BeautifulSoup(open(output_path), 'html')
+			bs = BeautifulSoup(open(output_path), 'xml')
 			output = bs.prettify()
 			output = open(output_path, 'r').read()
 			return render.viewer(output)
 		else: 
 			return render.transform() # redirects user to upload form if there is no output file in temp folder 
+
+
 # class download(object):
 #def GET(self):
 #	download_path = 'static/temp/output.rdf'
@@ -125,6 +129,7 @@ class viewer(object):
 #		return open(output, 'rb'),read()
 #	else: 
 #		raise web.seeother('/transform.html') # redirects user to upload form if there is no output file in temp folder 
+
 if __name__ == "__main__":
 	app = web.application(urls, globals())
 	app.internalerror = web.debugerror

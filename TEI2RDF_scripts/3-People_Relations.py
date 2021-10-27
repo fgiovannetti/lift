@@ -27,7 +27,6 @@ frbroo = Namespace("http://iflastandards.info/ns/fr/frbr/frbroo/")
 pro = Namespace("http://purl.org/spar/pro/")
 proles = Namespace("http://www.essepuntato.it/2013/10/politicalroles/")
 prov = Namespace("http://www.w3.org/ns/prov#")
-schema = Namespace("https://schema.org/")
 tvc = Namespace("http://www.essepuntato.it/2012/04/tvc/")
 
 
@@ -38,7 +37,6 @@ g.bind("agrelon", agrelon)
 g.bind("crm", crm)
 g.bind("frbroo", frbroo)
 g.bind("dcterms", DCTERMS)
-g.bind("schema", schema)
 g.bind("owl", OWL)
 g.bind("pro", pro)
 g.bind("proles", proles)
@@ -65,7 +63,7 @@ for person in root.findall('.//tei:person', tei):
     person_ref = '#' + person_id
     
     # person 
-    g.add( (person_uri, RDF.type, schema.Person))
+    g.add( (person_uri, RDF.type, crm.E21_Person))
     
     # same as
     same_as = person.get('sameAs')
@@ -89,7 +87,7 @@ for person in root.findall('.//tei:person', tei):
     
     # person type
     listperson = person.find('./...', tei)
-    perstype = listperson.get('type')
+    perstype = listperson.get('type').replace('-',' ')
     perscorr = listperson.get('corresp')
     if perstype is not None:
         g.add( (person_uri, DCTERMS.description, Literal(perstype)))
@@ -163,3 +161,6 @@ g.serialize(destination="output.n3", format='n3')
 
 # N-triples output
 g.serialize(destination="output.nt", format='nt')
+
+# Json-ld output
+g.serialize(destination='output.jsonld', format='json-ld')

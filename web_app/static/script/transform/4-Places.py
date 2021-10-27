@@ -27,7 +27,6 @@ frbroo = Namespace("http://iflastandards.info/ns/fr/frbr/frbroo/")
 pro = Namespace("http://purl.org/spar/pro/")
 proles = Namespace("http://www.essepuntato.it/2013/10/politicalroles/")
 prov = Namespace("http://www.w3.org/ns/prov#")
-schema = Namespace("https://schema.org/")
 tvc = Namespace("http://www.essepuntato.it/2012/04/tvc/")
 
 
@@ -38,7 +37,6 @@ g.bind("agrelon", agrelon)
 g.bind("crm", crm)
 g.bind("frbroo", frbroo)
 g.bind("dcterms", DCTERMS)
-g.bind("schema", schema)
 g.bind("owl", OWL)
 g.bind("pro", pro)
 g.bind("proles", proles)
@@ -64,10 +62,10 @@ for place in root.findall('.//tei:place', tei):
     place_id = place.get('{http://www.w3.org/XML/1998/namespace}id')
     place_uri = URIRef(base_uri + '/place/' + place_id)
     place_ref = '#' + place_id
-
+    
     #place
     g.add( (place_uri, RDF.type, crm.E53_Place))
-
+    
     #place_sameas(place)
     same_as = place.get('sameAs').split()
     i = 0
@@ -114,3 +112,6 @@ g.serialize(destination="static/temp/output.n3", format='n3')
 
 # N-triples output
 g.serialize(destination="static/temp/output.nt", format='nt')
+
+# Json-ld output
+g.serialize(destination='static/temp/output.jsonld', format='json-ld')

@@ -28,24 +28,24 @@ $def with (output)
 					<li><a href="credit.html">Credits</a></li>
 				</ul>
 			</nav>
-			<div class="main">
-				<p class="instruction">Below is your linked open data graph (serialized in RDFa). <br/> You can download it to your computer by using the download box provided.</p>
-			</div>
+			<!-- <div class="main">
+				<p class="instruction">Below is your linked open data graph (serialized in Turtle). <br/> You can download it to your computer via the download box provided below.</p>
+			</div> -->
 			<div class="download">
-				<p class="instruction">Download here your linked data graph:</p>
+				<p class="instruction">Download your graph:</p>
 				<div id="myDropdown" class="dropdown-content">
 					<select name="download" onChange="download(this.value)">
 						<option>Select a serialization</option>
 						<option value="output.rdf">RDF XML</option>
 						<option value="output.nt">N-triples</option>
 						<option value="output.n3">Notation3</option>
-						<option value="output.html">HTML+RDFa</option>
+						<option value="output.jsonld">JSON-LD</option>
 					</select>
 				</div>
-				<p class="nb">Warning: download your graph before leaving this page to avoid losing your data.</p>
+				<p class="nb">Warning: to avoid losing your data, download your graph before leaving this page.</p>
 			</div>
 			<div class="viewer">
-				$:output
+				<!-- $:output -->
 			</div>
 		</div>
 		<footer>

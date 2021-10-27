@@ -26,7 +26,6 @@ frbroo = Namespace("http://iflastandards.info/ns/fr/frbr/frbroo/")
 pro = Namespace("http://purl.org/spar/pro/")
 proles = Namespace("http://www.essepuntato.it/2013/10/politicalroles/")
 prov = Namespace("http://www.w3.org/ns/prov#")
-schema = Namespace("https://schema.org/")
 tvc = Namespace("http://www.essepuntato.it/2012/04/tvc/")
 
 
@@ -37,7 +36,6 @@ g.bind("agrelon", agrelon)
 g.bind("crm", crm)
 g.bind("frbroo", frbroo)
 g.bind("dcterms", DCTERMS)
-g.bind("schema", schema)
 g.bind("owl", OWL)
 g.bind("pro", pro)
 g.bind("proles", proles)
@@ -62,10 +60,10 @@ for person in root.findall('.//tei:person', tei):
     person_id = person.get('{http://www.w3.org/XML/1998/namespace}id')
     person_uri = URIRef(base_uri + '/person/' + person_id)
     person_ref = '#' + person_id
-
+    
     # person 
-    g.add( (person_uri, RDF.type, schema.Person))
-
+    g.add( (person_uri, RDF.type, crm.E21_Person))
+    
     # same as
     same_as = person.get('sameAs')
     if same_as is not None:
@@ -75,7 +73,7 @@ for person in root.findall('.//tei:person', tei):
             same_as_uri = URIRef(same_as[i])
             g.add( (person_uri, OWL.sameAs, same_as_uri))
             i += 1
-
+    
     # person name
     persname = person.find('./tei:persName', tei)
     if persname is not None:
@@ -85,10 +83,10 @@ for person in root.findall('.//tei:person', tei):
             g.add( (person_uri, RDFS.label, Literal(label, lang=label_lang)))
         else:
             g.add( (person_uri, RDFS.label, Literal(label)))
-
+    
     # person type
     listperson = person.find('./...', tei)
-    perstype = listperson.get('type')
+    perstype = listperson.get('type').replace('-',' ')
     perscorr = listperson.get('corresp')
     if perstype is not None:
         g.add( (person_uri, DCTERMS.description, Literal(perstype)))
@@ -99,7 +97,7 @@ for person in root.findall('.//tei:person', tei):
 
     value = etree.tostring(person, pretty_print=True, method="xml")
     g.add( (person_uri, RDF.value, Literal(value, datatype=RDF.XMLLiteral)) )
-
+    
     # person references
     ref = './tei:text//tei:persName[@ref="#' + person_id + '"]'
     for referenced_person in root.findall(ref, tei):
@@ -138,7 +136,7 @@ for person in root.findall('.//tei:person', tei):
         event_id = event.get('{http://www.w3.org/XML/1998/namespace}id')
         event_uri = URIRef(base_uri + '/event/' + event_id)  
         rit_uri = URIRef(base_uri + '/rit/' + person_id + '-at-' + event_id)
-
+        
         #partic_event(person)
         partic_event_uri = URIRef(base_uri + '/' + person_id + '-in-' + event_id)
         g.add( (person_uri, pro.holdsRoleInTime, partic_event_uri))
@@ -176,7 +174,6 @@ for person in root.findall('.//tei:person', tei):
         #event_desc()
         g.add( (rit_uri, pro.relatesToEntity, URIRef(base_uri + '/event/' + event_id)))
         g.add( (event_uri, RDF.type, crm.E5_Event))
-        g.add( (event_uri, RDF.type, schema.Event))
         if event.find('./tei:label', tei) is not None:
             label = event.find('./tei:label', tei).text
             g.add( (event_uri, RDFS.label, Literal(label)))
@@ -272,10 +269,10 @@ for place in root.findall('.//tei:place', tei):
     place_id = place.get('{http://www.w3.org/XML/1998/namespace}id')
     place_uri = URIRef(base_uri + '/place/' + place_id)
     place_ref = '#' + place_id
-
+    
     #place
-    g.add( (place_uri, RDF.type, schema.Place))
-
+    g.add( (place_uri, RDF.type, crm.E53_Place))
+    
     #place_sameas(place)
     same_as = place.get('sameAs').split()
     i = 0
@@ -312,18 +309,8 @@ for place in root.findall('.//tei:place', tei):
         g.add( (parent_uri, RDF.value, Literal(value, datatype=RDF.XMLLiteral)) )
 
 
-# bind prefix
-g.bind("agrelon", agrelon)
-g.bind("crm", crm)
-g.bind("frbroo", frbroo)
-g.bind("dcterms", DCTERMS)
-g.bind("schema", schema)
-g.bind("owl", OWL)
-g.bind("pro", pro)
-g.bind("proles", proles)
-g.bind("prov", prov)
-g.bind("tvc", tvc)
 
 g.serialize(destination='static/temp/output.nt', format='nt')
 g.serialize(destination='static/temp/output.n3', format='n3')
 g.serialize(destination='static/temp/output.rdf', format='xml')
+g.serialize(destination='static/temp/output.jsonld', format='json-ld')

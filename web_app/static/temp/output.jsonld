@@ -1,0 +1,131 @@
+[
+  {
+    "@id": "https://example.org/place/Sparta",
+    "@type": [
+      "http://www.cidoc-crm.org/cidoc-crm/E53_Place"
+    ],
+    "http://purl.org/dc/terms/isReferencedBy": [
+      {
+        "@id": "https://example.org/text/desc02"
+      },
+      {
+        "@id": "https://example.org/text/para02"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
+        "@value": "<place sameAs=\"https://pleiades.stoa.org/places/570685 http://dbpedia.org/resource/Sparta\" xml:id=\"Sparta\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n            <placeName>Sparta</placeName>\n          </place>\n        \n"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Sparta"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#sameAs": [
+      {
+        "@id": "http://dbpedia.org/resource/Sparta"
+      },
+      {
+        "@id": "https://pleiades.stoa.org/places/570685"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.org/text/para01",
+    "@type": [
+      "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"
+    ],
+    "http://iflastandards.info/ns/fr/frbr/frbroo/R15i_is_fragment_of": [
+      {
+        "@id": "https://example.org/example_v1"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
+        "@value": "<p xml:id=\"para01\" xmlns=\"http://www.tei-c.org/ns/1.0\">Some text mentioning <persName ref=\"#Plat\">Plato</persName> and <placeName ref=\"#Athens\">Athens</placeName>.</p>\n      \n"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.org/text/desc01",
+    "@type": [
+      "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"
+    ],
+    "http://iflastandards.info/ns/fr/frbr/frbroo/R15i_is_fragment_of": [
+      {
+        "@id": "https://example.org/example_v1"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
+        "@value": "<desc xml:id=\"desc01\" xmlns=\"http://www.tei-c.org/ns/1.0\">The trial of <persName corresp=\"http://wordnet-rdf.princeton.edu/id/09781524-n\" ref=\"#Socr\" role=\"defendant\">Socrates</persName> for impiety and corruption of the youth took place in <placeName ref=\"#Athens\">Athens</placeName> in <date when=\"-0399\">399 B.C.</date></desc> \n"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.org/text/desc02",
+    "@type": [
+      "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"
+    ],
+    "http://iflastandards.info/ns/fr/frbr/frbroo/R15i_is_fragment_of": [
+      {
+        "@id": "https://example.org/example_v1"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
+        "@value": "<desc xml:id=\"desc02\" xmlns=\"http://www.tei-c.org/ns/1.0\">Between 404 B.C. and 403 B.C. <persName role=\"leader\">Critias</persName> lead the oligarchic government imposed on <placeName ref=\"#Athens\" type=\"place_of_event\">Athens</placeName> by <placeName ref=\"#Sparta\">Sparta</placeName> after the end of the Peloponnysian war. <bibl xml:id=\"bibl02\">An accout of the main events concerning this period is given by the <author ref=\"#Aristot\">aristotelian</author> <title>Constitution of the Athenians</title></bibl>.</desc>\n            \n"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.org/text/para02",
+    "@type": [
+      "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"
+    ],
+    "http://iflastandards.info/ns/fr/frbr/frbroo/R15i_is_fragment_of": [
+      {
+        "@id": "https://example.org/example_v1"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
+        "@value": "<p xml:id=\"para02\" xmlns=\"http://www.tei-c.org/ns/1.0\">Some text mentioning <persName ref=\"#Aristot\">Aristotle</persName> and <placeName ref=\"#Sparta\">Sparta</placeName>.</p>\n      \n"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.org/place/Athens",
+    "@type": [
+      "http://www.cidoc-crm.org/cidoc-crm/E53_Place"
+    ],
+    "http://purl.org/dc/terms/isReferencedBy": [
+      {
+        "@id": "https://example.org/text/desc02"
+      },
+      {
+        "@id": "https://example.org/text/desc01"
+      },
+      {
+        "@id": "https://example.org/text/para01"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Athens"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#sameAs": [
+      {
+        "@id": "https://pleiades.stoa.org/places/579885"
+      }
+    ]
+  }
+]
