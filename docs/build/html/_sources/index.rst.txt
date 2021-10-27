@@ -6,9 +6,20 @@
 Welcome to LIFT's documentation!
 ================================
 
+LIFT (Linked data from TEI) is a Python-based tool for transforming your TEI XML document into an RDF graph, ready for publication as linked open data on the web.
+
+.. note::
+
+   This project is under active development.
+
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+
+   introduction
+   input
+   output
+   scripts
+   resources
 
 
 

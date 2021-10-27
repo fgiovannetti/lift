@@ -16,7 +16,8 @@
     <script src="_static/doctools.js"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction" href="introduction.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -24,6 +25,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             accesskey="N">next</a> |</li>
         <li class="nav-item nav-item-0"><a href="#">LIFT 0.1 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Welcome to LIFT’s documentation!</a></li> 
       </ul>
@@ -36,7 +40,44 @@
             
   <section id="welcome-to-lift-s-documentation">
 <h1>Welcome to LIFT’s documentation!<a class="headerlink" href="#welcome-to-lift-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>LIFT (Linked data from TEI) is a Python-based tool for transforming your TEI XML document into an RDF graph, ready for publication as linked open data on the web.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This project is under active development.</p>
+</div>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">Prepare your TEI document</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input.html#provide-tei-elements-with-unique-identifiers-using-xml-id">Provide TEI elements with unique identifiers using <code class="code docutils literal notranslate"><span class="pre">&#64;xml:id</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#provide-an-at-least-minimal-tei-header">Provide an at least minimal TEI header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#use-person-and-persname-to-represent-persons-and-in-text-references-to-such-persons">Use <code class="code docutils literal notranslate"><span class="pre">&lt;person&gt;</span></code> and <code class="code docutils literal notranslate"><span class="pre">&lt;persName&gt;</span></code> to represent persons and in-text references to such persons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#use-place-and-placename-to-represent-places-and-in-text-references-to-such-places">Use <code class="code docutils literal notranslate"><span class="pre">&lt;place&gt;</span></code> and <code class="code docutils literal notranslate"><span class="pre">&lt;placeName&gt;</span></code> to represent places and in-text references to such places</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#assign-a-sameas-attribute-to-real-world-entities">Assign a <code class="code docutils literal notranslate"><span class="pre">&#64;sameAs</span></code> attribute to real-world entities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#encode-relationships-between-persons-within-listrelation">Encode relationships between persons within <code class="code docutils literal notranslate"><span class="pre">&lt;listRelation&gt;</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#use-event-to-represent-events-either-within-person-or-place">Use <code class="code docutils literal notranslate"><span class="pre">&lt;event&gt;</span></code> to represent events, either within <code class="code docutils literal notranslate"><span class="pre">&lt;person&gt;</span></code> or <code class="code docutils literal notranslate"><span class="pre">&lt;place&gt;</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html#full-example">Full example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="output.html">The RDF graph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="output.html#persons">Persons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html#places">Places</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html#relations">Relations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html#events">Events</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="scripts.html">How the scripts work</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="scripts.html#a-jupyter-notebook-walking-through-lift-s-tei-to-rdf-transformation-line-by-line">A Jupyter notebook walking through LIFT’s TEI to RDF transformation line-by-line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts.html#modify-the-scripts-and-or-run-them-locally">Modify the scripts and/or run them locally</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Further readings and resources</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="resources.html#tutorials">Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html#suggested-readings">Suggested readings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html#useful-resources">Useful resources</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </section>
 <section id="indices-and-tables">
@@ -61,6 +102,9 @@
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
 
+  <h4>Next topic</h4>
+  <p class="topless"><a href="introduction.html"
+                        title="next chapter">Introduction</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -88,6 +132,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             >next</a> |</li>
         <li class="nav-item nav-item-0"><a href="#">LIFT 0.1 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Welcome to LIFT’s documentation!</a></li> 
       </ul>

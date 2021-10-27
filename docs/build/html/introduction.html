@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction &#8212; LIFT 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Prepare your TEI document" href="input.html" />
+    <link rel="prev" title="Welcome to LIFT’s documentation!" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="input.html" title="Prepare your TEI document"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to LIFT’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">LIFT 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Introduction</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>LIFT (<em>Linked data from TEI</em>) is a Digital Humanities tool based on Python 2.7 for generating linked open data (LOD) out of TEI-encoded texts.
+This documentation is intended to provide you with an understanding of how LIFT works from the standpoint of both the technologies and the methodology employed. After reading this documentation, you should be able to use LIFT as is or modify its scripts to meet your specific project requirements.</p>
+<p>LIFT offers four different TEI-to-LOD scripts written in Python 2.7. Each script addresses the transformation of a set of specific TEI entities (persons, persons and events, persons and relations, places) to LOD. The scripts can be used independently from one another. A fifth script comprehensive of all entities (i.e. persons, events, relations, and places) is also available.
+.. Two additional scripts, one for bibliographic entities and the other for critical apparatus entries, are currently under development (expected release: Spring 2021).</p>
+<p>This documentation, divided into four sections, serves a pedagogical purpose by demonstrating and discussing in detail a workflow for TEI-to-LOD transformation that does not require the use of XSLT and instead relies on Python (the <a class="reference external" href="https://lxml.de/">lxml</a> library is used for the processing of XML, while the <a class="reference external" href="https://rdflib.readthedocs.io/en/stable/">RDFLib</a> library is used for the creation of the RDF triples):</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="input.html"><span class="doc">Prepare your TEI document</span></a>, which explains the encoding requirements for the input TEI document;</p></li>
+<li><p><a class="reference internal" href="output.html"><span class="doc">The output RDF graph</span></a>, illustrating the structure and semantics of the generated knowledge graph by comparing the TEI input with the corresponding RDF output (this section also discusses why and how users might choose different ontologies for their projects or modify the scripts to work with different input data);</p></li>
+<li><p><a class="reference internal" href="scripts.html"><span class="doc">How the scripts work</span></a>, where users can access an interactive Jupyter notebook containing LIFT’s scripts with instructions and line-by-line explanations that are meant to help users develop the skills required to write their own transformation scripts;</p></li>
+<li><p><a class="reference internal" href="resources.html"><span class="doc">Further readings and resources</span></a>, which lists relevant publications and provides examples of TEI digital scholarly editions which have been enriched by means of linked open data.</p></li>
+</ol>
+<p>You can directly run the scripts from the web application (<a class="reference external" href="https://projects.dharc.unibo.it/lift/quickstart.html">https://projects.dharc.unibo.it/lift/quickstart.html</a>) or <a class="reference external" href="https://github.com/fgiovannetti/lift/tree/master/TEI2RDF_scripts">download them</a> for local use (see <a class="reference internal" href="scripts.html#scripts"><span class="std std-ref">How the scripts work</span></a> for more detailed instructions ).</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to LIFT’s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="input.html"
+                        title="next chapter">Prepare your TEI document</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/introduction.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="input.html" title="Prepare your TEI document"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to LIFT’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">LIFT 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Introduction</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Francesca Giovannetti.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+    </div>
+  </body>
+</html>

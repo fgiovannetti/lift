@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>How the scripts work &#8212; LIFT 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Further readings and resources" href="resources.html" />
+    <link rel="prev" title="The RDF graph" href="output.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="resources.html" title="Further readings and resources"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="output.html" title="The RDF graph"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">LIFT 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">How the scripts work</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="how-the-scripts-work">
+<span id="scripts"></span><h1>How the scripts work<a class="headerlink" href="#how-the-scripts-work" title="Permalink to this headline">¶</a></h1>
+<p>LIFT features a set of five transformation scripts written in Python 2.7. LIFT leverages two libraries:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://lxml.de">lxml</a> to find and select the relevant TEI constructs from the input XML document;</p></li>
+<li><p><a class="reference external" href="https://rdflib.readthedocs.io/en/stable">RDFLib</a> to create the RDF triples forming the knowledge graph.</p></li>
+</ul>
+<p>Any of the scripts can be applied to your TEI document. If you use the scripts as is, make sure to read LIFT’s encoding guidelines at <a class="reference internal" href="input.html#input"><span class="std std-ref">Prepare your TEI document</span></a> and update your input TEI document accordingly.</p>
+<section id="a-jupyter-notebook-walking-through-lift-s-tei-to-rdf-transformation-line-by-line">
+<h2>A Jupyter notebook walking through LIFT’s TEI to RDF transformation line-by-line<a class="headerlink" href="#a-jupyter-notebook-walking-through-lift-s-tei-to-rdf-transformation-line-by-line" title="Permalink to this headline">¶</a></h2>
+<p>The section <a class="reference internal" href="output.html#output"><span class="std std-ref">The RDF graph</span></a> displays the input TEI constructs next to the output RDF statements. A Jupyter notebook, available at <a class="reference external" href="https://nbviewer.jupyter.org/github/fgiovannetti/lift/blob/master/jupyter_nb/TEItoRDF.ipynb">this link</a>, walks you through the scripts line-by-line.</p>
+<p>You can read a non-interactive preview of the notebook by following the link above, or you can install Jupyer to access the notebook interactively. The second option requires a minimum familiarity with the command line (the <a class="reference external" href="https://programminghistorian.org/">Programming Historian</a> provides excellent introductory tutorials for <a class="reference external" href="https://programminghistorian.org/en/lessons/intro-to-powershell">Windows</a> as well as <a class="reference external" href="https://programminghistorian.org/en/lessons/intro-to-bash">Mac/Linux</a> users).</p>
+<p>In order to access the notebook interactively</p>
+<ol class="arabic simple">
+<li><p>open Terminal or Prompt. If Python is already installed on your machine, run <code class="code docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">notebook</span></code> (visit <a class="reference external" href="https://jupyter.org/install">https://jupyter.org/install</a> for further help);</p></li>
+<li><p><a class="reference external" href="https://github.com/fgiovannetti/lift/blob/master/jupyter_nb/TEItoRDF.ipynb">download the notebook</a>;</p></li>
+<li><p>in Terminal or Prompt navigate to the folder where the notebook was saved;</p></li>
+<li><p>run <code class="code docutils literal notranslate"><span class="pre">juptyter</span> <span class="pre">notebook</span></code> to open Jupyter on your browser;</p></li>
+<li><p>from the browser, click on TEItoRDF.ipynb to access the notebook.</p></li>
+</ol>
+</section>
+<section id="modify-the-scripts-and-or-run-them-locally">
+<h2>Modify the scripts and/or run them locally<a class="headerlink" href="#modify-the-scripts-and-or-run-them-locally" title="Permalink to this headline">¶</a></h2>
+<p>After reading the notebook, you should be able to modify LIFT’s scripts to meet the needs of your project. You can, for example, change how LIFT extracts information from the input file to avoid modifying your original TEI encoding, or you can enrich the knowledge graph with new RDF triples.</p>
+<p>To modify LIFT the scripts and/or run them locally</p>
+<ol class="arabic simple">
+<li><p>go to <a class="reference external" href="https://github.com/fgiovannetti/lift/tree/master/TEI2RDF_scripts">LIFT’s repository on Github</a> and download the scripts;</p></li>
+<li><p>open and change the scripts with an editor of your choice (remeber to update the path to the input TEI document (modify the line <code class="code docutils literal notranslate"><span class="pre">tree</span> <span class="pre">=</span> <span class="pre">etree.parse('input.xml')</span></code> at the very beginning of the script);</p></li>
+<li><dl class="simple">
+<dt>to run the transformation locally</dt><dd><ol class="arabic simple">
+<li><p>open your Terminal or Prompt;</p></li>
+<li><p>navigate to the folder where the scripts are;</p></li>
+<li><p>run <code class="code docutils literal notranslate"><span class="pre">python</span> <span class="pre">[name-of-your-script].py</span></code>.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ol>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">How the scripts work</a><ul>
+<li><a class="reference internal" href="#a-jupyter-notebook-walking-through-lift-s-tei-to-rdf-transformation-line-by-line">A Jupyter notebook walking through LIFT’s TEI to RDF transformation line-by-line</a></li>
+<li><a class="reference internal" href="#modify-the-scripts-and-or-run-them-locally">Modify the scripts and/or run them locally</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="output.html"
+                        title="previous chapter">The RDF graph</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="resources.html"
+                        title="next chapter">Further readings and resources</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/scripts.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="resources.html" title="Further readings and resources"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="output.html" title="The RDF graph"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">LIFT 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">How the scripts work</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Francesca Giovannetti.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+    </div>
+  </body>
+</html>

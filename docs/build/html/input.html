@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Prepare your TEI document &#8212; LIFT 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The output RDF graph" href="output.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="output.html" title="The output RDF graph"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">LIFT 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Prepare your TEI document</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="prepare-your-tei-document">
+<span id="input"></span><h1>Prepare your TEI document<a class="headerlink" href="#prepare-your-tei-document" title="Permalink to this headline">¶</a></h1>
+<p>The TEI standard allows for multiple ways to encode the same textual features. For example, you can use the tag <code class="code docutils literal notranslate"><span class="pre">&lt;persName&gt;</span></code>, the tag <code class="code docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>, or even the tag <code class="code docutils literal notranslate"><span class="pre">&lt;rs&gt;</span></code> to markup a personal name (cf. <a href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html" target="_blank">TEI Guidelines, 13. Names, Dates, People, and Places</a>).</p>
+<p>This TEI feature has the advantage of flexibility, but it makes creating a universal TEI-to-RDF transformation script a difficult task. This is why this documentation includes a set of encoding guidelines designed to ensure a smooth TEI-to-RDF transformation via LIFT. In particular, in order for LIFT to work on your TEI document, you must adhere to the following simple guidelines:</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#xmlid"><span class="std std-ref">Provide TEI elements with unique identifiers using &#64;xml:id</span></a></p></li>
+<li><p><a class="reference internal" href="#teiheader"><span class="std std-ref">Provide an at least minimal TEI header</span></a></p></li>
+<li><p><a class="reference internal" href="#person"><span class="std std-ref">Use &lt;person&gt; and &lt;persName&gt; to represent persons and in-text references to such persons</span></a></p></li>
+<li><p><a class="reference internal" href="#place"><span class="std std-ref">Use &lt;place&gt; and &lt;placeName&gt; to represent places and in-text references to such places</span></a></p></li>
+<li><p><a class="reference internal" href="#sameas"><span class="std std-ref">Assign a &#64;sameAs attribute to real-world entities</span></a></p></li>
+<li><p><a class="reference internal" href="#relation"><span class="std std-ref">Encode relationships between persons within &lt;listRelation&gt;</span></a></p></li>
+<li><p><a class="reference internal" href="#event"><span class="std std-ref">Use &lt;event&gt; to represent events, either within &lt;person&gt; or &lt;place&gt;</span></a></p></li>
+</ol>
+<section id="provide-tei-elements-with-unique-identifiers-using-xml-id">
+<span id="xmlid"></span><h2>Provide TEI elements with unique identifiers using <code class="code docutils literal notranslate"><span class="pre">&#64;xml:id</span></code><a class="headerlink" href="#provide-tei-elements-with-unique-identifiers-using-xml-id" title="Permalink to this headline">¶</a></h2>
+<p>A unique URI must be assigned to each entity of a linked data graph (for example, a person, a place, a literary work, etc.). LIFT uses <code class="code docutils literal notranslate"><span class="pre">&#64;xml:id</span></code> attributes to create unique URIs. To accomplish this, LIFT concatenates the value of the attribute <code class="code docutils literal notranslate"><span class="pre">&#64;xml:base</span></code> attribute of the <code class="code docutils literal notranslate"><span class="pre">&lt;TEI&gt;</span></code> element is concatenated with the value of the <code class="code docutils literal notranslate"><span class="pre">&#64;xml:id</span></code> attribute of the element. For example, the element below representing a person</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;TEI</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.tei-c.org/ns/1.0&quot;</span> <span class="na">xml:base=</span><span class="s">&quot;https://example.org&quot;</span><span class="nt">&gt;</span>
+        ...
+        <span class="nt">&lt;person</span> <span class="na">xml:id=</span><span class="s">&quot;socr&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/person&gt;</span>
+        ...
+<span class="nt">&lt;/TEI&gt;</span>
+</pre></div>
+</div>
+<p>will be assigned the following URI:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>&lt;https://example.org/person/socr&gt;
+</pre></div>
+</div>
+<p>Note that the value of your &#64;xml:base attribute should be registered as a permanent URL (i.e. through services such as <a class="reference external" href="https://w3id.org">w3id.org</a>). Check the <a href="https://www.w3.org/community/perma-id/" target="_blank">W3C Permanent Identifier Community Group</a> for more information on how to register your URL.</p>
+<p>If your TEI document lacks unique identifiers, you can use Charlotte Tupman’s <a href="https://github.com/fgiovannetti/lift/blob/master/TEI2RDF_scripts/add_ids_to_elements.xsl" target="_blank">this XSLT transformation</a> (written for <a href="http://www.ancientwisdoms.ac.uk" target="_blank">SAWS project</a>), which generates a unique identifier for each element that has no <code class="code docutils literal notranslate"><span class="pre">&#64;xml:id</span></code>. You can run the transformation using <a class="reference external" href="http://xmlsoft.org/XSLT/xsltproc2.html">xsltproc</a> after downloading the stylesheet to the same folder as your TEI document. You can look at this <a class="reference external" href="http://fhoerni.free.fr/comp/xslt.html">tutorial</a> for detailed instructions about the process (last accessed 2021-10-25).</p>
+</section>
+<section id="provide-an-at-least-minimal-tei-header">
+<span id="teiheader"></span><h2>Provide an at least minimal TEI header<a class="headerlink" href="#provide-an-at-least-minimal-tei-header" title="Permalink to this headline">¶</a></h2>
+<p>Your TEI header should comprise, at least, the minimal recommended elements as shown below:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;teiHeader&gt;</span>
+        <span class="nt">&lt;fileDesc&gt;</span>
+                <span class="nt">&lt;titleStmt&gt;</span>
+                        <span class="nt">&lt;title&gt;</span><span class="c">&lt;!-- Title of the resource --&gt;</span><span class="nt">&lt;/title&gt;</span>
+                        <span class="nt">&lt;author&gt;</span><span class="c">&lt;!-- Author of the resource --&gt;</span><span class="nt">&lt;/author&gt;</span>
+                <span class="nt">&lt;/titleStmt&gt;</span>
+                <span class="nt">&lt;publicationStmt&gt;</span>
+                        <span class="nt">&lt;p&gt;</span><span class="c">&lt;!-- Information about the distribution of the resource --&gt;</span><span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/publicationStmt&gt;</span>
+                <span class="nt">&lt;sourceDesc&gt;</span>
+                        <span class="nt">&lt;p&gt;</span><span class="c">&lt;!-- Information about the source from which the resource derives --&gt;</span><span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/sourceDesc&gt;</span>
+        <span class="nt">&lt;/fileDesc&gt;</span>
+<span class="nt">&lt;/teiHeader&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="use-person-and-persname-to-represent-persons-and-in-text-references-to-such-persons">
+<span id="person"></span><h2>Use <code class="code docutils literal notranslate"><span class="pre">&lt;person&gt;</span></code> and <code class="code docutils literal notranslate"><span class="pre">&lt;persName&gt;</span></code> to represent persons and in-text references to such persons<a class="headerlink" href="#use-person-and-persname-to-represent-persons-and-in-text-references-to-such-persons" title="Permalink to this headline">¶</a></h2>
+<p>Each person mentioned in the TEI document must be described in the TEI header within a <code class="code docutils literal notranslate"><span class="pre">&lt;person&gt;</span></code> element to which an <code class="code docutils literal notranslate"><span class="pre">&#64;xml:id</span></code> has been assigned.</p>
+<p>It is possible to provide a normalized form of each person’s name by nesting a <code class="code docutils literal notranslate"><span class="pre">&lt;persName&gt;</span></code> element containing the normalized name within <code class="code docutils literal notranslate"><span class="pre">&lt;person&gt;</span></code>. You can provide multiple normalizations, e.g. in different languages (to specify the language use the <code class="code docutils literal notranslate"><span class="pre">&#64;xml:lang</span></code> attribute and a value from the <a href="https://www.loc.gov/standards/iso639-2/php/English_list.php" target="_blank">ISO 639 list</a> of language codes).</p>
+<p>All in-text occurrences of personal names must be encoded using <code class="code docutils literal notranslate"><span class="pre">&lt;persName&gt;</span></code>. The attribute <code class="code docutils literal notranslate"><span class="pre">&#64;ref</span></code> should be used on the element to relate each name to the corresponding person (via the person’s <code class="code docutils literal notranslate"><span class="pre">&#64;xml:id</span></code>). For example:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;TEI</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.tei-c.org/ns/1.0&quot;</span> <span class="na">xml:base=</span><span class="s">&quot;https://example.org&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;teiHeader&gt;</span>
+                ...
+                <span class="nt">&lt;person</span> <span class="na">xml:id=</span><span class="s">&quot;socr&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;persName</span> <span class="na">xml:lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>Socrates<span class="nt">&lt;/persName&gt;</span>
+                        <span class="nt">&lt;persName</span> <span class="na">xml:lang=</span><span class="s">&quot;el&quot;</span><span class="nt">&gt;</span>Σωκρᾰ́της<span class="nt">&lt;/persName&gt;</span>
+                <span class="nt">&lt;/person&gt;</span>
+                ...
+        <span class="nt">&lt;/teiHeader&gt;</span>
+        <span class="nt">&lt;text&gt;</span>
+                ...
+                <span class="nt">&lt;persName</span> <span class="na">ref=</span><span class="s">&quot;#socr&quot;</span><span class="nt">&gt;</span>Socrates<span class="nt">&lt;/persName&gt;</span>
+                ...
+        <span class="nt">&lt;/text&gt;</span>
+<span class="nt">&lt;/TEI&gt;</span>
+</pre></div>
+</div>
+<p>Persons can be grouped using <code class="code docutils literal notranslate"><span class="pre">&lt;listPerson&gt;</span></code>. Each <code class="code docutils literal notranslate"><span class="pre">&lt;listPerson&gt;</span></code> (or, alternatively, each <code class="code docutils literal notranslate"><span class="pre">&lt;person&gt;</span></code> element if <code class="code docutils literal notranslate"><span class="pre">&lt;listPerson&gt;</span></code> is not present) can be assigned a <code class="code docutils literal notranslate"><span class="pre">&#64;type</span></code> and/or <code class="code docutils literal notranslate"><span class="pre">&#64;corresp</span></code> containing a short description of the group or individual. In particular, use <code class="code docutils literal notranslate"><span class="pre">&#64;type</span></code> for free-text descriptions (if using multi-word descriptions, please separate each word with an hyphen) or <code class="code docutils literal notranslate"><span class="pre">&#64;corresp</span></code> to provide a URI from a controlled vocabulary. For example:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;listPerson</span> <span class="na">type=</span><span class="s">&quot;ancient-athenian-philosophers&quot;</span> <span class="na">corresp=</span><span class="s">&quot;http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;person</span> <span class="na">xml:id=</span><span class="s">&quot;Socr&quot;</span><span class="nt">&gt;</span>
+        ...
+</pre></div>
+</div>
+</section>
+<section id="use-place-and-placename-to-represent-places-and-in-text-references-to-such-places">
+<span id="place"></span><h2>Use <code class="code docutils literal notranslate"><span class="pre">&lt;place&gt;</span></code> and <code class="code docutils literal notranslate"><span class="pre">&lt;placeName&gt;</span></code> to represent places and in-text references to such places<a class="headerlink" href="#use-place-and-placename-to-represent-places-and-in-text-references-to-such-places" title="Permalink to this headline">¶</a></h2>
+<p>The guidelines for encoding persons apply to places as well. For example:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;TEI</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.tei-c.org/ns/1.0&quot;</span> <span class="na">xml:base=</span><span class="s">&quot;https://example.org&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;teiHeader&gt;</span>
+        ...
+                <span class="nt">&lt;place</span> <span class="na">xml:id=</span><span class="s">&quot;athens&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;placeName</span> <span class="na">xml:lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>Athens<span class="nt">&lt;/placeName&gt;</span>
+                <span class="nt">&lt;/place&gt;</span>
+        ...
+        <span class="nt">&lt;/teiHeader&gt;</span>
+        <span class="nt">&lt;text&gt;</span>
+        ...
+                <span class="nt">&lt;placeName</span> <span class="na">ref=</span><span class="s">&quot;#athens&quot;</span><span class="nt">&gt;</span>Athens<span class="nt">&lt;/persName&gt;</span>
+        ...
+        <span class="nt">&lt;/text&gt;</span>
+<span class="nt">&lt;/TEI&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="assign-a-sameas-attribute-to-real-world-entities">
+<span id="sameas"></span><h2>Assign a <code class="code docutils literal notranslate"><span class="pre">&#64;sameAs</span></code> attribute to real-world entities<a class="headerlink" href="#assign-a-sameas-attribute-to-real-world-entities" title="Permalink to this headline">¶</a></h2>
+<p>By assigning a &#64;sameAs attribute to your entities, you can disambiguate them by connecting them to external authority files, such as <a href="https://viaf.org/" target="_blank">VIAF</a>, <a href="https://www.worldcat.org/" target="_blank">Worldcat</a>, or the <a href="https://id.loc.gov/" target="_blank">Library of Congress</a>.</p>
+<p>Provide a URI in a <code class="code docutils literal notranslate"><span class="pre">&#64;sameAs</span></code> attribute. You can supply multiple URIs, separated by a whitespace. For example:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;person</span> <span class="na">xml:id=</span><span class="s">&quot;Socr&quot;</span> <span class="na">sameAs=</span><span class="s">&quot;http://viaf.org/viaf/88039167 http://id.loc.gov/rwo/agents/n79055329&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="encode-relationships-between-persons-within-listrelation">
+<span id="relation"></span><h2>Encode relationships between persons within <code class="code docutils literal notranslate"><span class="pre">&lt;listRelation&gt;</span></code><a class="headerlink" href="#encode-relationships-between-persons-within-listrelation" title="Permalink to this headline">¶</a></h2>
+<p>Use a series of <code class="code docutils literal notranslate"><span class="pre">&lt;relation&gt;</span></code> elements nested within <code class="code docutils literal notranslate"><span class="pre">&lt;listRelation&gt;</span></code> to markup relationships between persons in the TEI header. Note that <code class="code docutils literal notranslate"><span class="pre">&lt;listRelation&gt;</span></code> must be a child element of <code class="code docutils literal notranslate"><span class="pre">&lt;listPerson&gt;</span></code>.</p>
+<p>In particular, for unidirectional relationships (e.g. ‘Socrates has student Plato’) use the attributes <code class="code docutils literal notranslate"><span class="pre">&#64;active</span></code> and <code class="code docutils literal notranslate"><span class="pre">&#64;passive</span></code> to express the subject and the object of the relationship respectively; for bidirectional relationships (e.g. ‘Plato has colleague Xenophon’) use the attribute <code class="code docutils literal notranslate"><span class="pre">&#64;mutual</span></code>. It is possible to represent a mutual relationship involving multiple persons by declaring more than one value for the <code class="code docutils literal notranslate"><span class="pre">&#64;mutual</span></code> attribute. Multiple values must be separated by whitespaces. Finally, use the <code class="code docutils literal notranslate"><span class="pre">&#64;name</span></code> attribute to express the nature of the relationship. You can reuse terms from <a href="https://d-nb.info/standards/elementset/agrelon" target="_blank">AgRelOn</a>, the Agent Relationship Ontology. For example:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;listRelation&gt;</span>
+        <span class="nt">&lt;relation</span> <span class="na">xml:id=</span><span class="s">&quot;rel01&quot;</span> <span class="na">name=</span><span class="s">&quot;hasStudent&quot;</span> <span class="na">active=</span><span class="s">&quot;#socr&quot;</span> <span class="na">passive=</span><span class="s">&quot;#plat #xen #criti&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;relation</span> <span class="na">xml:id=</span><span class="s">&quot;rel02&quot;</span> <span class="na">name=</span><span class="s">&quot;hasColleague&quot;</span> <span class="na">mutual=</span><span class="s">&quot;#plat #xen&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/listRelation&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="use-event-to-represent-events-either-within-person-or-place">
+<span id="event"></span><h2>Use <code class="code docutils literal notranslate"><span class="pre">&lt;event&gt;</span></code> to represent events, either within <code class="code docutils literal notranslate"><span class="pre">&lt;person&gt;</span></code> or <code class="code docutils literal notranslate"><span class="pre">&lt;place&gt;</span></code><a class="headerlink" href="#use-event-to-represent-events-either-within-person-or-place" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to describe events that occur in relation to a specific person or place. Such descriptions should be nested within the corresponding &lt;person&gt; or &lt;place&gt; elements.</p>
+<p>The element <code class="code docutils literal notranslate"><span class="pre">&lt;event&gt;</span></code> contains the description of the event. The attributes <code class="code docutils literal notranslate"><span class="pre">&#64;type</span></code> and <code class="code docutils literal notranslate"><span class="pre">&#64;corresp</span></code> can be assigned to <code class="code docutils literal notranslate"><span class="pre">&lt;event&gt;</span></code> to provide a free-text label or a URI, respectively.</p>
+<p>The date of the event must be recorded in <code class="code docutils literal notranslate"><span class="pre">&#64;when</span></code> or <code class="code docutils literal notranslate"><span class="pre">&#64;from/&#64;to</span></code> attributes. Dates should be represented according to the <a href="https://www.iso.org/iso-8601-date-and-time-format.html" target="_blank">ISO 8601</a> standard.</p>
+<p>A <code class="code docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> can be used to provide a short textual description of the event, while a <code class="code docutils literal notranslate"><span class="pre">&lt;desc&gt;</span></code> can contain the extended account of the event, including personal names, place names, and dates (encoded using the <code class="code docutils literal notranslate"><span class="pre">&lt;date&gt;</span></code> element).</p>
+<p>It is possible to specify the role held by the person in the event using the attribute <code class="code docutils literal notranslate"><span class="pre">&#64;role</span></code> and/or using the attribute <code class="code docutils literal notranslate"><span class="pre">&#64;corresp</span></code> on <code class="code docutils literal notranslate"><span class="pre">&lt;persName&gt;</span></code>. The attribute <code class="code docutils literal notranslate"><span class="pre">&#64;corresp</span></code> should only contain a URI representing the role.</p>
+<p>Furthermore, if there exist a primary or secondary source about the event, the element <code class="code docutils literal notranslate"><span class="pre">&lt;bibl&gt;</span></code> can be used to express it (either as a child of <code class="code docutils literal notranslate"><span class="pre">&lt;desc&gt;</span></code> or as a direct child of <code class="code docutils literal notranslate"><span class="pre">&lt;event&gt;</span></code>). The <code class="code docutils literal notranslate"><span class="pre">&lt;bibl&gt;</span></code> element may contain information about the <code class="code docutils literal notranslate"><span class="pre">&lt;author&gt;</span></code>, the <code class="code docutils literal notranslate"><span class="pre">&lt;title&gt;</span></code> and the <code class="code docutils literal notranslate"><span class="pre">&lt;date&gt;</span></code> of publication of the source. A <code class="code docutils literal notranslate"><span class="pre">&#64;sameAs</span></code> can be associated to <code class="code docutils literal notranslate"><span class="pre">&lt;bibl&gt;</span></code>.</p>
+<p>For example:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;person</span> <span class="na">xml:id=</span><span class="s">&quot;socr&quot;</span> <span class="na">sameAs=</span><span class="s">&quot;http://viaf.org/viaf/88039167&quot;</span><span class="nt">&gt;</span>
+        ...
+        <span class="nt">&lt;event</span> <span class="na">xml:id=</span><span class="s">&quot;ev01&quot;</span> <span class="na">type=</span><span class="s">&quot;trial&quot;</span> <span class="na">when=</span><span class="s">&quot;-0399&quot;</span> <span class="na">corresp=</span><span class="s">&quot;http://wordnet-rdf.princeton.edu/id/01198357-n&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;label&gt;</span>Socrates trial<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;desc</span> <span class="na">xml:id=</span><span class="s">&quot;desc01&quot;</span><span class="nt">&gt;</span>The trial of <span class="nt">&lt;persName</span> <span class="na">ref=</span><span class="s">&quot;#socr&quot;</span> <span class="na">role=</span><span class="s">&quot;defendant&quot;</span> <span class="na">corresp=</span><span class="s">&quot;http://wordnet-rdf.princeton.edu/id/09781524-n&quot;</span><span class="nt">&gt;</span>Socrates<span class="nt">&lt;/persName&gt;</span> for impiety and corruption of the youth took place in <span class="nt">&lt;placeName</span> <span class="na">ref=</span><span class="s">&quot;#athens&quot;</span><span class="nt">&gt;</span>Athens<span class="nt">&lt;/placeName&gt;</span> in <span class="nt">&lt;date</span> <span class="na">when=</span><span class="s">&quot;-0399&quot;</span><span class="nt">&gt;</span>399 B.C.<span class="nt">&lt;/date&gt;&lt;/desc&gt;</span>
+                <span class="nt">&lt;bibl</span> <span class="na">xml:id=</span><span class="s">&quot;bibl01&quot;</span> <span class="na">sameAs=</span><span class="s">&quot;http://viaf.org/viaf/214045129&quot;</span><span class="nt">&gt;&lt;author</span> <span class="na">ref=</span><span class="s">&quot;#plat&quot;</span><span class="nt">&gt;</span>Plato<span class="nt">&lt;/author&gt;</span> gives a contemporary account of the trial in his work titled <span class="nt">&lt;title</span> <span class="na">ref=</span><span class="s">&quot;Apology_of_Socr&quot;</span><span class="nt">&gt;</span>Apology of Socrates<span class="nt">&lt;/title&gt;</span>.<span class="nt">&lt;/bibl&gt;</span>
+        <span class="nt">&lt;/event&gt;</span>
+        ...
+<span class="nt">&lt;/person&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="full-example">
+<h2>Full example<a class="headerlink" href="#full-example" title="Permalink to this headline">¶</a></h2>
+<p>You can download a TEI XML pseudo-edition featuring all of the examples presented above from <a href="https://github.com/fgiovannetti/lift/blob/master/input-test/input-test.xml" target="_blank">this link</a>.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Prepare your TEI document</a><ul>
+<li><a class="reference internal" href="#provide-tei-elements-with-unique-identifiers-using-xml-id">Provide TEI elements with unique identifiers using <code class="code docutils literal notranslate"><span class="pre">&#64;xml:id</span></code></a></li>
+<li><a class="reference internal" href="#provide-an-at-least-minimal-tei-header">Provide an at least minimal TEI header</a></li>
+<li><a class="reference internal" href="#use-person-and-persname-to-represent-persons-and-in-text-references-to-such-persons">Use <code class="code docutils literal notranslate"><span class="pre">&lt;person&gt;</span></code> and <code class="code docutils literal notranslate"><span class="pre">&lt;persName&gt;</span></code> to represent persons and in-text references to such persons</a></li>
+<li><a class="reference internal" href="#use-place-and-placename-to-represent-places-and-in-text-references-to-such-places">Use <code class="code docutils literal notranslate"><span class="pre">&lt;place&gt;</span></code> and <code class="code docutils literal notranslate"><span class="pre">&lt;placeName&gt;</span></code> to represent places and in-text references to such places</a></li>
+<li><a class="reference internal" href="#assign-a-sameas-attribute-to-real-world-entities">Assign a <code class="code docutils literal notranslate"><span class="pre">&#64;sameAs</span></code> attribute to real-world entities</a></li>
+<li><a class="reference internal" href="#encode-relationships-between-persons-within-listrelation">Encode relationships between persons within <code class="code docutils literal notranslate"><span class="pre">&lt;listRelation&gt;</span></code></a></li>
+<li><a class="reference internal" href="#use-event-to-represent-events-either-within-person-or-place">Use <code class="code docutils literal notranslate"><span class="pre">&lt;event&gt;</span></code> to represent events, either within <code class="code docutils literal notranslate"><span class="pre">&lt;person&gt;</span></code> or <code class="code docutils literal notranslate"><span class="pre">&lt;place&gt;</span></code></a></li>
+<li><a class="reference internal" href="#full-example">Full example</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="introduction.html"
+                        title="previous chapter">Introduction</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="output.html"
+                        title="next chapter">The output RDF graph</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/input.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="output.html" title="The output RDF graph"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">LIFT 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Prepare your TEI document</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Francesca Giovannetti.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+    </div>
+  </body>
+</html>
