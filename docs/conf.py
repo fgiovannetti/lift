@@ -24,6 +24,7 @@ author = 'Francesca Giovannetti'
 
 # -- General configuration ---------------------------------------------------
 
+# Change name of master doc from contents.rst to index.rst
 master_doc = 'index'
 
 # Add any Sphinx extension module names here, as strings. They can be
