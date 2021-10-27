@@ -55,7 +55,7 @@ Linked data and the TEI
 
 
 Useful resources
----------
+------------------
 
 Pierre-Yves Vandenbussche, Bernard Vatant et al., *Linked Open Vocabularies (LOV): A gateway to reusable semantic vocabularies on the Web*, `<https://lov.linkeddata.es/dataset/lov/>`_.
 
