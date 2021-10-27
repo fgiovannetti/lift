@@ -22,10 +22,3 @@ LIFT (Linked data from TEI) is a Python-based tool for transforming your TEI XML
    resources
 
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
