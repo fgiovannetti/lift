@@ -1,47 +1,81 @@
-<https://example.org/person/Criti> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<person sameAs=\"http://viaf.org/viaf/17263602 http://id.loc.gov/authorities/names/n00087919 http://dbpedia.org/resource/Critias\" xml:id=\"Criti\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n            <persName xml:lang=\"en\">Critias (approximately 460 B.C.-approximately 403 B.C.)</persName>\n            <persName xml:lang=\"el\">\u039A\u03C1\u03B9\u03C4\u03AF\u03B1\u03C2</persName>\n            <event from=\"-0404-06\" to=\"-0403-01\" xml:id=\"ev02\">\n              <desc xml:id=\"desc02\">Between 404 B.C. and 403 B.C. <persName role=\"leader\">Critias</persName> lead the oligarchic government imposed on <placeName ref=\"#Athens\" type=\"place_of_event\">Athens</placeName> by <placeName ref=\"#Sparta\">Sparta</placeName> after the end of the Peloponnysian war. <bibl xml:id=\"bibl02\">An accout of the main events concerning this period is given by the <author ref=\"#Aristot\">aristotelian</author> <title>Constitution of the Athenians</title></bibl>.</desc>\n            </event>\n          </person>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Socr> <http://purl.org/dc/terms/description> "ancient-athenian-philosophers" .
-<https://example.org/person/Plat> <http://purl.org/dc/terms/subject> <http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers> .
-<https://example.org/person/Plat> <http://www.w3.org/2000/01/rdf-schema#label> "Plato"@en .
-<https://example.org/text/line01> <http://iflastandards.info/ns/fr/frbr/frbroo/R15i_is_fragment_of> <https://example.org/example_v1> .
-<https://example.org/person/Aristot> <http://purl.org/dc/terms/isReferencedBy> <https://example.org/text/para02> .
-<https://example.org/person/Criti> <http://purl.org/dc/terms/description> "ancient-athenian-philosophers" .
-<https://example.org/person/Aristot> <http://purl.org/dc/terms/description> "ancient-athenian-philosophers" .
-<https://example.org/person/Criti> <http://purl.org/dc/terms/subject> <http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers> .
-<https://example.org/person/Aristot> <http://www.w3.org/2002/07/owl#sameAs> <http://viaf.org/viaf/7524651> .
-<https://example.org/person/Xen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<person sameAs=\"http://viaf.org/viaf/89597697\" xml:id=\"Xen\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n            <persName xml:lang=\"en\">Xenophon</persName>\n            <persName xml:lang=\"el\">\u039E\u03B5\u03BD\u03BF\u03C6\u1FF6\u03BD</persName>\n          </person>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Xen> <http://purl.org/dc/terms/description> "ancient-athenian-philosophers" .
-<https://example.org/text/line01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<l xml:id=\"line01\" xmlns=\"http://www.tei-c.org/ns/1.0\">Some text mentioning <persName ref=\"#Socr\">Socrates</persName></l>\n      \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Plat> <http://purl.org/dc/terms/isReferencedBy> <https://example.org/text/para01> .
-<https://example.org/text/para02> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<p xml:id=\"para02\" xmlns=\"http://www.tei-c.org/ns/1.0\">Some text mentioning <persName ref=\"#Aristot\">Aristotle</persName> and <placeName ref=\"#Sparta\">Sparta</placeName> here.</p>\n      \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Aristot> <http://purl.org/dc/terms/subject> <http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers> .
-<https://example.org/person/Socr> <http://purl.org/dc/terms/isReferencedBy> <https://example.org/text/line01> .
-<https://example.org/person/Xen> <http://purl.org/dc/terms/subject> <http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers> .
-<https://example.org/text/para01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<p xml:id=\"para01\" xmlns=\"http://www.tei-c.org/ns/1.0\">Some text mentioning <persName ref=\"#Plat\">Plato</persName> here and <placeName ref=\"#Athens\">Athens</placeName>.</p>\n      \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Plat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<person sameAs=\"https://viaf.org/viaf/108159964/ http://dbpedia.org/resource/Plato\" xml:id=\"Plat\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n            <persName xml:lang=\"en\">Plato</persName>\n            <persName xml:lang=\"el\">\u03A0\u03BB\u03AC\u03C4\u03C9\u03BD</persName>\n          </person>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Plat> <http://purl.org/dc/terms/description> "ancient-athenian-philosophers" .
-<https://example.org/person/Plat> <http://www.w3.org/2002/07/owl#sameAs> <http://dbpedia.org/resource/Plato> .
-<https://example.org/text/line01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
-<https://example.org/person/Criti> <http://www.w3.org/2002/07/owl#sameAs> <http://dbpedia.org/resource/Critias> .
-<https://example.org/text/para01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
-<https://example.org/person/Xen> <http://www.w3.org/2000/01/rdf-schema#label> "Xenophon"@en .
-<https://example.org/person/Xen> <http://www.w3.org/2002/07/owl#sameAs> <http://viaf.org/viaf/89597697> .
-<https://example.org/person/Xen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-<https://example.org/person/Criti> <http://www.w3.org/2002/07/owl#sameAs> <http://viaf.org/viaf/17263602> .
-<https://example.org/person/Socr> <http://www.w3.org/2000/01/rdf-schema#label> "Socrates"@en .
-<https://example.org/text/para02> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
-<https://example.org/person/Plat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-<https://example.org/person/Criti> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-<https://example.org/person/Aristot> <http://www.w3.org/2002/07/owl#sameAs> <http://dbpedia.org/resource/Aristotle> .
-<https://example.org/person/Plat> <http://www.w3.org/2002/07/owl#sameAs> <https://viaf.org/viaf/108159964/> .
-<https://example.org/person/Criti> <http://www.w3.org/2000/01/rdf-schema#label> "Critias (approximately 460 B.C.-approximately 403 B.C.)"@en .
-<https://example.org/person/Socr> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-<https://example.org/text/para02> <http://iflastandards.info/ns/fr/frbr/frbroo/R15i_is_fragment_of> <https://example.org/example_v1> .
-<https://example.org/person/Aristot> <http://www.w3.org/2000/01/rdf-schema#label> "Aristotle"@en .
 <https://example.org/person/Aristot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<person sameAs=\"http://viaf.org/viaf/7524651 http://dbpedia.org/resource/Aristotle\" xml:id=\"Aristot\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n            <persName xml:lang=\"en\">Aristotle</persName>\n            <persName xml:lang=\"el\">\u1F08\u03C1\u03B9\u03C3\u03C4\u03BF\u03C4\u03AD\u03BB\u03B7\u03C2</persName>\n          </person>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Criti> <http://www.w3.org/2002/07/owl#sameAs> <http://id.loc.gov/authorities/names/n00087919> .
+<https://example.org/text/line01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://example.org/role/defendant> <http://www.w3.org/2002/07/owl#sameAs> <http://wordnet-rdf.princeton.edu/id/09781524-n> .
+<https://example.org/person/Socr> <http://purl.org/dc/terms/isReferencedBy> <https://example.org/text/line01> .
+<https://example.org/event/ev02> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<event from=\"-0404-06\" to=\"-0403-01\" xml:id=\"ev02\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n              <desc xml:id=\"desc02\">Between 404 B.C. and 403 B.C. <persName role=\"leader\">Critias</persName> lead the oligarchic government imposed on <placeName ref=\"#Athens\" type=\"place_of_event\">Athens</placeName> by <placeName ref=\"#Sparta\">Sparta</placeName> after the end of the Peloponnysian war. <bibl xml:id=\"bibl02\">An accout of the main events concerning this period is given by the <author ref=\"#Aristot\">aristotelian</author> <title>Constitution of the Athenians</title></bibl>.</desc>\n            </event>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
+<https://example.org/text/line01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<l xml:id=\"line01\" xmlns=\"http://www.tei-c.org/ns/1.0\">Some text mentioning <persName ref=\"#Socr\">Socrates</persName></l>\n      \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
+<https://example.org/person/Xen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+<https://example.org/person/Plat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<person sameAs=\"https://viaf.org/viaf/108159964/ http://dbpedia.org/resource/Plato\" xml:id=\"Plat\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n            <persName xml:lang=\"en\">Plato</persName>\n            <persName xml:lang=\"el\">\u03A0\u03BB\u03AC\u03C4\u03C9\u03BD</persName>\n          </person>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
+<https://example.org/person/Xen> <http://purl.org/dc/terms/description> "ancient-athenian-philosophers" .
+<https://example.org/text/para02> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://example.org/ev02-time> <http://www.w3.org/2002/07/owl#hasIntervalEndDate> "-0403-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://example.org/event/ev01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<event corresp=\"http://wordnet-rdf.princeton.edu/id/01198357-n\" type=\"trial\" when=\"-0399\" xml:id=\"ev01\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n              <label>Socrates trial</label>\n              <desc xml:id=\"desc01\">The trial of <persName corresp=\"http://wordnet-rdf.princeton.edu/id/09781524-n\" ref=\"#Socr\" role=\"defendant\">Socrates</persName> for impiety and corruption of the youth took place in <placeName ref=\"#Athens\">Athens</placeName> in <date when=\"-0399\">399 B.C.</date></desc> <bibl sameAs=\"http://viaf.org/viaf/214045129\" xml:id=\"bibl01\"><author ref=\"#Plat\">Plato</author> gives a contemporary account of the trial in his work \n                titled <title ref=\"Apology_of_Socr\">Apology of Socrates</title>.</bibl>\n            </event>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
 <https://example.org/person/Socr> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<person sameAs=\"http://viaf.org/viaf/88039167\" xml:id=\"Socr\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n            <persName xml:lang=\"en\">Socrates</persName>\n            <persName xml:lang=\"el\">\u03A3\u03C9\u03BA\u03C1\u1FB0\u0301\u03C4\u03B7\u03C2</persName>\n            <event corresp=\"http://wordnet-rdf.princeton.edu/id/01198357-n\" type=\"trial\" when=\"-0399\" xml:id=\"ev01\">\n              <label>Socrates trial</label>\n              <desc xml:id=\"desc01\">The trial of <persName corresp=\"http://wordnet-rdf.princeton.edu/id/09781524-n\" ref=\"#Socr\" role=\"defendant\">Socrates</persName> for impiety and corruption of the youth took place in <placeName ref=\"#Athens\">Athens</placeName> in <date when=\"-0399\">399 B.C.</date></desc> <bibl sameAs=\"http://viaf.org/viaf/214045129\" xml:id=\"bibl01\"><author ref=\"#Plat\">Plato</author> gives a contemporary account of the trial in his work \n                titled <title ref=\"Apology_of_Socr\">Apology of Socrates</title>.</bibl>\n            </event>\n          </person>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Socr> <http://purl.org/dc/terms/subject> <http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers> .
-<https://example.org/person/Socr> <http://www.w3.org/2002/07/owl#sameAs> <http://viaf.org/viaf/88039167> .
+<https://example.org/person/Plat> <http://purl.org/dc/terms/isReferencedBy> <https://example.org/text/para01> .
+<https://example.org/person/Plat> <http://www.w3.org/2000/01/rdf-schema#label> "Plato"@en .
+<https://example.org/person/Xen> <http://purl.org/dc/terms/subject> <http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers> .
+<https://example.org/rit/Criti-at-ev02> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/RoleInTime> .
+<https://example.org/rit/Socr-at-ev01> <http://www.essepuntato.it/2012/04/tvc/atTime> <https://example.org/ev01-time> .
+<https://example.org/person/Plat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+<https://example.org/role/defendant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/Role> .
+<https://example.org/text/para01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<p xml:id=\"para01\" xmlns=\"http://www.tei-c.org/ns/1.0\">Some text mentioning <persName ref=\"#Plat\">Plato</persName> here and <placeName ref=\"#Athens\">Athens</placeName>.</p>\n      \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
+<https://example.org/person/Plat> <http://www.w3.org/2002/07/owl#sameAs> <https://viaf.org/viaf/108159964/> .
+<https://example.org/person/Aristot> <http://www.w3.org/2002/07/owl#sameAs> <http://dbpedia.org/resource/Aristotle> .
+<https://example.org/source/bibl01> <http://purl.org/dc/terms/creator> <https://example.org/person/Plat> .
+<https://example.org/rit/Criti-at-ev02> <http://www.essepuntato.it/2013/10/politicalroles/relatesToPlace> <https://example.org/place/Athens> .
+<https://example.org/event/ev02> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E5_Event> .
+<https://example.org/rit/Socr-at-ev01> <http://purl.org/spar/pro/withRole> <https://example.org/role/defendant> .
+<https://example.org/event/ev01> <http://www.w3.org/2000/01/rdf-schema#label> "Socrates trial" .
+<https://example.org/source/bibl01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#PrimarySource> .
+<https://example.org/person/Xen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<person sameAs=\"http://viaf.org/viaf/89597697\" xml:id=\"Xen\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n            <persName xml:lang=\"en\">Xenophon</persName>\n            <persName xml:lang=\"el\">\u039E\u03B5\u03BD\u03BF\u03C6\u1FF6\u03BD</persName>\n          </person>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
+<https://example.org/event/ev01> <http://purl.org/dc/terms/subject> <http://wordnet-rdf.princeton.edu/id/01198357-n> .
+<https://example.org/ev01-time> <http://www.w3.org/2002/07/owl#hasIntervalStartDate> "-0399"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://example.org/person/Plat> <http://purl.org/dc/terms/description> "ancient-athenian-philosophers" .
+<https://example.org/person/Aristot> <http://purl.org/dc/terms/description> "ancient-athenian-philosophers" .
+<https://example.org/rit/Socr-at-ev01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/RoleInTime> .
+<https://example.org/rit/Socr-at-ev01> <http://www.essepuntato.it/2013/10/politicalroles/relatesToPlace> <https://example.org/place/Athens> .
+<https://example.org/person/Criti> <http://purl.org/dc/terms/subject> <http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers> .
+<https://example.org/rit/Criti-at-ev02> <http://www.essepuntato.it/2012/04/tvc/atTime> <https://example.org/ev02-time> .
+<https://example.org/person/Socr> <http://purl.org/spar/pro/holdsRoleInTime> <https://example.org/Socr-in-ev01> .
 <https://example.org/person/Aristot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+<https://example.org/event/ev01> <http://purl.org/dc/terms/description> "trial" .
+<https://example.org/source/bibl01> <http://purl.org/dc/terms/title> "Apology of Socrates" .
+<https://example.org/person/Socr> <http://purl.org/dc/terms/subject> <http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers> .
+<https://example.org/person/Socr> <http://www.w3.org/2000/01/rdf-schema#label> "Socrates"@en .
+<https://example.org/rit/Criti-at-ev02> <http://purl.org/spar/pro/relatesToEntity> <https://example.org/event/ev02> .
+<https://example.org/person/Aristot> <http://purl.org/dc/terms/subject> <http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers> .
+<https://example.org/person/Aristot> <http://purl.org/dc/terms/isReferencedBy> <https://example.org/text/para02> .
+<https://example.org/person/Socr> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+<https://example.org/person/Plat> <http://purl.org/dc/terms/subject> <http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers> .
+<https://example.org/person/Criti> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+<https://example.org/person/Socr> <http://www.w3.org/2002/07/owl#sameAs> <http://viaf.org/viaf/88039167> .
+<https://example.org/event/ev02> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Event> .
+<https://example.org/event/ev01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E5_Event> .
+<https://example.org/person/Criti> <http://purl.org/dc/terms/description> "ancient-athenian-philosophers" .
+<https://example.org/person/Criti> <http://www.w3.org/2002/07/owl#sameAs> <http://id.loc.gov/authorities/names/n00087919> .
+<https://example.org/person/Criti> <http://www.w3.org/2002/07/owl#sameAs> <http://viaf.org/viaf/17263602> .
 <https://example.org/text/para01> <http://iflastandards.info/ns/fr/frbr/frbroo/R15i_is_fragment_of> <https://example.org/example_v1> .
+<https://example.org/person/Xen> <http://www.w3.org/2002/07/owl#sameAs> <http://viaf.org/viaf/89597697> .
+<https://example.org/person/Socr> <http://purl.org/dc/terms/description> "ancient-athenian-philosophers" .
+<https://example.org/role/defendant> <http://www.w3.org/2000/01/rdf-schema#label> "defendant" .
+<https://example.org/person/Aristot> <http://www.w3.org/2002/07/owl#sameAs> <http://viaf.org/viaf/7524651> .
+<https://example.org/ev01-time> <http://www.w3.org/2002/07/owl#hasIntervalEndDate> "-0399"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://example.org/person/Xen> <http://www.w3.org/2000/01/rdf-schema#label> "Xenophon"@en .
+<https://example.org/text/para02> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<p xml:id=\"para02\" xmlns=\"http://www.tei-c.org/ns/1.0\">Some text mentioning <persName ref=\"#Aristot\">Aristotle</persName> and <placeName ref=\"#Sparta\">Sparta</placeName> here.</p>\n      \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
+<https://example.org/rit/Socr-at-ev01> <http://purl.org/spar/pro/relatesToEntity> <https://example.org/event/ev01> .
+<https://example.org/ev02-time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> .
+<https://example.org/person/Criti> <http://purl.org/spar/pro/holdsRoleInTime> <https://example.org/Criti-in-ev02> .
+<https://example.org/person/Criti> <http://www.w3.org/2000/01/rdf-schema#label> "Critias (approximately 460 B.C.-approximately 403 B.C.)"@en .
+<https://example.org/person/Criti> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<person sameAs=\"http://viaf.org/viaf/17263602 http://id.loc.gov/authorities/names/n00087919 http://dbpedia.org/resource/Critias\" xml:id=\"Criti\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n            <persName xml:lang=\"en\">Critias (approximately 460 B.C.-approximately 403 B.C.)</persName>\n            <persName xml:lang=\"el\">\u039A\u03C1\u03B9\u03C4\u03AF\u03B1\u03C2</persName>\n            <event from=\"-0404-06\" to=\"-0403-01\" xml:id=\"ev02\">\n              <desc xml:id=\"desc02\">Between 404 B.C. and 403 B.C. <persName role=\"leader\">Critias</persName> lead the oligarchic government imposed on <placeName ref=\"#Athens\" type=\"place_of_event\">Athens</placeName> by <placeName ref=\"#Sparta\">Sparta</placeName> after the end of the Peloponnysian war. <bibl xml:id=\"bibl02\">An accout of the main events concerning this period is given by the <author ref=\"#Aristot\">aristotelian</author> <title>Constitution of the Athenians</title></bibl>.</desc>\n            </event>\n          </person>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
+<https://example.org/ev01-time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> .
+<https://example.org/person/Aristot> <http://www.w3.org/2000/01/rdf-schema#label> "Aristotle"@en .
+<https://example.org/event/ev01> <http://www.w3.org/ns/prov#hadPrimarySource> <https://example.org/source/bibl01> .
+<https://example.org/person/Criti> <http://www.w3.org/2002/07/owl#sameAs> <http://dbpedia.org/resource/Critias> .
+<https://example.org/text/line01> <http://iflastandards.info/ns/fr/frbr/frbroo/R15i_is_fragment_of> <https://example.org/example_v1> .
+<https://example.org/ev02-time> <http://www.w3.org/2002/07/owl#hasIntervalStartDate> "-0404-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://example.org/person/Plat> <http://www.w3.org/2002/07/owl#sameAs> <http://dbpedia.org/resource/Plato> .
+<https://example.org/text/para01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://example.org/event/ev01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Event> .
+<https://example.org/text/para02> <http://iflastandards.info/ns/fr/frbr/frbroo/R15i_is_fragment_of> <https://example.org/example_v1> .
+<https://example.org/source/bibl01> <http://www.w3.org/2002/07/owl#sameAs> <http://viaf.org/viaf/214045129> .
 

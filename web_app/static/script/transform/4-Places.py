@@ -66,7 +66,7 @@ for place in root.findall('.//tei:place', tei):
     place_ref = '#' + place_id
 
     #place
-    g.add( (place_uri, RDF.type, schema.Place))
+    g.add( (place_uri, RDF.type, crm.E53_Place))
 
     #place_sameas(place)
     same_as = place.get('sameAs').split()
