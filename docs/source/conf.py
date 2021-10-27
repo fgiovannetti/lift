@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'LIFT'
+copyright = '2021, Francesca Giovannetti'
+author = 'Francesca Giovannetti'
 
 release = '0.1'
 version = '0.1.0'
