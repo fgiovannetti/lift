@@ -207,7 +207,7 @@ Events
 
 .. All links
 
-.. |AgRelOn| raw:: html
+.. |Agent Relationship Ontology (AgRelOn)| raw:: html
 	
 	<a href="https://d-nb.info/standards/elementset/agrelon" target="_blank">AgRelOn</a>
 
@@ -215,7 +215,7 @@ Events
 	
 	<a href="http://www.cidoc-crm.org/cidoc-crm/" target="_blank">CIDOC Conceptual Reference Model (CRM)</a>
 
-.. |DCMI Metadata Terms (DCTERMS)| raw:: html
+.. |Dublin Core (DCTERMS)| raw:: html
 	
 	<a href="http://purl.org/dc/terms/" target="_blank">DCMI Metadata Terms (DCTERMS)</a>
 
