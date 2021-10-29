@@ -33,7 +33,7 @@ v.write('''<div xmlns="http://www.w3.org/1999/xhtml"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
     xmlns:schema="https://schema.org/" 
     xmlns:tei="http://www.tei-c.org/ns/1.0" 
-    xmlns:tvc="http://www.essepuntato.it/2012/04/tvc/">''')
+    xmlns:ti="http://www.essepuntato.it/2012/04/tvc/">''')
 
 
 nodes = root.findall('./rdf:Description', ns)

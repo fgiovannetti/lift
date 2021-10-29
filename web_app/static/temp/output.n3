@@ -12,12 +12,109 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://example.org/place/Athens> a crm:E53_Place ;
-    rdfs:label "Athens"@en ;
-    dcterms:isReferencedBy <https://example.org/text/desc01>,
-        <https://example.org/text/desc02>,
-        <https://example.org/text/para01> ;
-    = <https://pleiades.stoa.org/places/579885> .
+<https://example.org/person/Aristot> a crm:E21_Person ;
+    rdfs:label "Aristotle"@en ;
+    dcterms:description "ancient athenian philosophers" ;
+    dcterms:isReferencedBy <https://example.org/text/para02> ;
+    dcterms:subject <http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers> ;
+    rdf:value """<relation active="#Criti" name="hasNieceNephew" passive="#Plat" xml:id="rel03" xmlns="http://www.tei-c.org/ns/1.0"/>
+          
+"""^^rdf:XMLLiteral,
+        """<relation active="#Socr" name="hasStudent" passive="#Plat #Xen #Criti" xml:id="rel01" xmlns="http://www.tei-c.org/ns/1.0"/>
+            
+"""^^rdf:XMLLiteral,
+        """<relation mutual="#Plat #Xen" name="hasColleague" xml:id="rel02" xmlns="http://www.tei-c.org/ns/1.0"/>
+          
+"""^^rdf:XMLLiteral,
+        """<person sameAs="http://viaf.org/viaf/7524651 http://dbpedia.org/resource/Aristotle" xml:id="Aristot" xmlns="http://www.tei-c.org/ns/1.0">
+            <persName xml:lang="en">Aristotle</persName>
+            <persName xml:lang="el">Ἀριστοτέλης</persName>
+          </person>
+          
+"""^^rdf:XMLLiteral ;
+    = <http://dbpedia.org/resource/Aristotle>,
+        <http://viaf.org/viaf/7524651> .
+
+<https://example.org/person/Criti> a crm:E21_Person ;
+    rdfs:label "Critias (approximately 460 B.C.-approximately 403 B.C.)"@en ;
+    dcterms:description "ancient athenian philosophers" ;
+    dcterms:subject <http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers> ;
+    pro:holdsRoleInTime <https://example.org/Criti-in-ev02> ;
+    rdf:value """<relation active="#Criti" name="hasNieceNephew" passive="#Plat" xml:id="rel03" xmlns="http://www.tei-c.org/ns/1.0"/>
+          
+"""^^rdf:XMLLiteral,
+        """<relation active="#Socr" name="hasStudent" passive="#Plat #Xen #Criti" xml:id="rel01" xmlns="http://www.tei-c.org/ns/1.0"/>
+            
+"""^^rdf:XMLLiteral,
+        """<relation mutual="#Plat #Xen" name="hasColleague" xml:id="rel02" xmlns="http://www.tei-c.org/ns/1.0"/>
+          
+"""^^rdf:XMLLiteral,
+        """<person sameAs="http://viaf.org/viaf/17263602 http://id.loc.gov/authorities/names/n00087919 http://dbpedia.org/resource/Critias" xml:id="Criti" xmlns="http://www.tei-c.org/ns/1.0">
+            <persName xml:lang="en">Critias (approximately 460 B.C.-approximately 403 B.C.)</persName>
+            <persName xml:lang="el">Κριτίας</persName>
+            <event from="-0404-06" to="-0403-01" xml:id="ev02">
+              <desc xml:id="desc02">Between 404 B.C. and 403 B.C. <persName role="leader">Critias</persName> lead the oligarchic government imposed on <placeName ref="#Athens" type="place_of_event">Athens</placeName> by <placeName ref="#Sparta">Sparta</placeName> after the end of the Peloponnysian war. <bibl xml:id="bibl02">An accout of the main events concerning this period is given by the <author ref="#Aristot">aristotelian</author> <title>Constitution of the Athenians</title></bibl>.</desc>
+            </event>
+          </person>
+          
+"""^^rdf:XMLLiteral ;
+    = <http://dbpedia.org/resource/Critias>,
+        <http://id.loc.gov/authorities/names/n00087919>,
+        <http://viaf.org/viaf/17263602> ;
+    agrelon:hasNieceNephew <https://example.org/Plat> .
+
+<https://example.org/person/Socr> a crm:E21_Person ;
+    rdfs:label "Socrates"@en ;
+    dcterms:description "ancient athenian philosophers" ;
+    dcterms:isReferencedBy <https://example.org/text/line01> ;
+    dcterms:subject <http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers> ;
+    pro:holdsRoleInTime <https://example.org/Socr-in-ev01> ;
+    rdf:value """<person sameAs="http://viaf.org/viaf/88039167" xml:id="Socr" xmlns="http://www.tei-c.org/ns/1.0">
+            <persName xml:lang="en">Socrates</persName>
+            <persName xml:lang="el">Σωκρᾰ́της</persName>
+            <event corresp="http://wordnet-rdf.princeton.edu/id/01198357-n" type="trial" when="-0399" xml:id="ev01">
+              <label>Socrates trial</label>
+              <desc xml:id="desc01">The trial of <persName corresp="http://wordnet-rdf.princeton.edu/id/09781524-n" ref="#Socr" role="defendant">Socrates</persName> for impiety and corruption of the youth took place in <placeName ref="#Athens">Athens</placeName> in <date when="-0399">399 B.C.</date></desc> <bibl sameAs="http://viaf.org/viaf/214045129" xml:id="bibl01"><author ref="#Plat">Plato</author> gives a contemporary account of the trial in his work 
+                titled <title ref="Apology_of_Socr">Apology of Socrates</title>.</bibl>
+            </event>
+          </person>
+          
+"""^^rdf:XMLLiteral,
+        """<relation active="#Criti" name="hasNieceNephew" passive="#Plat" xml:id="rel03" xmlns="http://www.tei-c.org/ns/1.0"/>
+          
+"""^^rdf:XMLLiteral,
+        """<relation active="#Socr" name="hasStudent" passive="#Plat #Xen #Criti" xml:id="rel01" xmlns="http://www.tei-c.org/ns/1.0"/>
+            
+"""^^rdf:XMLLiteral,
+        """<relation mutual="#Plat #Xen" name="hasColleague" xml:id="rel02" xmlns="http://www.tei-c.org/ns/1.0"/>
+          
+"""^^rdf:XMLLiteral ;
+    = <http://viaf.org/viaf/88039167> ;
+    agrelon:hasStudent <https://example.org/Criti>,
+        <https://example.org/Plat>,
+        <https://example.org/Xen> .
+
+<https://example.org/person/Xen> a crm:E21_Person ;
+    rdfs:label "Xenophon"@en ;
+    dcterms:description "ancient athenian philosophers" ;
+    dcterms:subject <http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers> ;
+    rdf:value """<relation active="#Criti" name="hasNieceNephew" passive="#Plat" xml:id="rel03" xmlns="http://www.tei-c.org/ns/1.0"/>
+          
+"""^^rdf:XMLLiteral,
+        """<relation active="#Socr" name="hasStudent" passive="#Plat #Xen #Criti" xml:id="rel01" xmlns="http://www.tei-c.org/ns/1.0"/>
+            
+"""^^rdf:XMLLiteral,
+        """<relation mutual="#Plat #Xen" name="hasColleague" xml:id="rel02" xmlns="http://www.tei-c.org/ns/1.0"/>
+          
+"""^^rdf:XMLLiteral,
+        """<person sameAs="http://viaf.org/viaf/89597697" xml:id="Xen" xmlns="http://www.tei-c.org/ns/1.0">
+            <persName xml:lang="en">Xenophon</persName>
+            <persName xml:lang="el">Ξενοφῶν</persName>
+          </person>
+          
+"""^^rdf:XMLLiteral ;
+    = <http://viaf.org/viaf/89597697> ;
+    agrelon:hasColleague <https://example.org/Plat> .
 
 <https://example.org/place/Sparta> a crm:E53_Place ;
     rdfs:label "Sparta" ;
@@ -31,9 +128,100 @@
     = <http://dbpedia.org/resource/Sparta>,
         <https://pleiades.stoa.org/places/570685> .
 
+<https://example.org/rit/Criti-at-ev02> a pro:RoleInTime ;
+    pro:relatesToEntity <https://example.org/event/ev02> ;
+    tvc:atTime <https://example.org/ev02-time> ;
+    proles:relatesToPlace <https://example.org/place/Athens> .
+
+<https://example.org/rit/Socr-at-ev01> a pro:RoleInTime ;
+    pro:relatesToEntity <https://example.org/event/ev01> ;
+    pro:withRole <https://example.org/role/defendant> ;
+    tvc:atTime <https://example.org/ev01-time> ;
+    proles:relatesToPlace <https://example.org/place/Athens> .
+
+<https://example.org/ev01-time> a <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> ;
+    owl:hasIntervalEndDate "-0399"^^xsd:date ;
+    owl:hasIntervalStartDate "-0399"^^xsd:date .
+
+<https://example.org/ev02-time> a <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> ;
+    owl:hasIntervalEndDate "-0403-01"^^xsd:date ;
+    owl:hasIntervalStartDate "-0404-06"^^xsd:date .
+
+<https://example.org/event/ev01> a crm:E5_Event ;
+    rdfs:label "Socrates trial" ;
+    dcterms:description "trial" ;
+    dcterms:subject <http://wordnet-rdf.princeton.edu/id/01198357-n> ;
+    rdf:value """<event corresp="http://wordnet-rdf.princeton.edu/id/01198357-n" type="trial" when="-0399" xml:id="ev01" xmlns="http://www.tei-c.org/ns/1.0">
+              <label>Socrates trial</label>
+              <desc xml:id="desc01">The trial of <persName corresp="http://wordnet-rdf.princeton.edu/id/09781524-n" ref="#Socr" role="defendant">Socrates</persName> for impiety and corruption of the youth took place in <placeName ref="#Athens">Athens</placeName> in <date when="-0399">399 B.C.</date></desc> <bibl sameAs="http://viaf.org/viaf/214045129" xml:id="bibl01"><author ref="#Plat">Plato</author> gives a contemporary account of the trial in his work 
+                titled <title ref="Apology_of_Socr">Apology of Socrates</title>.</bibl>
+            </event>
+          
+"""^^rdf:XMLLiteral ;
+    prov:hadPrimarySource <https://example.org/source/bibl01> .
+
+<https://example.org/event/ev02> a crm:E5_Event ;
+    rdf:value """<event from="-0404-06" to="-0403-01" xml:id="ev02" xmlns="http://www.tei-c.org/ns/1.0">
+              <desc xml:id="desc02">Between 404 B.C. and 403 B.C. <persName role="leader">Critias</persName> lead the oligarchic government imposed on <placeName ref="#Athens" type="place_of_event">Athens</placeName> by <placeName ref="#Sparta">Sparta</placeName> after the end of the Peloponnysian war. <bibl xml:id="bibl02">An accout of the main events concerning this period is given by the <author ref="#Aristot">aristotelian</author> <title>Constitution of the Athenians</title></bibl>.</desc>
+            </event>
+          
+"""^^rdf:XMLLiteral .
+
+<https://example.org/person/Plat> a crm:E21_Person ;
+    rdfs:label "Plato"@en ;
+    dcterms:description "ancient athenian philosophers" ;
+    dcterms:isReferencedBy <https://example.org/text/para01> ;
+    dcterms:subject <http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers> ;
+    rdf:value """<relation active="#Criti" name="hasNieceNephew" passive="#Plat" xml:id="rel03" xmlns="http://www.tei-c.org/ns/1.0"/>
+          
+"""^^rdf:XMLLiteral,
+        """<relation active="#Socr" name="hasStudent" passive="#Plat #Xen #Criti" xml:id="rel01" xmlns="http://www.tei-c.org/ns/1.0"/>
+            
+"""^^rdf:XMLLiteral,
+        """<relation mutual="#Plat #Xen" name="hasColleague" xml:id="rel02" xmlns="http://www.tei-c.org/ns/1.0"/>
+          
+"""^^rdf:XMLLiteral,
+        """<person sameAs="https://viaf.org/viaf/108159964/ http://dbpedia.org/resource/Plato" xml:id="Plat" xmlns="http://www.tei-c.org/ns/1.0">
+            <persName xml:lang="en">Plato</persName>
+            <persName xml:lang="el">Πλάτων</persName>
+          </person>
+          
+"""^^rdf:XMLLiteral ;
+    = <http://dbpedia.org/resource/Plato>,
+        <https://viaf.org/viaf/108159964/> ;
+    agrelon:hasColleague <https://example.org/Xen> .
+
+<https://example.org/role/defendant> a pro:Role ;
+    rdfs:label "defendant" ;
+    = <http://wordnet-rdf.princeton.edu/id/09781524-n> .
+
+<https://example.org/source/bibl01> a prov:PrimarySource ;
+    dcterms:creator <https://example.org/person/Plat> ;
+    dcterms:title "Apology of Socrates" ;
+    = <http://viaf.org/viaf/214045129> .
+
 <https://example.org/text/desc01> a frbroo:F23_Expression_Fragment ;
     frbroo:R15i_is_fragment_of <https://example.org/example_v1> ;
     rdf:value """<desc xml:id="desc01" xmlns="http://www.tei-c.org/ns/1.0">The trial of <persName corresp="http://wordnet-rdf.princeton.edu/id/09781524-n" ref="#Socr" role="defendant">Socrates</persName> for impiety and corruption of the youth took place in <placeName ref="#Athens">Athens</placeName> in <date when="-0399">399 B.C.</date></desc> 
+"""^^rdf:XMLLiteral .
+
+<https://example.org/text/line01> a frbroo:F23_Expression_Fragment ;
+    frbroo:R15i_is_fragment_of <https://example.org/example_v1> ;
+    rdf:value """<l xml:id="line01" xmlns="http://www.tei-c.org/ns/1.0">Some text mentioning <persName ref="#Socr">Socrates</persName></l>
+      
+"""^^rdf:XMLLiteral .
+
+<https://example.org/place/Athens> a crm:E53_Place ;
+    rdfs:label "Athens"@en ;
+    dcterms:isReferencedBy <https://example.org/text/desc01>,
+        <https://example.org/text/desc02>,
+        <https://example.org/text/para01> ;
+    = <https://pleiades.stoa.org/places/579885> .
+
+<https://example.org/text/desc02> a frbroo:F23_Expression_Fragment ;
+    frbroo:R15i_is_fragment_of <https://example.org/example_v1> ;
+    rdf:value """<desc xml:id="desc02" xmlns="http://www.tei-c.org/ns/1.0">Between 404 B.C. and 403 B.C. <persName role="leader">Critias</persName> lead the oligarchic government imposed on <placeName ref="#Athens" type="place_of_event">Athens</placeName> by <placeName ref="#Sparta">Sparta</placeName> after the end of the Peloponnysian war. <bibl xml:id="bibl02">An accout of the main events concerning this period is given by the <author ref="#Aristot">aristotelian</author> <title>Constitution of the Athenians</title></bibl>.</desc>
+            
 """^^rdf:XMLLiteral .
 
 <https://example.org/text/para01> a frbroo:F23_Expression_Fragment ;
@@ -46,11 +234,5 @@
     frbroo:R15i_is_fragment_of <https://example.org/example_v1> ;
     rdf:value """<p xml:id="para02" xmlns="http://www.tei-c.org/ns/1.0">Some text mentioning <persName ref="#Aristot">Aristotle</persName> and <placeName ref="#Sparta">Sparta</placeName>.</p>
       
-"""^^rdf:XMLLiteral .
-
-<https://example.org/text/desc02> a frbroo:F23_Expression_Fragment ;
-    frbroo:R15i_is_fragment_of <https://example.org/example_v1> ;
-    rdf:value """<desc xml:id="desc02" xmlns="http://www.tei-c.org/ns/1.0">Between 404 B.C. and 403 B.C. <persName role="leader">Critias</persName> lead the oligarchic government imposed on <placeName ref="#Athens" type="place_of_event">Athens</placeName> by <placeName ref="#Sparta">Sparta</placeName> after the end of the Peloponnysian war. <bibl xml:id="bibl02">An accout of the main events concerning this period is given by the <author ref="#Aristot">aristotelian</author> <title>Constitution of the Athenians</title></bibl>.</desc>
-            
 """^^rdf:XMLLiteral .
 

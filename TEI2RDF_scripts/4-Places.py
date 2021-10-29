@@ -27,7 +27,7 @@ frbroo = Namespace("http://iflastandards.info/ns/fr/frbr/frbroo/")
 pro = Namespace("http://purl.org/spar/pro/")
 proles = Namespace("http://www.essepuntato.it/2013/10/politicalroles/")
 prov = Namespace("http://www.w3.org/ns/prov#")
-tvc = Namespace("http://www.essepuntato.it/2012/04/tvc/")
+ti = Namespace("http://www.essepuntato.it/2012/04/tvc/")
 
 
 g = Graph()
@@ -41,7 +41,7 @@ g.bind("owl", OWL)
 g.bind("pro", pro)
 g.bind("proles", proles)
 g.bind("prov", prov)
-g.bind("tvc", tvc)
+g.bind("ti", ti)
 
 
 

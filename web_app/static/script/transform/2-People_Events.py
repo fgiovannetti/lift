@@ -27,7 +27,7 @@ frbroo = Namespace("http://iflastandards.info/ns/fr/frbr/frbroo/")
 pro = Namespace("http://purl.org/spar/pro/")
 proles = Namespace("http://www.essepuntato.it/2013/10/politicalroles/")
 prov = Namespace("http://www.w3.org/ns/prov#")
-tvc = Namespace("http://www.essepuntato.it/2012/04/tvc/")
+ti = Namespace("http://www.essepuntato.it/2012/04/tvc/")
 
 
 g = Graph()
@@ -41,7 +41,7 @@ g.bind("owl", OWL)
 g.bind("pro", pro)
 g.bind("proles", proles)
 g.bind("prov", prov)
-g.bind("tvc", tvc)
+g.bind("ti", ti)
 
 
 
@@ -159,15 +159,15 @@ for person in root.findall('.//tei:person', tei):
 
         #event_time()
         event_time_uri = URIRef(base_uri + '/' + event_id + '-time')
-        g.add( (rit_uri, tvc.atTime, event_time_uri))
+        g.add( (rit_uri, ti.atTime, event_time_uri))
         g.add( (event_time_uri, RDF.type, URIRef('http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval')))
         if event.get('when') is not None:
-            g.add( (event_time_uri, OWL.hasIntervalStartDate, Literal(event.get('when'), datatype=XSD.date)))
-            g.add( (event_time_uri, OWL.hasIntervalEndDate, Literal(event.get('when'), datatype=XSD.date)))
+            g.add( (event_time_uri, ti.hasIntervalStartDate, Literal(event.get('when'), datatype=XSD.date)))
+            g.add( (event_time_uri, ti.hasIntervalEndDate, Literal(event.get('when'), datatype=XSD.date)))
         if event.get('from') is not None:
-            g.add( (event_time_uri, OWL.hasIntervalStartDate, Literal(event.get('from'), datatype=XSD.date)))
+            g.add( (event_time_uri, ti.hasIntervalStartDate, Literal(event.get('from'), datatype=XSD.date)))
         if event.get('to') is not None:
-            g.add( (event_time_uri, OWL.hasIntervalEndDate, Literal(event.get('to'), datatype=XSD.date)))
+            g.add( (event_time_uri, ti.hasIntervalEndDate, Literal(event.get('to'), datatype=XSD.date)))
 
         #event_desc()
         g.add( (rit_uri, pro.relatesToEntity, URIRef(base_uri + '/event/' + event_id)))
