@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="https://www.example.org" xml:id="example">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Title</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Publication information</p>        
+      </publicationStmt>
+      <sourceDesc>
+        <listBibl>
+          <bibl xml:id="ext-ed-1">
+          <!-- other bibliographic information --> 
+          </bibl>
+          <bibl xml:id="ext-ed-2" sameAs='http://externaledition.org'>
+          <!-- other bibliographic information --> 
+          </bibl>
+        </listBibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <listPrefixDef>
+        <prefixDef ident="lawd" matchPattern="([a-z]+)" replacementPattern="http://lawd.info/ontology/$1"/>
+        <prefixDef ident="cao" matchPattern="([a-z]+)" replacementPattern="http://purl.org/cao/$1"/>
+        <prefixDef ident="ex" matchPattern="([a-z]+)" replacementPattern="http://example.org/$1"/>
+      </listPrefixDef>
+    </encodingDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <!-- xml:id attributes are my addition -->
+      <!-- Example 1 (TEI Consortium, 2019, 12.1.1) -->
+      <app xml:id="a1">
+        <rdg wit="#El" xml:id="a1-r1">Experience though noon Auctoritee</rdg>
+        <rdg wit="#La" xml:id="a1-r2">Experiment thouh noon Auctoritee</rdg>
+        <rdg wit="#Ra2" xml:id="a1-r3">Eryment though none auctorite</rdg>
+      </app> 
+      <!-- Example 2 (TEI Consortium, 2019, 12.1.1) -->
+      <!-- the value of the @type attributes have been changed to lawd:variant at the aim to demonstrate the use of the lawd reading classification system -->
+      <app xml:id="a2">
+        <lem wit="#El #Hg" xml:id="a2-r1">Experience</lem>
+        <rdg wit="#La" type="lawd:variant" xml:id="a2-r2">Experiment</rdg>
+        <rdg wit="#Ra2" type="lawd:variant" xml:id="a2-r3">Eryment</rdg>
+      </app> 
+      <!-- Example 3 (TEI Consortium, 2019, 12.1.1) -->
+      <app xml:id="a3">
+        <rdg wit="#La" varSeq="1" xml:id="a3-r1">Experiment</rdg>
+        <rdg wit="#Ra2" cause="cao:haplography" varSeq="2" xml:id="a3-r2">Eryment</rdg>
+      </app>
+      <!-- Example 4 (TEI Consortium, 2019, 12.1.1) -->
+      <app xml:id="a4">
+        <rdg wit="#Mu" varSeq="1" hand="#m1" xml:id="a4-r1">alle</rdg>
+        <rdg wit="#Mu" cause="lawd:addition" varSeq="2" hand="#m2" xml:id="a4-r2">allen</rdg>
+      </app>
+      <!-- Example 5 (TEI Consortium, 2019, 12.1.1) -->
+      <app xml:id="a5">
+        <rdg wit="#Kl" xml:id="a5-r1">hea(um) h(æþ)e</rdg>
+        <rdg wit="#ms" source="#ext-ed-1" xml:id="a5-r2">heaðo hlæwe</rdg>
+        <rdg wit="#ms" source="#ext-ed-2" xml:id="a5-r3">heaum hope</rdg>
+      </app>
+      <!-- Example 6 (TEI Consortium, 2019, 12.1.1) -->
+      <!-- Note that CAO does not handle elements internal to a note -->
+      <app xml:id="a6">
+        <lem xml:id="a6-r1">Beowulfe</lem>
+        <note source="#ext-ed-1" xml:id="a6-n1" target="#a6-r1">[...] Folio 179, with the last page (Fol. 198b) [...]</note>
+      </app>
+      <!-- Example 7 (TEI Consortium, 11.3.1.3) -->
+      <!-- Representation of Primary Sources: Correction and Conjecture -->
+      <!-- The responsible entity is fully described in <respStmt> within the TEI header -->
+      <!-- Original example from TEI Guidelines -->
+      <!-- <app xml:id="a7">
+        <rdg wit="#Hg">wight</rdg>
+        <rdg wit="#Ln #Ry2 #Ld">
+          <corr resp="#ETD">wright</corr>
+        </rdg>
+        <rdg wit="#Gg">
+          <corr resp="#mp">wyf</corr>
+        </rdg>
+      </app> -->
+      <!-- equivalent to -->
+      <app xml:id="a7">
+        <rdg wit="#Hg" xml:id="a7-r1">wight</rdg>
+        <rdg wit="#Ln #Ry2 #Ld" resp="#ETD" type="cao:correction" xml:id="a7-r2">wright</rdg>
+        <rdg wit="#Gg" resp="#mp" xml:id="a7-r3">wyf</rdg>
+      </app>
+      <!-- Example 8 (TEI Consortium, 11.3.1.3) -->
+      <!-- Original example from TEI Guidelines  -->
+      <!-- <app xml:id="a8">
+        <rdg varSeq="1">
+          <del>this</del>
+        </rdg>
+        <rdg varSeq="2">
+          <del>
+            <add>such a</add>
+          </del>
+        </rdg>
+        <rdg varSeq="3">
+          <add>a</add>
+        </rdg>
+      </app> -->
+      <!-- partially equivalent to -->
+      <app xml:id="a8">
+        <rdg varSeq="1" type="cao:deletion" xml:id="a8-r1">this</rdg>
+        <rdg varSeq="2" type="cao:deletion" xml:id="a8-r2">such a</rdg> 
+        <rdg varSeq="3" type="cao:addition" xml:id="a8-r3">a</rdg>
+      </app>
+      <!-- Example 9 (TEI Consortium, 12.4) -->
+      <app xml:id="a9">
+        <lem xml:id="a9-r1" source="#Heyworth">Hypsipyle uacuo constitit in thalamo:</lem>
+        <rdg xml:id="a9-r2" wit="#J" cause="cao:homeoarchy"/>
+      </app>
+      <!-- Example 10 (TEI Consortium, 12.1.3) -->
+      <app xml:id="a10">
+        <rdgGrp xml:id="a10-1">
+          <lem wit="#El #Hg" xml:id="a10-r1">Experience</lem>
+          <rdg wit="#Ha4" xml:id="a10-r2">Experiens</rdg>
+        </rdgGrp>
+        <rdgGrp xml:id="a10-2">
+          <lem resp="#ed2013" xml:id="a10-r3">Eriment</lem>
+          <rdg wit="#Ra2" xml:id="a10-r4">Eryment</rdg>
+        </rdgGrp>
+      </app>
+    </body>
+  </text>
+</TEI>
+
+
+
+
+
+

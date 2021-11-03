@@ -1,119 +1,214 @@
-<https://example.org/person/Xen> <http://purl.org/dc/terms/subject> <http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers> .
-<https://example.org/role/defendant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/Role> .
-<https://example.org/role/defendant> <http://www.w3.org/2002/07/owl#sameAs> <http://wordnet-rdf.princeton.edu/id/09781524-n> .
-<https://example.org/person/Criti> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<relation mutual=\"#Plat #Xen\" name=\"hasColleague\" xml:id=\"rel02\" xmlns=\"http://www.tei-c.org/ns/1.0\"/>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Plat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<relation active=\"#Criti\" name=\"hasNieceNephew\" passive=\"#Plat\" xml:id=\"rel03\" xmlns=\"http://www.tei-c.org/ns/1.0\"/>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/place/Sparta> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E53_Place> .
-<https://example.org/person/Plat> <http://www.w3.org/2000/01/rdf-schema#label> "Plato"@en .
-<https://example.org/person/Plat> <http://purl.org/dc/terms/subject> <http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers> .
-<https://example.org/event/ev01> <http://www.w3.org/2000/01/rdf-schema#label> "Socrates trial" .
-<https://example.org/person/Criti> <http://www.w3.org/2002/07/owl#sameAs> <http://dbpedia.org/resource/Critias> .
-<https://example.org/source/bibl01> <http://purl.org/dc/terms/title> "Apology of Socrates" .
-<https://example.org/person/Criti> <http://purl.org/spar/pro/holdsRoleInTime> <https://example.org/Criti-in-ev02> .
-<https://example.org/person/Criti> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<relation active=\"#Criti\" name=\"hasNieceNephew\" passive=\"#Plat\" xml:id=\"rel03\" xmlns=\"http://www.tei-c.org/ns/1.0\"/>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/ev02-time> <http://www.w3.org/2002/07/owl#hasIntervalEndDate> "-0403-01"^^<http://www.w3.org/2001/XMLSchema#date> .
-<https://example.org/source/bibl01> <http://www.w3.org/2002/07/owl#sameAs> <http://viaf.org/viaf/214045129> .
-<https://example.org/person/Plat> <http://www.w3.org/2002/07/owl#sameAs> <https://viaf.org/viaf/108159964/> .
-<https://example.org/event/ev01> <http://purl.org/dc/terms/subject> <http://wordnet-rdf.princeton.edu/id/01198357-n> .
-<https://example.org/source/bibl01> <http://purl.org/dc/terms/creator> <https://example.org/person/Plat> .
-<https://example.org/person/Aristot> <http://www.w3.org/2002/07/owl#sameAs> <http://viaf.org/viaf/7524651> .
-<https://example.org/text/line01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<l xml:id=\"line01\" xmlns=\"http://www.tei-c.org/ns/1.0\">Some text mentioning <persName ref=\"#Socr\">Socrates</persName></l>\n      \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Aristot> <http://www.w3.org/2002/07/owl#sameAs> <http://dbpedia.org/resource/Aristotle> .
-<https://example.org/person/Aristot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
-<https://example.org/ev02-time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> .
-<https://example.org/person/Xen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<relation active=\"#Socr\" name=\"hasStudent\" passive=\"#Plat #Xen #Criti\" xml:id=\"rel01\" xmlns=\"http://www.tei-c.org/ns/1.0\"/>\n            \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Socr> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<person sameAs=\"http://viaf.org/viaf/88039167\" xml:id=\"Socr\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n            <persName xml:lang=\"en\">Socrates</persName>\n            <persName xml:lang=\"el\">\u03A3\u03C9\u03BA\u03C1\u1FB0\u0301\u03C4\u03B7\u03C2</persName>\n            <event corresp=\"http://wordnet-rdf.princeton.edu/id/01198357-n\" type=\"trial\" when=\"-0399\" xml:id=\"ev01\">\n              <label>Socrates trial</label>\n              <desc xml:id=\"desc01\">The trial of <persName corresp=\"http://wordnet-rdf.princeton.edu/id/09781524-n\" ref=\"#Socr\" role=\"defendant\">Socrates</persName> for impiety and corruption of the youth took place in <placeName ref=\"#Athens\">Athens</placeName> in <date when=\"-0399\">399 B.C.</date></desc> <bibl sameAs=\"http://viaf.org/viaf/214045129\" xml:id=\"bibl01\"><author ref=\"#Plat\">Plato</author> gives a contemporary account of the trial in his work \n                titled <title ref=\"Apology_of_Socr\">Apology of Socrates</title>.</bibl>\n            </event>\n          </person>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Socr> <http://purl.org/dc/terms/description> "ancient athenian philosophers" .
-<https://example.org/event/ev02> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E5_Event> .
-<https://example.org/event/ev02> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<event from=\"-0404-06\" to=\"-0403-01\" xml:id=\"ev02\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n              <desc xml:id=\"desc02\">Between 404 B.C. and 403 B.C. <persName role=\"leader\">Critias</persName> lead the oligarchic government imposed on <placeName ref=\"#Athens\" type=\"place_of_event\">Athens</placeName> by <placeName ref=\"#Sparta\">Sparta</placeName> after the end of the Peloponnysian war. <bibl xml:id=\"bibl02\">An accout of the main events concerning this period is given by the <author ref=\"#Aristot\">aristotelian</author> <title>Constitution of the Athenians</title></bibl>.</desc>\n            </event>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/ev01-time> <http://www.w3.org/2002/07/owl#hasIntervalEndDate> "-0399"^^<http://www.w3.org/2001/XMLSchema#date> .
-<https://example.org/place/Sparta> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<place sameAs=\"https://pleiades.stoa.org/places/570685 http://dbpedia.org/resource/Sparta\" xml:id=\"Sparta\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n            <placeName>Sparta</placeName>\n          </place>\n        \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Socr> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<relation mutual=\"#Plat #Xen\" name=\"hasColleague\" xml:id=\"rel02\" xmlns=\"http://www.tei-c.org/ns/1.0\"/>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/text/desc01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<desc xml:id=\"desc01\" xmlns=\"http://www.tei-c.org/ns/1.0\">The trial of <persName corresp=\"http://wordnet-rdf.princeton.edu/id/09781524-n\" ref=\"#Socr\" role=\"defendant\">Socrates</persName> for impiety and corruption of the youth took place in <placeName ref=\"#Athens\">Athens</placeName> in <date when=\"-0399\">399 B.C.</date></desc> \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/rit/Criti-at-ev02> <http://www.essepuntato.it/2013/10/politicalroles/relatesToPlace> <https://example.org/place/Athens> .
-<https://example.org/person/Socr> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<relation active=\"#Criti\" name=\"hasNieceNephew\" passive=\"#Plat\" xml:id=\"rel03\" xmlns=\"http://www.tei-c.org/ns/1.0\"/>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/event/ev01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<event corresp=\"http://wordnet-rdf.princeton.edu/id/01198357-n\" type=\"trial\" when=\"-0399\" xml:id=\"ev01\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n              <label>Socrates trial</label>\n              <desc xml:id=\"desc01\">The trial of <persName corresp=\"http://wordnet-rdf.princeton.edu/id/09781524-n\" ref=\"#Socr\" role=\"defendant\">Socrates</persName> for impiety and corruption of the youth took place in <placeName ref=\"#Athens\">Athens</placeName> in <date when=\"-0399\">399 B.C.</date></desc> <bibl sameAs=\"http://viaf.org/viaf/214045129\" xml:id=\"bibl01\"><author ref=\"#Plat\">Plato</author> gives a contemporary account of the trial in his work \n                titled <title ref=\"Apology_of_Socr\">Apology of Socrates</title>.</bibl>\n            </event>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/source/bibl01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#PrimarySource> .
-<https://example.org/text/para01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<p xml:id=\"para01\" xmlns=\"http://www.tei-c.org/ns/1.0\">Some text mentioning <persName ref=\"#Plat\">Plato</persName> and <placeName ref=\"#Athens\">Athens</placeName>.</p>\n      \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Criti> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<person sameAs=\"http://viaf.org/viaf/17263602 http://id.loc.gov/authorities/names/n00087919 http://dbpedia.org/resource/Critias\" xml:id=\"Criti\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n            <persName xml:lang=\"en\">Critias (approximately 460 B.C.-approximately 403 B.C.)</persName>\n            <persName xml:lang=\"el\">\u039A\u03C1\u03B9\u03C4\u03AF\u03B1\u03C2</persName>\n            <event from=\"-0404-06\" to=\"-0403-01\" xml:id=\"ev02\">\n              <desc xml:id=\"desc02\">Between 404 B.C. and 403 B.C. <persName role=\"leader\">Critias</persName> lead the oligarchic government imposed on <placeName ref=\"#Athens\" type=\"place_of_event\">Athens</placeName> by <placeName ref=\"#Sparta\">Sparta</placeName> after the end of the Peloponnysian war. <bibl xml:id=\"bibl02\">An accout of the main events concerning this period is given by the <author ref=\"#Aristot\">aristotelian</author> <title>Constitution of the Athenians</title></bibl>.</desc>\n            </event>\n          </person>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Xen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
-<https://example.org/place/Athens> <http://purl.org/dc/terms/isReferencedBy> <https://example.org/text/desc01> .
-<https://example.org/rit/Criti-at-ev02> <http://www.essepuntato.it/2012/04/tvc/atTime> <https://example.org/ev02-time> .
-<https://example.org/rit/Socr-at-ev01> <http://purl.org/spar/pro/relatesToEntity> <https://example.org/event/ev01> .
-<https://example.org/rit/Socr-at-ev01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/RoleInTime> .
-<https://example.org/person/Socr> <http://purl.org/dc/terms/isReferencedBy> <https://example.org/text/line01> .
-<https://example.org/person/Plat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<relation active=\"#Socr\" name=\"hasStudent\" passive=\"#Plat #Xen #Criti\" xml:id=\"rel01\" xmlns=\"http://www.tei-c.org/ns/1.0\"/>\n            \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Xen> <http://www.w3.org/2002/07/owl#sameAs> <http://viaf.org/viaf/89597697> .
-<https://example.org/person/Aristot> <http://purl.org/dc/terms/description> "ancient athenian philosophers" .
-<https://example.org/text/para02> <http://iflastandards.info/ns/fr/frbr/frbroo/R15i_is_fragment_of> <https://example.org/example_v1> .
-<https://example.org/person/Criti> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
-<https://example.org/person/Criti> <http://www.w3.org/2000/01/rdf-schema#label> "Critias (approximately 460 B.C.-approximately 403 B.C.)"@en .
-<https://example.org/person/Aristot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<relation mutual=\"#Plat #Xen\" name=\"hasColleague\" xml:id=\"rel02\" xmlns=\"http://www.tei-c.org/ns/1.0\"/>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Plat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<person sameAs=\"https://viaf.org/viaf/108159964/ http://dbpedia.org/resource/Plato\" xml:id=\"Plat\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n            <persName xml:lang=\"en\">Plato</persName>\n            <persName xml:lang=\"el\">\u03A0\u03BB\u03AC\u03C4\u03C9\u03BD</persName>\n          </person>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Aristot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<relation active=\"#Criti\" name=\"hasNieceNephew\" passive=\"#Plat\" xml:id=\"rel03\" xmlns=\"http://www.tei-c.org/ns/1.0\"/>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/place/Athens> <http://purl.org/dc/terms/isReferencedBy> <https://example.org/text/para01> .
-<https://example.org/person/Socr> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
-<https://example.org/person/Aristot> <http://purl.org/dc/terms/subject> <http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers> .
-<https://example.org/person/Socr> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<relation active=\"#Socr\" name=\"hasStudent\" passive=\"#Plat #Xen #Criti\" xml:id=\"rel01\" xmlns=\"http://www.tei-c.org/ns/1.0\"/>\n            \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Plat> <http://purl.org/dc/terms/isReferencedBy> <https://example.org/text/para01> .
-<https://example.org/rit/Criti-at-ev02> <http://purl.org/spar/pro/relatesToEntity> <https://example.org/event/ev02> .
-<https://example.org/person/Criti> <http://www.w3.org/2002/07/owl#sameAs> <http://id.loc.gov/authorities/names/n00087919> .
-<https://example.org/person/Xen> <http://www.w3.org/2000/01/rdf-schema#label> "Xenophon"@en .
-<https://example.org/role/defendant> <http://www.w3.org/2000/01/rdf-schema#label> "defendant" .
-<https://example.org/place/Athens> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E53_Place> .
-<https://example.org/place/Athens> <http://www.w3.org/2000/01/rdf-schema#label> "Athens"@en .
-<https://example.org/rit/Socr-at-ev01> <http://www.essepuntato.it/2013/10/politicalroles/relatesToPlace> <https://example.org/place/Athens> .
-<https://example.org/person/Xen> <https://d-nb.info/standards/elementset/agrelon#hasColleague> <https://example.org/Plat> .
-<https://example.org/place/Sparta> <http://www.w3.org/2002/07/owl#sameAs> <http://dbpedia.org/resource/Sparta> .
-<https://example.org/person/Socr> <http://www.w3.org/2002/07/owl#sameAs> <http://viaf.org/viaf/88039167> .
-<https://example.org/ev01-time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> .
-<https://example.org/text/para01> <http://iflastandards.info/ns/fr/frbr/frbroo/R15i_is_fragment_of> <https://example.org/example_v1> .
-<https://example.org/person/Socr> <https://d-nb.info/standards/elementset/agrelon#hasStudent> <https://example.org/Xen> .
-<https://example.org/text/desc02> <http://iflastandards.info/ns/fr/frbr/frbroo/R15i_is_fragment_of> <https://example.org/example_v1> .
-<https://example.org/person/Plat> <https://d-nb.info/standards/elementset/agrelon#hasColleague> <https://example.org/Xen> .
-<https://example.org/person/Xen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<person sameAs=\"http://viaf.org/viaf/89597697\" xml:id=\"Xen\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n            <persName xml:lang=\"en\">Xenophon</persName>\n            <persName xml:lang=\"el\">\u039E\u03B5\u03BD\u03BF\u03C6\u1FF6\u03BD</persName>\n          </person>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/place/Sparta> <http://purl.org/dc/terms/isReferencedBy> <https://example.org/text/para02> .
-<https://example.org/place/Athens> <http://purl.org/dc/terms/isReferencedBy> <https://example.org/text/desc02> .
-<https://example.org/text/desc02> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
-<https://example.org/place/Athens> <http://www.w3.org/2002/07/owl#sameAs> <https://pleiades.stoa.org/places/579885> .
-<https://example.org/text/para01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
-<https://example.org/person/Socr> <https://d-nb.info/standards/elementset/agrelon#hasStudent> <https://example.org/Plat> .
-<https://example.org/text/para02> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<p xml:id=\"para02\" xmlns=\"http://www.tei-c.org/ns/1.0\">Some text mentioning <persName ref=\"#Aristot\">Aristotle</persName> and <placeName ref=\"#Sparta\">Sparta</placeName>.</p>\n      \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/text/desc01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
-<https://example.org/event/ev01> <http://purl.org/dc/terms/description> "trial" .
-<https://example.org/text/line01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
-<https://example.org/ev01-time> <http://www.w3.org/2002/07/owl#hasIntervalStartDate> "-0399"^^<http://www.w3.org/2001/XMLSchema#date> .
-<https://example.org/rit/Socr-at-ev01> <http://purl.org/spar/pro/withRole> <https://example.org/role/defendant> .
-<https://example.org/event/ev01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E5_Event> .
-<https://example.org/rit/Socr-at-ev01> <http://www.essepuntato.it/2012/04/tvc/atTime> <https://example.org/ev01-time> .
-<https://example.org/person/Socr> <http://purl.org/spar/pro/holdsRoleInTime> <https://example.org/Socr-in-ev01> .
-<https://example.org/person/Socr> <http://purl.org/dc/terms/subject> <http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers> .
-<https://example.org/person/Aristot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<relation active=\"#Socr\" name=\"hasStudent\" passive=\"#Plat #Xen #Criti\" xml:id=\"rel01\" xmlns=\"http://www.tei-c.org/ns/1.0\"/>\n            \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Criti> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<relation active=\"#Socr\" name=\"hasStudent\" passive=\"#Plat #Xen #Criti\" xml:id=\"rel01\" xmlns=\"http://www.tei-c.org/ns/1.0\"/>\n            \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Plat> <http://www.w3.org/2002/07/owl#sameAs> <http://dbpedia.org/resource/Plato> .
-<https://example.org/person/Criti> <https://d-nb.info/standards/elementset/agrelon#hasNieceNephew> <https://example.org/Plat> .
-<https://example.org/person/Socr> <http://www.w3.org/2000/01/rdf-schema#label> "Socrates"@en .
-<https://example.org/person/Plat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
-<https://example.org/person/Aristot> <http://www.w3.org/2000/01/rdf-schema#label> "Aristotle"@en .
-<https://example.org/event/ev01> <http://www.w3.org/ns/prov#hadPrimarySource> <https://example.org/source/bibl01> .
-<https://example.org/ev02-time> <http://www.w3.org/2002/07/owl#hasIntervalStartDate> "-0404-06"^^<http://www.w3.org/2001/XMLSchema#date> .
-<https://example.org/person/Criti> <http://purl.org/dc/terms/description> "ancient athenian philosophers" .
-<https://example.org/person/Plat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<relation mutual=\"#Plat #Xen\" name=\"hasColleague\" xml:id=\"rel02\" xmlns=\"http://www.tei-c.org/ns/1.0\"/>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Criti> <http://purl.org/dc/terms/subject> <http://dbpedia.org/class/yago/WikicatAncientAthenianPhilosophers> .
-<https://example.org/person/Aristot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<person sameAs=\"http://viaf.org/viaf/7524651 http://dbpedia.org/resource/Aristotle\" xml:id=\"Aristot\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n            <persName xml:lang=\"en\">Aristotle</persName>\n            <persName xml:lang=\"el\">\u1F08\u03C1\u03B9\u03C3\u03C4\u03BF\u03C4\u03AD\u03BB\u03B7\u03C2</persName>\n          </person>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/place/Sparta> <http://www.w3.org/2000/01/rdf-schema#label> "Sparta" .
-<https://example.org/text/line01> <http://iflastandards.info/ns/fr/frbr/frbroo/R15i_is_fragment_of> <https://example.org/example_v1> .
-<https://example.org/rit/Criti-at-ev02> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/pro/RoleInTime> .
-<https://example.org/person/Socr> <https://d-nb.info/standards/elementset/agrelon#hasStudent> <https://example.org/Criti> .
-<https://example.org/text/para02> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
-<https://example.org/person/Criti> <http://www.w3.org/2002/07/owl#sameAs> <http://viaf.org/viaf/17263602> .
-<https://example.org/text/desc01> <http://iflastandards.info/ns/fr/frbr/frbroo/R15i_is_fragment_of> <https://example.org/example_v1> .
-<https://example.org/place/Sparta> <http://www.w3.org/2002/07/owl#sameAs> <https://pleiades.stoa.org/places/570685> .
-<https://example.org/person/Xen> <http://purl.org/dc/terms/description> "ancient athenian philosophers" .
-<https://example.org/text/desc02> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<desc xml:id=\"desc02\" xmlns=\"http://www.tei-c.org/ns/1.0\">Between 404 B.C. and 403 B.C. <persName role=\"leader\">Critias</persName> lead the oligarchic government imposed on <placeName ref=\"#Athens\" type=\"place_of_event\">Athens</placeName> by <placeName ref=\"#Sparta\">Sparta</placeName> after the end of the Peloponnysian war. <bibl xml:id=\"bibl02\">An accout of the main events concerning this period is given by the <author ref=\"#Aristot\">aristotelian</author> <title>Constitution of the Athenians</title></bibl>.</desc>\n            \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Aristot> <http://purl.org/dc/terms/isReferencedBy> <https://example.org/text/para02> .
-<https://example.org/place/Sparta> <http://purl.org/dc/terms/isReferencedBy> <https://example.org/text/desc02> .
-<https://example.org/person/Plat> <http://purl.org/dc/terms/description> "ancient athenian philosophers" .
-<https://example.org/person/Xen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<relation mutual=\"#Plat #Xen\" name=\"hasColleague\" xml:id=\"rel02\" xmlns=\"http://www.tei-c.org/ns/1.0\"/>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
-<https://example.org/person/Xen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "<relation active=\"#Criti\" name=\"hasNieceNephew\" passive=\"#Plat\" xml:id=\"rel03\" xmlns=\"http://www.tei-c.org/ns/1.0\"/>\n          \n"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> .
+<https://www.example.org/rdg/a7-r1> <https://w3id.org/cao/isWitnessedBy> <https://www.example.org/rdg-fragment/a7-r1> .
+<https://www.example.org/rdg-fragment/a7-r1> <http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by> <https://www.example.org/wit/Hg> .
+<https://www.example.org/rdg-fragment/a5-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://www.example.org/rdg-fragment/a1-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://www.example.org/rdg-fragment/a2-r1> <http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by> <https://www.example.org/wit/Hg> .
+<https://www.example.org/rdg-fragment/a4-r2> <https://w3id.org/cao/hasAttributedHand> <https://www.example.org/hand/m2> .
+<https://www.example.org/app/a5> <https://w3id.org/cao/hasReading> <https://www.example.org/rdg/a5-r2> .
+<https://www.example.org/annot/an-a2> <http://purl.org/dc/terms/creator> <https://www.example.org/agent/f-giov> .
+<https://www.example.org/rdg/a2-r3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "['Eryment']"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/rdg-fragment/a1-r3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://www.example.org/annot/an-a7> <http://www.w3.org/ns/oa#hasBody> <https://www.example.org/app/a7> .
+<https://www.example.org/rdg/a5-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/Reading> .
+<https://www.example.org/rdg-fragment/a1-r1> <http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by> <https://www.example.org/wit/El> .
+<https://www.example.org/app/a7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/VariationUnit> .
+<https://www.example.org/annot/an-a8> <http://purl.org/dc/terms/created> "2021-11-03"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://www.example.org/rdg-fragment/a5-r3> <http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by> <https://www.example.org/wit/ms> .
+<https://www.example.org/app/a6> <https://w3id.org/cao/hasBaseReading> <https://www.example.org/rdg/a6-r1> .
+<https://www.example.org/rdg-fragment/a5-r1> <http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by> <https://www.example.org/wit/Kl> .
+<https://www.example.org/annot/an-a4> <http://www.w3.org/ns/oa#hasTarget> <https://www.example.org/varloc/vl-a4> .
+<https://www.example.org/annot/an-a5> <http://www.w3.org/ns/oa#hasBody> <https://www.example.org/app/a5> .
+<https://www.example.org/rdg-fragment/a4-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://www.example.org/annot/an-a7> <http://www.w3.org/ns/oa#hasTarget> <https://www.example.org/varloc/vl-a7> .
+<https://www.example.org/annot/an-a6> <http://www.w3.org/ns/oa#hasTarget> <https://www.example.org/varloc/vl-a6> .
+<https://www.example.org/rdg/a6-r1> <https://w3id.org/cao/isWitnessedBy> <https://www.example.org/rdg-fragment/a6-r1> .
+<https://www.example.org/rdg/a5-r3> <http://www.w3.org/ns/prov#hadPrimarySource> <http://externaledition.org> .
+<https://www.example.org/rdg-fragment/a8-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://www.example.org/app/a1> <https://w3id.org/cao/hasReading> <https://www.example.org/rdg/a1-r1> .
+<https://www.example.org/app/a2> <https://w3id.org/cao/hasReading> <https://www.example.org/rdg/a2-r3> .
+<https://www.example.org/rdg/a2-r3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/Reading> .
+<https://www.example.org/annot/an-a9> <http://purl.org/dc/terms/creator> <https://www.example.org/agent/f-giov> .
+<https://www.example.org/rdg-fragment/a7-r3> <http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by> <https://www.example.org/wit/Gg> .
+<https://www.example.org/rdg/a6-r1> <http://www.cidoc-crm.org/cidoc-crm/P3_has_note> <https://www.example.org/note/a6-n1> .
+<https://www.example.org/app/a5> <https://w3id.org/cao/hasReading> <https://www.example.org/rdg/a5-r1> .
+<https://www.example.org/rdg/a2-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "['Experience']"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/app/a4> <https://w3id.org/cao/hasReading> <https://www.example.org/rdg/a4-r2> .
+<https://www.example.org/annot/an-a10> <http://www.w3.org/ns/oa#hasBody> <https://www.example.org/app/a10> .
+<https://www.example.org/annot/an-a10> <http://www.w3.org/ns/oa#hasTarget> <https://www.example.org/varloc/vl-a10> .
+<https://www.example.org/annot/an-a5> <http://www.w3.org/ns/oa#hasTarget> <https://www.example.org/varloc/vl-a5> .
+<https://www.example.org/rdg/a4-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "['alle']"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/rdg-fragment/a1-r3> <http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by> <https://www.example.org/wit/Ra2> .
+<https://www.example.org/rdg-fragment/a4-r1> <https://w3id.org/cao/hasAttributedHand> <https://www.example.org/hand/m1> .
+<https://www.example.org/rdg/a4-r2> <https://w3id.org/cao/isWitnessedBy> <https://www.example.org/rdg-fragment/a4-r2> .
+<https://www.example.org/rdg/a8-r3> <https://w3id.org/cao/follows> <https://www.example.org/rdg/a8-r2> .
+<https://www.example.org/rdg/a2-r2> <https://w3id.org/cao/isWitnessedBy> <https://www.example.org/rdg-fragment/a2-r2> .
+<https://www.example.org/rdg-fragment/a3-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://www.example.org/app/a1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/VariationUnit> .
+<https://www.example.org/rdg/a8-r2> <https://w3id.org/cao/isWitnessedBy> <https://www.example.org/rdg-fragment/a8-r2> .
+<https://www.example.org/annot/an-a7> <http://purl.org/dc/terms/creator> <https://www.example.org/agent/f-giov> .
+<https://www.example.org/rdg-fragment/a2-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://www.example.org/rdg/a2-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/Reading> .
+<https://www.example.org/app/a3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/VariationUnit> .
+<https://www.example.org/rdg/a7-r3> <https://w3id.org/cao/isWitnessedBy> <https://www.example.org/rdg-fragment/a7-r3> .
+<https://www.example.org/rdg-fragment/a2-r3> <http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by> <https://www.example.org/wit/Ra2> .
+<https://www.example.org/app/a2> <https://w3id.org/cao/hasReading> <https://www.example.org/rdg/a2-r2> .
+<https://www.example.org/app/a2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/VariationUnit> .
+<https://www.example.org/rdg/a3-r1> <https://w3id.org/cao/isWitnessedBy> <https://www.example.org/rdg-fragment/a3-r1> .
+<https://www.example.org/rdg/a3-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/Reading> .
+<https://www.example.org/rdg-fragment/a5-r2> <http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by> <https://www.example.org/wit/ms> .
+<https://www.example.org/rdg-fragment/a1-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://www.example.org/rdg/a7-r2> <https://w3id.org/cao/hasReadingType> <http://purl.org/cao/correction> .
+<https://www.example.org/rdg/a4-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "['allen']"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/rdg/a4-r2> <https://w3id.org/cao/follows> <https://www.example.org/rdg/a4-r1> .
+<https://www.example.org/rdg-fragment/a7-r2> <http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by> <https://www.example.org/wit/Ln> .
+<https://www.example.org/app/a1> <https://w3id.org/cao/hasReading> <https://www.example.org/rdg/a1-r2> .
+<https://www.example.org/rdg/a1-r3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "['Eryment though none auctorite']"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/app/a9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/VariationUnit> .
+<https://www.example.org/rdg-fragment/a2-r2> <http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by> <https://www.example.org/wit/La> .
+<https://www.example.org/rdg/a3-r2> <https://w3id.org/cao/follows> <https://www.example.org/rdg/a3-r1> .
+<https://www.example.org/rdg/a5-r1> <https://w3id.org/cao/isWitnessedBy> <https://www.example.org/rdg-fragment/a5-r1> .
+<https://www.example.org/app/a4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/VariationUnit> .
+<https://www.example.org/rdg/a1-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/Reading> .
+<https://www.example.org/app/a10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/VariationUnit> .
+<https://www.example.org/annot/an-a4> <http://www.w3.org/ns/oa#hasBody> <https://www.example.org/app/a4> .
+<https://www.example.org/rdg/a2-r2> <https://w3id.org/cao/hasReadingType> <http://lawd.info/ontology/variant> .
+<https://www.example.org/annot/an-a5> <http://purl.org/dc/terms/created> "2021-11-03"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://www.example.org/rdg-fragment/a7-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://www.example.org/annot/an-a3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/oa#Annotation> .
+<https://www.example.org/app/a7> <https://w3id.org/cao/hasReading> <https://www.example.org/rdg/a7-r2> .
+<https://www.example.org/rdg/a2-r3> <https://w3id.org/cao/isWitnessedBy> <https://www.example.org/rdg-fragment/a2-r3> .
+<https://www.example.org/rdg-fragment/a3-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://www.example.org/annot/an-a10> <http://purl.org/dc/terms/created> "2021-11-03"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://www.example.org/rdg/a7-r3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "['wyf']"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/annot/an-a8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/oa#Annotation> .
+<https://www.example.org/rdg/a5-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/Reading> .
+<https://www.example.org/rdg/a1-r3> <https://w3id.org/cao/isWitnessedBy> <https://www.example.org/rdg-fragment/a1-r3> .
+<https://www.example.org/rdg/a5-r2> <https://w3id.org/cao/isWitnessedBy> <https://www.example.org/rdg-fragment/a5-r2> .
+<https://www.example.org/annot/an-a7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/oa#Annotation> .
+<https://www.example.org/rdg/a4-r2> <https://w3id.org/cao/hasReadingCause> <http://lawd.info/ontology/addition> .
+<https://www.example.org/rdg/a5-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "[u'hea(um) h(\\xe6\\xfe)e']"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/rdg-fragment/a4-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://www.example.org/annot/an-a9> <http://purl.org/dc/terms/created> "2021-11-03"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://www.example.org/app/a4> <https://w3id.org/cao/hasReading> <https://www.example.org/rdg/a4-r1> .
+<https://www.example.org/note/a6-n1> <http://www.w3.org/ns/prov#hadPrimarySource> <https://www.example.org/source-edition/ext-ed-1> .
+<https://www.example.org/rdg/a2-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "['Experiment']"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/app/a1> <https://w3id.org/cao/hasReading> <https://www.example.org/rdg/a1-r3> .
+<https://www.example.org/rdg/a8-r3> <https://w3id.org/cao/isWitnessedBy> <https://www.example.org/rdg-fragment/a8-r3> .
+<https://www.example.org/rdg/a9-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "['Hypsipyle uacuo constitit in thalamo:']"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/rdg-fragment/a6-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://www.example.org/rdg-fragment/a1-r2> <http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by> <https://www.example.org/wit/La> .
+<https://www.example.org/rdg-fragment/a4-r2> <http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by> <https://www.example.org/wit/Mu> .
+<https://www.example.org/annot/an-a1> <http://www.w3.org/ns/oa#hasBody> <https://www.example.org/app/a1> .
+<https://www.example.org/rdg/a8-r3> <https://w3id.org/cao/hasReadingType> <http://purl.org/cao/addition> .
+<https://www.example.org/annot/an-a6> <http://www.w3.org/ns/oa#hasBody> <https://www.example.org/app/a6> .
+<https://www.example.org/rdg/a9-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/BaseReading> .
+<https://www.example.org/rdg-fragment/a5-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://www.example.org/app/a3> <https://w3id.org/cao/hasReading> <https://www.example.org/rdg/a3-r1> .
+<https://www.example.org/rdg/a4-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/Reading> .
+<https://www.example.org/rdg/a3-r2> <https://w3id.org/cao/hasReadingCause> <http://purl.org/cao/haplography> .
+<https://www.example.org/annot/an-a2> <http://purl.org/dc/terms/created> "2021-11-03"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://www.example.org/annot/an-a4> <http://purl.org/dc/terms/created> "2021-11-03"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://www.example.org/annot/an-a6> <http://purl.org/dc/terms/created> "2021-11-03"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://www.example.org/rdg/a1-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/Reading> .
+<https://www.example.org/rdg/a8-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "['such a']"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/rdg/a2-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/BaseReading> .
+<https://www.example.org/rdg/a1-r3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/Reading> .
+<https://www.example.org/app/a3> <https://w3id.org/cao/hasReading> <https://www.example.org/rdg/a3-r2> .
+<https://www.example.org/annot/an-a3> <http://www.w3.org/ns/oa#hasTarget> <https://www.example.org/varloc/vl-a3> .
+<https://www.example.org/rdg-fragment/a9-r2> <http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by> <https://www.example.org/wit/J> .
+<https://www.example.org/annot/an-a6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/oa#Annotation> .
+<https://www.example.org/rdg/a9-r2> <https://w3id.org/cao/isWitnessedBy> <https://www.example.org/rdg-fragment/a9-r2> .
+<https://www.example.org/rdg/a7-r2> <https://w3id.org/cao/isWitnessedBy> <https://www.example.org/rdg-fragment/a7-r2> .
+<https://www.example.org/rdg-fragment/a2-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://www.example.org/annot/an-a10> <http://purl.org/dc/terms/creator> <https://www.example.org/agent/f-giov> .
+<https://www.example.org/rdg/a7-r3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/Reading> .
+<https://www.example.org/annot/an-a4> <http://purl.org/dc/terms/creator> <https://www.example.org/agent/f-giov> .
+<https://www.example.org/annot/an-a4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/oa#Annotation> .
+<https://www.example.org/app/a8> <https://w3id.org/cao/hasReading> <https://www.example.org/rdg/a8-r2> .
+<https://www.example.org/app/a9> <https://w3id.org/cao/hasReading> <https://www.example.org/rdg/a9-r2> .
+<https://www.example.org/annot/an-a8> <http://purl.org/dc/terms/creator> <https://www.example.org/agent/f-giov> .
+<https://www.example.org/annot/an-a1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/oa#Annotation> .
+<https://www.example.org/rdg/a7-r2> <http://www.w3.org/ns/prov#wasAttributedTo> <https://www.example.org/agent/ETD> .
+<https://www.example.org/rdg/a8-r1> <https://w3id.org/cao/isWitnessedBy> <https://www.example.org/rdg-fragment/a8-r1> .
+<https://www.example.org/rdg/a2-r3> <https://w3id.org/cao/hasReadingType> <http://lawd.info/ontology/variant> .
+<https://www.example.org/rdg/a6-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/BaseReading> .
+<https://www.example.org/annot/an-a9> <http://www.w3.org/ns/oa#hasTarget> <https://www.example.org/varloc/vl-a9> .
+<https://www.example.org/annot/an-a3> <http://purl.org/dc/terms/created> "2021-11-03"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://www.example.org/annot/an-a3> <http://purl.org/dc/terms/creator> <https://www.example.org/agent/f-giov> .
+<https://www.example.org/rdg-fragment/a7-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://www.example.org/rdg/a9-r1> <https://w3id.org/cao/isWitnessedBy> <https://www.example.org/rdg-fragment/a9-r1> .
+<https://www.example.org/app/a8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/VariationUnit> .
+<https://www.example.org/rdg/a7-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/Reading> .
+<https://www.example.org/app/a8> <https://w3id.org/cao/hasReading> <https://www.example.org/rdg/a8-r1> .
+<https://www.example.org/rdg/a8-r3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "['a']"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/rdg/a8-r2> <https://w3id.org/cao/hasReadingType> <http://purl.org/cao/deletion> .
+<https://www.example.org/rdg/a3-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "['Eryment']"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/rdg-fragment/a2-r3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://www.example.org/rdg/a5-r3> <https://w3id.org/cao/isWitnessedBy> <https://www.example.org/rdg-fragment/a5-r3> .
+<https://www.example.org/annot/an-a8> <http://www.w3.org/ns/oa#hasBody> <https://www.example.org/app/a8> .
+<https://www.example.org/annot/an-a1> <http://purl.org/dc/terms/created> "2021-11-03"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://www.example.org/rdg/a3-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "['Experiment']"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/rdg/a5-r2> <http://www.w3.org/ns/prov#hadPrimarySource> <https://www.example.org/source-edition/ext-ed-1> .
+<https://www.example.org/app/a5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/VariationUnit> .
+<https://www.example.org/rdg-fragment/a7-r3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://www.example.org/annot/an-a6> <http://purl.org/dc/terms/creator> <https://www.example.org/agent/f-giov> .
+<https://www.example.org/rdg/a9-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "[]"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/app/a6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/VariationUnit> .
+<https://www.example.org/annot/an-a2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/oa#Annotation> .
+<https://www.example.org/rdg/a7-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "['wright']"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/rdg-fragment/a8-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://www.example.org/rdg-fragment/a9-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://www.example.org/rdg/a9-r2> <https://w3id.org/cao/hasReadingCause> <http://purl.org/cao/homeoarchy> .
+<https://www.example.org/app/a5> <https://w3id.org/cao/hasReading> <https://www.example.org/rdg/a5-r3> .
+<https://www.example.org/app/a8> <https://w3id.org/cao/hasReading> <https://www.example.org/rdg/a8-r3> .
+<https://www.example.org/rdg/a8-r1> <https://w3id.org/cao/hasReadingType> <http://purl.org/cao/deletion> .
+<https://www.example.org/annot/an-a7> <http://purl.org/dc/terms/created> "2021-11-03"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://www.example.org/rdg/a5-r3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/Reading> .
+<https://www.example.org/annot/an-a2> <http://www.w3.org/ns/oa#hasBody> <https://www.example.org/app/a2> .
+<https://www.example.org/rdg-fragment/a5-r3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://www.example.org/rdg/a7-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/Reading> .
+<https://www.example.org/annot/an-a3> <http://www.w3.org/ns/oa#hasBody> <https://www.example.org/app/a3> .
+<https://www.example.org/annot/an-a5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/oa#Annotation> .
+<https://www.example.org/rdg/a4-r1> <https://w3id.org/cao/isWitnessedBy> <https://www.example.org/rdg-fragment/a4-r1> .
+<https://www.example.org/annot/an-a1> <http://www.w3.org/ns/oa#hasTarget> <https://www.example.org/varloc/vl-a1> .
+<https://www.example.org/annot/an-a2> <http://www.w3.org/ns/oa#hasTarget> <https://www.example.org/varloc/vl-a2> .
+<https://www.example.org/rdg-fragment/a7-r2> <http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by> <https://www.example.org/wit/Ld> .
+<https://www.example.org/rdg-fragment/a8-r3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://www.example.org/rdg/a5-r3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "['heaum hope']"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/rdg/a8-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/Reading> .
+<https://www.example.org/rdg/a6-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "['Beowulfe']"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/app/a7> <https://w3id.org/cao/hasReading> <https://www.example.org/rdg/a7-r1> .
+<https://www.example.org/annot/an-a9> <http://www.w3.org/ns/oa#hasBody> <https://www.example.org/app/a9> .
+<https://www.example.org/app/a9> <https://w3id.org/cao/hasBaseReading> <https://www.example.org/rdg/a9-r1> .
+<https://www.example.org/annot/an-a1> <http://purl.org/dc/terms/creator> <https://www.example.org/agent/f-giov> .
+<https://www.example.org/rdg/a9-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/Reading> .
+<https://www.example.org/app/a7> <https://w3id.org/cao/hasReading> <https://www.example.org/rdg/a7-r3> .
+<https://www.example.org/rdg/a1-r2> <https://w3id.org/cao/isWitnessedBy> <https://www.example.org/rdg-fragment/a1-r2> .
+<https://www.example.org/rdg/a7-r3> <http://www.w3.org/ns/prov#wasAttributedTo> <https://www.example.org/agent/mp> .
+<https://www.example.org/note/a6-n1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "['[...] Folio 179, with the last page (Fol. 198b) [...]']"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/rdg/a8-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/Reading> .
+<https://www.example.org/annot/an-a10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/oa#Annotation> .
+<https://www.example.org/annot/an-a9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/oa#Annotation> .
+<https://www.example.org/rdg/a1-r1> <https://w3id.org/cao/isWitnessedBy> <https://www.example.org/rdg-fragment/a1-r1> .
+<https://www.example.org/rdg/a8-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "['this']"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/rdg-fragment/a7-r2> <http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by> <https://www.example.org/wit/Ry2> .
+<https://www.example.org/rdg-fragment/a9-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment> .
+<https://www.example.org/rdg/a8-r2> <https://w3id.org/cao/follows> <https://www.example.org/rdg/a8-r1> .
+<https://www.example.org/rdg/a2-r1> <https://w3id.org/cao/isWitnessedBy> <https://www.example.org/rdg-fragment/a2-r1> .
+<https://www.example.org/rdg/a5-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "[u'hea\\xf0o hl\\xe6we']"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/annot/an-a5> <http://purl.org/dc/terms/creator> <https://www.example.org/agent/f-giov> .
+<https://www.example.org/note/a6-n1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E62_String> .
+<https://www.example.org/rdg/a3-r2> <https://w3id.org/cao/isWitnessedBy> <https://www.example.org/rdg-fragment/a3-r2> .
+<https://www.example.org/rdg-fragment/a3-r2> <http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by> <https://www.example.org/wit/Ra2> .
+<https://www.example.org/rdg-fragment/a2-r1> <http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by> <https://www.example.org/wit/El> .
+<https://www.example.org/rdg/a7-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "['wight']"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/rdg-fragment/a4-r1> <http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by> <https://www.example.org/wit/Mu> .
+<https://www.example.org/rdg-fragment/a3-r1> <http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by> <https://www.example.org/wit/La> .
+<https://www.example.org/annot/an-a8> <http://www.w3.org/ns/oa#hasTarget> <https://www.example.org/varloc/vl-a8> .
+<https://www.example.org/rdg/a4-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/Reading> .
+<https://www.example.org/rdg/a8-r3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/Reading> .
+<https://www.example.org/rdg/a1-r2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "['Experiment thouh noon Auctoritee']"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/app/a2> <https://w3id.org/cao/hasBaseReading> <https://www.example.org/rdg/a2-r1> .
+<https://www.example.org/rdg/a1-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "['Experience though noon Auctoritee']"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://www.example.org/rdg/a3-r1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/cao/Reading> .
 

@@ -11,47 +11,81 @@
     ]
   },
   {
-    "@id": "https://www.example.org/rdg-fragment/a7-r2",
+    "@id": "https://www.example.org/rdg/a8-r1",
     "@type": [
-      "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"
+      "https://w3id.org/cao/Reading"
     ],
-    "http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by": [
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
       {
-        "@id": "https://www.example.org/wit/Ld"
-      },
+        "@value": [
+          "this"
+        ]
+      }
+    ],
+    "https://w3id.org/cao/hasReadingType": [
       {
-        "@id": "https://www.example.org/wit/Ry2"
-      },
+        "@id": "http://purl.org/cao/deletion"
+      }
+    ],
+    "https://w3id.org/cao/isWitnessedBy": [
       {
-        "@id": "https://www.example.org/wit/Ln"
+        "@id": "https://www.example.org/rdg-fragment/a8-r1"
       }
     ]
   },
   {
-    "@id": "https://www.example.org/rdg-fragment/a7-r1",
+    "@id": "https://www.example.org/rdg/a8-r2",
     "@type": [
-      "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"
+      "https://w3id.org/cao/Reading"
     ],
-    "http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by": [
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
       {
-        "@id": "https://www.example.org/wit/Hg"
+        "@value": [
+          "such a"
+        ]
+      }
+    ],
+    "https://w3id.org/cao/follows": [
+      {
+        "@id": "https://www.example.org/rdg/a8-r1"
+      }
+    ],
+    "https://w3id.org/cao/hasReadingType": [
+      {
+        "@id": "http://purl.org/cao/deletion"
+      }
+    ],
+    "https://w3id.org/cao/isWitnessedBy": [
+      {
+        "@id": "https://www.example.org/rdg-fragment/a8-r2"
       }
     ]
   },
   {
-    "@id": "https://www.example.org/app/a7",
+    "@id": "https://www.example.org/rdg/a8-r3",
     "@type": [
-      "https://w3id.org/cao/VariationUnit"
+      "https://w3id.org/cao/Reading"
     ],
-    "https://w3id.org/cao/hasReading": [
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
       {
-        "@id": "https://www.example.org/rdg/a7-r1"
-      },
+        "@value": [
+          "a"
+        ]
+      }
+    ],
+    "https://w3id.org/cao/follows": [
       {
-        "@id": "https://www.example.org/rdg/a7-r2"
-      },
+        "@id": "https://www.example.org/rdg/a8-r2"
+      }
+    ],
+    "https://w3id.org/cao/hasReadingType": [
       {
-        "@id": "https://www.example.org/rdg/a7-r3"
+        "@id": "http://purl.org/cao/addition"
+      }
+    ],
+    "https://w3id.org/cao/isWitnessedBy": [
+      {
+        "@id": "https://www.example.org/rdg-fragment/a8-r3"
       }
     ]
   },
@@ -120,114 +154,59 @@
     ]
   },
   {
-    "@id": "https://www.example.org/rdg-fragment/a5-r1",
+    "@id": "https://www.example.org/rdg-fragment/a7-r1",
     "@type": [
       "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"
     ],
     "http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by": [
       {
-        "@id": "https://www.example.org/wit/Kl"
+        "@id": "https://www.example.org/wit/Hg"
       }
     ]
   },
   {
-    "@id": "https://www.example.org/rdg/a8-r2",
+    "@id": "https://www.example.org/app/a1",
     "@type": [
-      "https://w3id.org/cao/Reading"
+      "https://w3id.org/cao/VariationUnit"
+    ],
+    "https://w3id.org/cao/hasReading": [
+      {
+        "@id": "https://www.example.org/rdg/a1-r2"
+      },
+      {
+        "@id": "https://www.example.org/rdg/a1-r1"
+      },
+      {
+        "@id": "https://www.example.org/rdg/a1-r3"
+      }
+    ]
+  },
+  {
+    "@id": "https://www.example.org/rdg-fragment/a1-r3",
+    "@type": [
+      "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"
+    ],
+    "http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by": [
+      {
+        "@id": "https://www.example.org/wit/Ra2"
+      }
+    ]
+  },
+  {
+    "@id": "https://www.example.org/note/a6-n1",
+    "@type": [
+      "http://www.cidoc-crm.org/cidoc-crm/E62_String"
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
       {
         "@value": [
-          "such a"
+          "[...] Folio 179, with the last page (Fol. 198b) [...]"
         ]
       }
     ],
-    "https://w3id.org/cao/follows": [
+    "http://www.w3.org/ns/prov#hadPrimarySource": [
       {
-        "@id": "https://www.example.org/rdg/a8-r1"
-      }
-    ],
-    "https://w3id.org/cao/hasReadingType": [
-      {
-        "@id": "http://purl.org/cao/deletion"
-      }
-    ],
-    "https://w3id.org/cao/isWitnessedBy": [
-      {
-        "@id": "https://www.example.org/rdg-fragment/a8-r2"
-      }
-    ]
-  },
-  {
-    "@id": "https://www.example.org/rdg/a4-r1",
-    "@type": [
-      "https://w3id.org/cao/Reading"
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": [
-          "alle"
-        ]
-      }
-    ],
-    "https://w3id.org/cao/isWitnessedBy": [
-      {
-        "@id": "https://www.example.org/rdg-fragment/a4-r1"
-      }
-    ]
-  },
-  {
-    "@id": "https://www.example.org/annot/an-a2",
-    "@type": [
-      "http://www.w3.org/ns/oa#Annotation"
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2021-11-03"
-      }
-    ],
-    "http://purl.org/dc/terms/creator": [
-      {
-        "@id": "https://www.example.org/agent/f-giov"
-      }
-    ],
-    "http://www.w3.org/ns/oa#hasBody": [
-      {
-        "@id": "https://www.example.org/app/a2"
-      }
-    ],
-    "http://www.w3.org/ns/oa#hasTarget": [
-      {
-        "@id": "https://www.example.org/varloc/vl-a2"
-      }
-    ]
-  },
-  {
-    "@id": "https://www.example.org/rdg/a8-r3",
-    "@type": [
-      "https://w3id.org/cao/Reading"
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": [
-          "a"
-        ]
-      }
-    ],
-    "https://w3id.org/cao/follows": [
-      {
-        "@id": "https://www.example.org/rdg/a8-r2"
-      }
-    ],
-    "https://w3id.org/cao/hasReadingType": [
-      {
-        "@id": "http://purl.org/cao/addition"
-      }
-    ],
-    "https://w3id.org/cao/isWitnessedBy": [
-      {
-        "@id": "https://www.example.org/rdg-fragment/a8-r3"
+        "@id": "https://www.example.org/source-edition/ext-ed-1"
       }
     ]
   },
@@ -264,6 +243,23 @@
     "http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by": [
       {
         "@id": "https://www.example.org/wit/Ra2"
+      }
+    ]
+  },
+  {
+    "@id": "https://www.example.org/rdg-fragment/a7-r2",
+    "@type": [
+      "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"
+    ],
+    "http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by": [
+      {
+        "@id": "https://www.example.org/wit/Ld"
+      },
+      {
+        "@id": "https://www.example.org/wit/Ry2"
+      },
+      {
+        "@id": "https://www.example.org/wit/Ln"
       }
     ]
   },
@@ -337,9 +333,24 @@
     ]
   },
   {
-    "@id": "https://www.example.org/rdg-fragment/a6-r1",
+    "@id": "https://www.example.org/rdg/a9-r2",
     "@type": [
-      "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"
+      "https://w3id.org/cao/Reading"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": []
+      }
+    ],
+    "https://w3id.org/cao/hasReadingCause": [
+      {
+        "@id": "http://purl.org/cao/homeoarchy"
+      }
+    ],
+    "https://w3id.org/cao/isWitnessedBy": [
+      {
+        "@id": "https://www.example.org/rdg-fragment/a9-r2"
+      }
     ]
   },
   {
@@ -474,33 +485,6 @@
     ]
   },
   {
-    "@id": "https://www.example.org/annot/an-a6",
-    "@type": [
-      "http://www.w3.org/ns/oa#Annotation"
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2021-11-03"
-      }
-    ],
-    "http://purl.org/dc/terms/creator": [
-      {
-        "@id": "https://www.example.org/agent/f-giov"
-      }
-    ],
-    "http://www.w3.org/ns/oa#hasBody": [
-      {
-        "@id": "https://www.example.org/app/a6"
-      }
-    ],
-    "http://www.w3.org/ns/oa#hasTarget": [
-      {
-        "@id": "https://www.example.org/varloc/vl-a6"
-      }
-    ]
-  },
-  {
     "@id": "https://www.example.org/rdg-fragment/a8-r2",
     "@type": [
       "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"
@@ -542,6 +526,17 @@
     ]
   },
   {
+    "@id": "https://www.example.org/rdg-fragment/a3-r1",
+    "@type": [
+      "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"
+    ],
+    "http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by": [
+      {
+        "@id": "https://www.example.org/wit/La"
+      }
+    ]
+  },
+  {
     "@id": "https://www.example.org/annot/an-a10",
     "@type": [
       "http://www.w3.org/ns/oa#Annotation"
@@ -569,24 +564,9 @@
     ]
   },
   {
-    "@id": "https://www.example.org/rdg/a9-r2",
+    "@id": "https://www.example.org/rdg-fragment/a6-r1",
     "@type": [
-      "https://w3id.org/cao/Reading"
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": []
-      }
-    ],
-    "https://w3id.org/cao/hasReadingCause": [
-      {
-        "@id": "http://purl.org/cao/homeoarchy"
-      }
-    ],
-    "https://w3id.org/cao/isWitnessedBy": [
-      {
-        "@id": "https://www.example.org/rdg-fragment/a9-r2"
-      }
+      "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"
     ]
   },
   {
@@ -642,13 +622,29 @@
     ]
   },
   {
-    "@id": "https://www.example.org/rdg-fragment/a1-r1",
+    "@id": "https://www.example.org/annot/an-a4",
     "@type": [
-      "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"
+      "http://www.w3.org/ns/oa#Annotation"
     ],
-    "http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by": [
+    "http://purl.org/dc/terms/created": [
       {
-        "@id": "https://www.example.org/wit/El"
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2021-11-03"
+      }
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@id": "https://www.example.org/agent/f-giov"
+      }
+    ],
+    "http://www.w3.org/ns/oa#hasBody": [
+      {
+        "@id": "https://www.example.org/app/a4"
+      }
+    ],
+    "http://www.w3.org/ns/oa#hasTarget": [
+      {
+        "@id": "https://www.example.org/varloc/vl-a4"
       }
     ]
   },
@@ -680,13 +676,29 @@
     ]
   },
   {
-    "@id": "https://www.example.org/rdg-fragment/a1-r3",
+    "@id": "https://www.example.org/annot/an-a6",
     "@type": [
-      "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"
+      "http://www.w3.org/ns/oa#Annotation"
     ],
-    "http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by": [
+    "http://purl.org/dc/terms/created": [
       {
-        "@id": "https://www.example.org/wit/Ra2"
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2021-11-03"
+      }
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@id": "https://www.example.org/agent/f-giov"
+      }
+    ],
+    "http://www.w3.org/ns/oa#hasBody": [
+      {
+        "@id": "https://www.example.org/app/a6"
+      }
+    ],
+    "http://www.w3.org/ns/oa#hasTarget": [
+      {
+        "@id": "https://www.example.org/varloc/vl-a6"
       }
     ]
   },
@@ -745,13 +757,29 @@
     ]
   },
   {
-    "@id": "https://www.example.org/rdg-fragment/a3-r1",
+    "@id": "https://www.example.org/annot/an-a2",
     "@type": [
-      "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"
+      "http://www.w3.org/ns/oa#Annotation"
     ],
-    "http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by": [
+    "http://purl.org/dc/terms/created": [
       {
-        "@id": "https://www.example.org/wit/La"
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2021-11-03"
+      }
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@id": "https://www.example.org/agent/f-giov"
+      }
+    ],
+    "http://www.w3.org/ns/oa#hasBody": [
+      {
+        "@id": "https://www.example.org/app/a2"
+      }
+    ],
+    "http://www.w3.org/ns/oa#hasTarget": [
+      {
+        "@id": "https://www.example.org/varloc/vl-a2"
       }
     ]
   },
@@ -837,29 +865,13 @@
     ]
   },
   {
-    "@id": "https://www.example.org/annot/an-a4",
+    "@id": "https://www.example.org/rdg-fragment/a1-r1",
     "@type": [
-      "http://www.w3.org/ns/oa#Annotation"
+      "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"
     ],
-    "http://purl.org/dc/terms/created": [
+    "http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by": [
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2021-11-03"
-      }
-    ],
-    "http://purl.org/dc/terms/creator": [
-      {
-        "@id": "https://www.example.org/agent/f-giov"
-      }
-    ],
-    "http://www.w3.org/ns/oa#hasBody": [
-      {
-        "@id": "https://www.example.org/app/a4"
-      }
-    ],
-    "http://www.w3.org/ns/oa#hasTarget": [
-      {
-        "@id": "https://www.example.org/varloc/vl-a4"
+        "@id": "https://www.example.org/wit/El"
       }
     ]
   },
@@ -870,13 +882,13 @@
     ],
     "https://w3id.org/cao/hasReading": [
       {
+        "@id": "https://www.example.org/rdg/a8-r1"
+      },
+      {
         "@id": "https://www.example.org/rdg/a8-r3"
       },
       {
         "@id": "https://www.example.org/rdg/a8-r2"
-      },
-      {
-        "@id": "https://www.example.org/rdg/a8-r1"
       }
     ]
   },
@@ -903,10 +915,10 @@
     ],
     "https://w3id.org/cao/hasReading": [
       {
-        "@id": "https://www.example.org/rdg/a4-r2"
+        "@id": "https://www.example.org/rdg/a4-r1"
       },
       {
-        "@id": "https://www.example.org/rdg/a4-r1"
+        "@id": "https://www.example.org/rdg/a4-r2"
       }
     ]
   },
@@ -917,13 +929,13 @@
     ],
     "https://w3id.org/cao/hasReading": [
       {
+        "@id": "https://www.example.org/rdg/a5-r1"
+      },
+      {
         "@id": "https://www.example.org/rdg/a5-r2"
       },
       {
         "@id": "https://www.example.org/rdg/a5-r3"
-      },
-      {
-        "@id": "https://www.example.org/rdg/a5-r1"
       }
     ]
   },
@@ -939,37 +951,37 @@
     ]
   },
   {
-    "@id": "https://www.example.org/note/a6-n1",
-    "@type": [
-      "http://www.cidoc-crm.org/cidoc-crm/E62_String"
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": [
-          "[...] Folio 179, with the last page (Fol. 198b) [...]"
-        ]
-      }
-    ],
-    "http://www.w3.org/ns/prov#hadPrimarySource": [
-      {
-        "@id": "https://www.example.org/source-edition/ext-ed-1"
-      }
-    ]
-  },
-  {
-    "@id": "https://www.example.org/app/a1",
+    "@id": "https://www.example.org/app/a7",
     "@type": [
       "https://w3id.org/cao/VariationUnit"
     ],
     "https://w3id.org/cao/hasReading": [
       {
-        "@id": "https://www.example.org/rdg/a1-r3"
+        "@id": "https://www.example.org/rdg/a7-r1"
       },
       {
-        "@id": "https://www.example.org/rdg/a1-r1"
+        "@id": "https://www.example.org/rdg/a7-r3"
       },
       {
-        "@id": "https://www.example.org/rdg/a1-r2"
+        "@id": "https://www.example.org/rdg/a7-r2"
+      }
+    ]
+  },
+  {
+    "@id": "https://www.example.org/rdg/a4-r1",
+    "@type": [
+      "https://w3id.org/cao/Reading"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": [
+          "alle"
+        ]
+      }
+    ],
+    "https://w3id.org/cao/isWitnessedBy": [
+      {
+        "@id": "https://www.example.org/rdg-fragment/a4-r1"
       }
     ]
   },
@@ -985,10 +997,10 @@
     ],
     "https://w3id.org/cao/hasReading": [
       {
-        "@id": "https://www.example.org/rdg/a2-r2"
+        "@id": "https://www.example.org/rdg/a2-r3"
       },
       {
-        "@id": "https://www.example.org/rdg/a2-r3"
+        "@id": "https://www.example.org/rdg/a2-r2"
       }
     ]
   },
@@ -1093,25 +1105,13 @@
     ]
   },
   {
-    "@id": "https://www.example.org/rdg/a8-r1",
+    "@id": "https://www.example.org/rdg-fragment/a5-r1",
     "@type": [
-      "https://w3id.org/cao/Reading"
+      "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment"
     ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+    "http://iflastandards.info/ns/fr/frbr/frbroo/R4_carriers_provided_by": [
       {
-        "@value": [
-          "this"
-        ]
-      }
-    ],
-    "https://w3id.org/cao/hasReadingType": [
-      {
-        "@id": "http://purl.org/cao/deletion"
-      }
-    ],
-    "https://w3id.org/cao/isWitnessedBy": [
-      {
-        "@id": "https://www.example.org/rdg-fragment/a8-r1"
+        "@id": "https://www.example.org/wit/Kl"
       }
     ]
   },
